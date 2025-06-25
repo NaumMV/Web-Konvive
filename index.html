@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -7,17 +6,6 @@
   <title>Inicio</title>
   <link rel="stylesheet" href="style.css" />
 </head>
-  <script>
-  const tiempo = parseInt(localStorage.getItem("tiempoAcceso"));
-  const minutosPermitidos = 30;
-  const ahora = Date.now();
-
-  if (!tiempo || ahora - tiempo > minutosPermitidos * 60000) {
-    alert("Debes ingresar por el acceso primero.");
-    localStorage.removeItem("tiempoAcceso");
-    window.location.href = "acceso.html";
-  }
-</script>
 <body>
   <header>
     <nav>
@@ -45,6 +33,21 @@
   <footer>
     <p>© 2025 Innovation Program | Naum Muro, Luis Mendoza</p>
   </footer>
+
+  <!-- 🔒 Protección de acceso -->
+  <script>
+    const tiempo = parseInt(localStorage.getItem("tiempoAcceso"));
+    const minutosPermitidos = 30;
+    const ahora = Date.now();
+
+    if (!tiempo || ahora - tiempo > minutosPermitidos * 60000) {
+      alert("Debes ingresar por el acceso primero.");
+      localStorage.removeItem("tiempoAcceso");
+      window.location.href = "acceso.html";
+    }
+  </script>
+
+  <!-- Tu script principal -->
   <script src="script.js"></script>
 </body>
 </html>
