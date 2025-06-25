@@ -4,7 +4,7 @@ function verificarCodigo() {
 
   if (codigoIngresado === codigoCorrecto) {
     localStorage.setItem("tiempoAcceso", Date.now());
-    window.location.href = "zona-secreta.html";
+    window.location.href = "index.html";
   } else {
     alert("Código incorrecto.");
   }
