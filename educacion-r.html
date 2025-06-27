@@ -141,6 +141,124 @@
       </ul>
     </nav>
   </header>
+      <main>
+  <section id="educacion-r" class="educacion-r">
+    <h2 class="titulo-principal">📘 Educación R</h2>
+    <p class="intro">
+      Una metodología transformadora basada en el <strong>Respeto, Reconocimiento, Reflexión y Reconciliación</strong>, que busca construir una comunidad educativa sana, inclusiva y libre de violencia.
+    </p>
 
-  <main>
-    <section id="educacion-r" class="educacion-r
+    <div class="grid-ejes">
+      <div class="eje">
+        <h3>1. Respeto</h3>
+        <ul>
+          <li>Ambiente seguro y valorado</li>
+          <li>Normas consensuadas</li>
+          <li>Dinámicas de trato amable</li>
+        </ul>
+      </div>
+      <div class="eje">
+        <h3>2. Reconocimiento</h3>
+        <ul>
+          <li>Conciencia emocional</li>
+          <li>Valoración del esfuerzo</li>
+          <li>Reconocimiento de habilidades</li>
+        </ul>
+      </div>
+      <div class="eje">
+        <h3>3. Reflexión</h3>
+        <ul>
+          <li>Bitácoras semanales</li>
+          <li>Preguntas clave post-conflicto</li>
+          <li>Evaluación con feedback</li>
+        </ul>
+      </div>
+      <div class="eje">
+        <h3>4. Reconciliación</h3>
+        <ul>
+          <li>Mediación entre pares</li>
+          <li>Cartas de reparación emocional</li>
+          <li>Círculos restaurativos</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3 class="subtitulo">🛡️ Plan de Acción: ¿Qué hacer ante bullying o violencia?</h3>
+
+    <div class="acciones">
+      <button onclick="toggleAccion('prevencion')">🔍 Prevención</button>
+      <div id="prevencion" class="accion">
+        <p><strong>Objetivo:</strong> Prevenir la violencia escolar.</p>
+        <ul>
+          <li>Campañas de sensibilización</li>
+          <li>Talleres sobre bullying y ciberbullying</li>
+          <li>Brigadas de convivencia</li>
+          <li>Acuerdos de aula</li>
+          <li>Actividades de Educación R semanales</li>
+        </ul>
+      </div>
+
+      <button onclick="toggleAccion('deteccion')">🧠 Detección</button>
+      <div id="deteccion" class="accion">
+        <p><strong>Objetivo:</strong> Identificar señales tempranas de violencia.</p>
+        <ul>
+          <li>Aislamiento, bajo rendimiento</li>
+          <li>Moretones o pérdida de objetos</li>
+          <li>Temor al recreo o al celular</li>
+          <li>Detectores: docentes, padres, alumnos</li>
+        </ul>
+      </div>
+
+      <button onclick="toggleAccion('actuacion')">🚨 Actuación inmediata</button>
+      <div id="actuacion" class="accion">
+        <ol>
+          <li>Escuchar sin juzgar</li>
+          <li>Garantizar confidencialidad</li>
+          <li>Notificar al tutor o psicólogo</li>
+          <li>Separar al agresor si hay riesgo</li>
+          <li>Activar el protocolo del colegio</li>
+        </ol>
+      </div>
+
+      <button onclick="toggleAccion('intervencion')">🗣️ Intervención y Acompañamiento</button>
+      <div id="intervencion" class="accion">
+        <ul>
+          <li>Entrevistas privadas</li>
+          <li>Compromisos firmados</li>
+          <li>Derivación psicológica</li>
+          <li>Actividades de reparación emocional</li>
+        </ul>
+      </div>
+
+      <button onclick="toggleAccion('seguimiento')">🔁 Seguimiento</button>
+      <div id="seguimiento" class="accion">
+        <ul>
+          <li>Evaluación del clima escolar</li>
+          <li>Entrevistas periódicas</li>
+          <li>Apoyo al entorno</li>
+          <li>Refuerzo de normas</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="extra">
+      <h4>📜 Reglamento Interno</h4>
+      <p>📁 Documento en PDF o acceso desde el colegio (enlace o archivo descargable).</p>
+
+      <h4>🧾 Protocolo Interno (Resumen)</h4>
+      <p>Etapas claras con responsables y acciones para cada fase del proceso.</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>© 2025 Innovation Program | Naum Muro, Luis Mendoza</p>
+</footer>
+
+<script>
+  function toggleAccion(id) {
+    const elem = document.getElementById(id);
+    elem.style.display = (elem.style.display === "block") ? "none" : "block";
+  }
+</script>
+
