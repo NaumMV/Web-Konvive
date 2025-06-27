@@ -3,20 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Educación R</title>
+  <title>Educación R | Konvive</title>
   <link rel="stylesheet" href="style.css" />
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
       margin: 0;
-      background-color: #f8f9fb;
+      background-color: #f9fafc;
     }
 
     header, footer {
-      background-color: #0d47a1;
+      background-color: #263238;
       color: white;
       text-align: center;
-      padding: 15px 0;
+      padding: 20px 0;
     }
 
     nav ul {
@@ -24,7 +24,7 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 10px;
+      gap: 15px;
       padding: 0;
       margin: 0;
     }
@@ -32,24 +32,26 @@
     nav li a {
       color: white;
       text-decoration: none;
-      padding: 8px 12px;
+      padding: 10px 16px;
       border-radius: 6px;
+      transition: background 0.3s;
     }
 
     nav li a:hover {
-      background-color: #1565c0;
+      background-color: #455a64;
     }
 
     .educacion-r {
-      padding: 40px 20px;
+      padding: 50px 20px;
       max-width: 1100px;
       margin: auto;
     }
 
-    .educacion-r h2.titulo-principal {
+    .educacion-r h2 {
       text-align: center;
-      font-size: 2.2rem;
-      margin-bottom: 1rem;
+      font-size: 2.4rem;
+      margin-bottom: 20px;
+      color: #263238;
     }
 
     .educacion-r .intro {
@@ -57,66 +59,96 @@
       max-width: 800px;
       margin: 0 auto 40px;
       font-size: 1.1rem;
+      color: #444;
     }
 
     .grid-ejes {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
       gap: 20px;
       margin-bottom: 50px;
     }
 
     .eje {
       background: white;
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-      transition: transform 0.3s;
+      padding: 25px;
+      border-radius: 14px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+      transition: transform 0.3s ease;
     }
 
     .eje:hover {
-      transform: translateY(-5px);
+      transform: translateY(-8px);
+    }
+
+    .eje h3 {
+      color: #0d47a1;
+      margin-bottom: 10px;
+    }
+
+    .eje ul {
+      padding-left: 20px;
+      color: #555;
     }
 
     .subtitulo {
       text-align: center;
-      margin: 40px 0 20px;
-      font-size: 1.5rem;
+      margin: 60px 0 20px;
+      font-size: 1.6rem;
+      color: #263238;
     }
 
     .acciones button {
       display: block;
       width: 100%;
-      max-width: 400px;
-      margin: 10px auto;
-      padding: 12px;
+      max-width: 420px;
+      margin: 15px auto;
+      padding: 14px;
       border: none;
-      background: #007BFF;
+      background: #0d47a1;
       color: white;
       border-radius: 10px;
       font-weight: bold;
+      font-size: 1rem;
       cursor: pointer;
       transition: background 0.3s;
     }
 
     .acciones button:hover {
-      background: #0056b3;
+      background: #1565c0;
     }
 
     .accion {
-      background: #fff;
-      border-radius: 8px;
+      background: #ffffff;
+      border-radius: 10px;
       box-shadow: 0 1px 5px rgba(0,0,0,0.05);
-      max-width: 600px;
-      margin: 0 auto 20px;
-      padding: 15px;
+      max-width: 700px;
+      margin: 0 auto 25px;
+      padding: 20px;
       display: none;
       animation: fadeIn 0.4s ease;
+      color: #333;
     }
 
     .extra {
-      margin-top: 40px;
+      margin-top: 50px;
       text-align: center;
+    }
+
+    .btn-descarga {
+      display: inline-block;
+      padding: 12px 20px;
+      background-color: #2e7d32;
+      color: white;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      margin-top: 10px;
+      transition: background 0.3s;
+    }
+
+    .btn-descarga:hover {
+      background-color: #1b5e20;
     }
 
     @keyframes fadeIn {
@@ -128,7 +160,7 @@
 <body>
   <header>
     <nav>
-      <h1>Innovation Program</h1>
+      <h1>Konvive - Innovation Program</h1>
       <ul>
         <li><a href="quienes-somos.html">Quiénes somos</a></li>
         <li><a href="educacion-r.html">Educación R</a></li>
@@ -141,124 +173,122 @@
       </ul>
     </nav>
   </header>
-      <main>
-  <section id="educacion-r" class="educacion-r">
-    <h2 class="titulo-principal">📘 Educación R</h2>
-    <p class="intro">
-      Una metodología transformadora basada en el <strong>Respeto, Reconocimiento, Reflexión y Reconciliación</strong>, que busca construir una comunidad educativa sana, inclusiva y libre de violencia.
-    </p>
 
-    <div class="grid-ejes">
-      <div class="eje">
-        <h3>1. Respeto</h3>
-        <ul>
-          <li>Ambiente seguro y valorado</li>
-          <li>Normas consensuadas</li>
-          <li>Dinámicas de trato amable</li>
-        </ul>
-      </div>
-      <div class="eje">
-        <h3>2. Reconocimiento</h3>
-        <ul>
-          <li>Conciencia emocional</li>
-          <li>Valoración del esfuerzo</li>
-          <li>Reconocimiento de habilidades</li>
-        </ul>
-      </div>
-      <div class="eje">
-        <h3>3. Reflexión</h3>
-        <ul>
-          <li>Bitácoras semanales</li>
-          <li>Preguntas clave post-conflicto</li>
-          <li>Evaluación con feedback</li>
-        </ul>
-      </div>
-      <div class="eje">
-        <h3>4. Reconciliación</h3>
-        <ul>
-          <li>Mediación entre pares</li>
-          <li>Cartas de reparación emocional</li>
-          <li>Círculos restaurativos</li>
-        </ul>
-      </div>
-    </div>
+  <main>
+    <section class="educacion-r">
+      <h2>Educación R</h2>
+      <p class="intro">
+        Nuestra propuesta educativa se basa en una metodología transformadora enfocada en el <strong>Respeto, Reconocimiento, Reflexión y Reconciliación</strong>. Con estos pilares, buscamos formar comunidades escolares libres de violencia, inclusivas y emocionalmente sanas.
+      </p>
 
-    <h3 class="subtitulo">🛡️ Plan de Acción: ¿Qué hacer ante bullying o violencia?</h3>
-
-    <div class="acciones">
-      <button onclick="toggleAccion('prevencion')">🔍 Prevención</button>
-      <div id="prevencion" class="accion">
-        <p><strong>Objetivo:</strong> Prevenir la violencia escolar.</p>
-        <ul>
-          <li>Campañas de sensibilización</li>
-          <li>Talleres sobre bullying y ciberbullying</li>
-          <li>Brigadas de convivencia</li>
-          <li>Acuerdos de aula</li>
-          <li>Actividades de Educación R semanales</li>
-        </ul>
+      <div class="grid-ejes">
+        <div class="eje">
+          <h3>1. Respeto</h3>
+          <ul>
+            <li>Ambientes seguros y valorados</li>
+            <li>Normas y acuerdos de aula</li>
+            <li>Escucha activa y trato amable</li>
+          </ul>
+        </div>
+        <div class="eje">
+          <h3>2. Reconocimiento</h3>
+          <ul>
+            <li>Conciencia emocional</li>
+            <li>Reconocimiento de logros y esfuerzos</li>
+            <li>Valoración de habilidades individuales</li>
+          </ul>
+        </div>
+        <div class="eje">
+          <h3>3. Reflexión</h3>
+          <ul>
+            <li>Bitácoras semanales</li>
+            <li>Evaluación grupal y retroalimentación</li>
+            <li>Espacios para pensar antes de actuar</li>
+          </ul>
+        </div>
+        <div class="eje">
+          <h3>4. Reconciliación</h3>
+          <ul>
+            <li>Mediación entre pares</li>
+            <li>Círculos restaurativos</li>
+            <li>Cartas o mensajes de reparación</li>
+          </ul>
+        </div>
       </div>
 
-      <button onclick="toggleAccion('deteccion')">🧠 Detección</button>
-      <div id="deteccion" class="accion">
-        <p><strong>Objetivo:</strong> Identificar señales tempranas de violencia.</p>
-        <ul>
-          <li>Aislamiento, bajo rendimiento</li>
-          <li>Moretones o pérdida de objetos</li>
-          <li>Temor al recreo o al celular</li>
-          <li>Detectores: docentes, padres, alumnos</li>
-        </ul>
+      <h3 class="subtitulo">🛡️ Plan de acción ante casos de bullying o violencia</h3>
+
+      <div class="acciones">
+        <button onclick="toggleAccion('prevencion')">🔍 Prevención</button>
+        <div id="prevencion" class="accion">
+          <ul>
+            <li>Campañas de sensibilización</li>
+            <li>Talleres sobre bullying y ciberbullying</li>
+            <li>Formación de brigadas de convivencia</li>
+            <li>Acuerdos de aula firmados</li>
+            <li>Integración de Educación R en sesiones</li>
+          </ul>
+        </div>
+
+        <button onclick="toggleAccion('deteccion')">🧠 Detección</button>
+        <div id="deteccion" class="accion">
+          <ul>
+            <li>Detectar cambios de conducta</li>
+            <li>Observar uso del celular o aislamiento</li>
+            <li>Alertas por docentes, padres o alumnos</li>
+          </ul>
+        </div>
+
+        <button onclick="toggleAccion('actuacion')">🚨 Actuación inmediata</button>
+        <div id="actuacion" class="accion">
+          <ol>
+            <li>Escuchar sin juzgar</li>
+            <li>Garantizar confidencialidad</li>
+            <li>Notificar a tutor o psicólogo</li>
+            <li>Separar al agresor si hay riesgo</li>
+            <li>Aplicar protocolo del colegio</li>
+          </ol>
+        </div>
+
+        <button onclick="toggleAccion('intervencion')">🗣️ Intervención y acompañamiento</button>
+        <div id="intervencion" class="accion">
+          <ul>
+            <li>Entrevistas con ambas partes</li>
+            <li>Compromisos firmados</li>
+            <li>Derivación psicológica</li>
+            <li>Actividades restaurativas</li>
+          </ul>
+        </div>
+
+        <button onclick="toggleAccion('seguimiento')">🔁 Seguimiento</button>
+        <div id="seguimiento" class="accion">
+          <ul>
+            <li>Evaluaciones de clima escolar</li>
+            <li>Observación del agresor</li>
+            <li>Refuerzo de normas</li>
+          </ul>
+        </div>
       </div>
 
-      <button onclick="toggleAccion('actuacion')">🚨 Actuación inmediata</button>
-      <div id="actuacion" class="accion">
-        <ol>
-          <li>Escuchar sin juzgar</li>
-          <li>Garantizar confidencialidad</li>
-          <li>Notificar al tutor o psicólogo</li>
-          <li>Separar al agresor si hay riesgo</li>
-          <li>Activar el protocolo del colegio</li>
-        </ol>
+      <div class="extra">
+        <h4>📜 Reglamento Interno</h4>
+        <a href="reglamento-interno.pdf" download class="btn-descarga">📥 Descargar Reglamento Interno (PDF)</a>
+
+        <h4 style="margin-top: 30px">🧾 Protocolo Interno (Resumen)</h4>
+        <p>Etapas claras con responsables y acciones para cada fase del proceso. Disponible en nuestra sección de Plan de Acción.</p>
       </div>
+    </section>
+  </main>
 
-      <button onclick="toggleAccion('intervencion')">🗣️ Intervención y Acompañamiento</button>
-      <div id="intervencion" class="accion">
-        <ul>
-          <li>Entrevistas privadas</li>
-          <li>Compromisos firmados</li>
-          <li>Derivación psicológica</li>
-          <li>Actividades de reparación emocional</li>
-        </ul>
-      </div>
+  <footer>
+    <p>© 2025 Innovation Program | Naum Muro, Luis Mendoza</p>
+  </footer>
 
-      <button onclick="toggleAccion('seguimiento')">🔁 Seguimiento</button>
-      <div id="seguimiento" class="accion">
-        <ul>
-          <li>Evaluación del clima escolar</li>
-          <li>Entrevistas periódicas</li>
-          <li>Apoyo al entorno</li>
-          <li>Refuerzo de normas</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="extra">
-      <h4>📜 Reglamento Interno</h4>
-      <p>📁 Documento en PDF o acceso desde el colegio (enlace o archivo descargable).</p>
-
-      <h4>🧾 Protocolo Interno (Resumen)</h4>
-      <p>Etapas claras con responsables y acciones para cada fase del proceso.</p>
-    </div>
-  </section>
-</main>
-
-<footer>
-  <p>© 2025 Innovation Program | Naum Muro, Luis Mendoza</p>
-</footer>
-
-<script>
-  function toggleAccion(id) {
-    const elem = document.getElementById(id);
-    elem.style.display = (elem.style.display === "block") ? "none" : "block";
-  }
-</script>
-
+  <script>
+    function toggleAccion(id) {
+      const elem = document.getElementById(id);
+      elem.style.display = (elem.style.display === "block") ? "none" : "block";
+    }
+  </script>
+</body>
+</html>
