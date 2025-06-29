@@ -1,16 +1,114 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Reporta un caso</title>
+  <title>Reporta un caso | Konvive</title>
   <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      background-color: #f9fafc;
+    }
+
+    header, footer {
+      background-color: #263238;
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      padding: 0;
+      margin: 0;
+    }
+
+    nav li a {
+      color: white;
+      text-decoration: none;
+      padding: 10px 16px;
+      border-radius: 6px;
+      transition: background 0.3s;
+    }
+
+    nav li a:hover {
+      background-color: #455a64;
+    }
+
+    .contenedor-reporte {
+      padding: 50px 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .contenedor-reporte h2 {
+      text-align: center;
+      font-size: 2.4rem;
+      margin-bottom: 30px;
+      color: #263238;
+    }
+
+    .contenedor-reporte p {
+      color: #444;
+      line-height: 1.6;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    form {
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    label {
+      display: block;
+      margin: 15px 0 5px;
+      color: #333;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 12px 20px;
+      background-color: #0d47a1;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background-color: #1565c0;
+    }
+
+    .nota {
+      text-align: center;
+      font-size: 0.9rem;
+      color: #777;
+      margin-top: 20px;
+    }
+  </style>
 </head>
 <body>
   <header>
     <nav>
-      <h1>Innovation Program</h1>
+      <h1>Konvive - Innovation Program</h1>
       <ul>
         <li><a href="quienes-somos.html">Quiénes somos</a></li>
         <li><a href="educacion-r.html">Educación R</a></li>
@@ -25,24 +123,50 @@
   </header>
 
   <main>
-    <section>
+    <section class="contenedor-reporte">
       <h2>Reporta un caso</h2>
-      
-<div class="card">
-  <p>En esta sección puedes reportar casos de acoso o bullying. Se procederá con medidas según el protocolo oficial del MINEDU, UGEL y autoridades escolares.</p>
-  <form>
-    <input type="text" placeholder="Tu nombre (opcional)">
-    <textarea placeholder="Describe el caso..."></textarea>
-    <button type="submit">Enviar reporte</button>
-  </form>
-</div>
+      <p>Este espacio está destinado a comunicar de forma confidencial cualquier situación de acoso o violencia escolar. Tu reporte será atendido por el equipo encargado siguiendo un protocolo de protección y acompañamiento.</p>
 
+      <form onsubmit="guardarCaso(event)">
+        <label for="nombre">Nombre del estudiante (opcional)</label>
+        <input type="text" id="nombre" name="nombre" />
+
+        <label for="detalle">Describe lo ocurrido</label>
+        <textarea id="detalle" name="detalle" rows="5" required></textarea>
+
+        <label for="contacto">Correo electrónico o contacto (opcional)</label>
+        <input type="email" id="contacto" name="contacto" />
+
+        <button type="submit">Enviar reporte</button>
+        <p class="nota">Este formulario es anónimo y no será visible para otros usuarios.</p>
+      </form>
     </section>
   </main>
 
   <footer>
     <p>© 2025 Innovation Program | Naum Muro, Luis Mendoza</p>
   </footer>
-  <script src="script.js"></script>
+
+  <script>
+    function guardarCaso(e) {
+      e.preventDefault();
+      const nombre = document.getElementById("nombre").value;
+      const detalle = document.getElementById("detalle").value;
+      const contacto = document.getElementById("contacto").value;
+
+      const reporte = {
+        nombre,
+        detalle,
+        contacto,
+        fecha: new Date().toLocaleString()
+      };
+
+      let reportes = JSON.parse(localStorage.getItem("reportesKonvive")) || [];
+      reportes.push(reporte);
+      localStorage.setItem("reportesKonvive", JSON.stringify(reportes));
+      alert("Gracias por tu reporte. Será evaluado por el equipo responsable.");
+      document.querySelector("form").reset();
+    }
+  </script>
 </body>
 </html>
