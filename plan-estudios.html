@@ -1,16 +1,97 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Plan de estudios</title>
+  <title>Plan de estudios | Konvive</title>
   <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      background-color: #f9fafc;
+    }
+
+    header, footer {
+      background-color: #263238;
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      padding: 0;
+      margin: 0;
+    }
+
+    nav li a {
+      color: white;
+      text-decoration: none;
+      padding: 10px 16px;
+      border-radius: 6px;
+      transition: background 0.3s;
+    }
+
+    nav li a:hover {
+      background-color: #455a64;
+    }
+
+    .plan-estudios {
+      padding: 50px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .plan-estudios h2 {
+      text-align: center;
+      font-size: 2.4rem;
+      margin-bottom: 20px;
+      color: #263238;
+    }
+
+    .plan-estudios .intro {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto 40px;
+      font-size: 1.1rem;
+      color: #444;
+    }
+
+    .bloque {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      padding: 25px;
+      margin-bottom: 30px;
+    }
+
+    .bloque h3 {
+      color: #0d47a1;
+      margin-bottom: 10px;
+    }
+
+    .bloque p, .bloque ul {
+      color: #555;
+    }
+
+    iframe {
+      display: block;
+      margin: 20px auto;
+      max-width: 100%;
+      border: none;
+      border-radius: 10px;
+    }
+  </style>
 </head>
 <body>
   <header>
     <nav>
-      <h1>Innovation Program</h1>
+      <h1>Konvive - Innovation Program</h1>
       <ul>
         <li><a href="quienes-somos.html">Quiénes somos</a></li>
         <li><a href="educacion-r.html">Educación R</a></li>
@@ -25,15 +106,38 @@
   </header>
 
   <main>
-    <section>
-      <h2>Plan de estudios</h2>
-      <p>Trabajando...</p>
+    <section class="plan-estudios">
+      <h2>📘 Plan de Estudios</h2>
+      <p class="intro">
+        Este plan define las estrategias de enseñanza basadas en nuestra metodología Educación R. A través de actividades innovadoras, desarrollamos habilidades académicas y socioemocionales que construyen una convivencia sana.
+      </p>
+
+      <div class="bloque">
+        <h3>🧠 Nuestra metodología revolucionaria</h3>
+        <p>El centro de nuestro plan es la Educación R: Respeto, Reconocimiento, Reflexión y Reconciliación. Estas bases se integran en cada clase, generando empatía, trabajo en equipo y desarrollo emocional.</p>
+      </div>
+
+      <div class="bloque">
+        <h3>🎯 Actividades clave del aula</h3>
+        <ul>
+          <li>Bitácoras semanales para reflexionar</li>
+          <li>Dinámicas grupales con reglas claras de convivencia</li>
+          <li>Círculos de diálogo cada 15 días</li>
+          <li>Reconocimiento de logros individuales y grupales</li>
+          <li>Integración del plan en sesiones de tutoría</li>
+        </ul>
+      </div>
+
+      <div class="bloque">
+        <h3>🎬 Video guía para docentes</h3>
+        <p>Este video resume el enfoque del plan y cómo aplicarlo en clase:</p>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/jkHIyC3EjLg" allowfullscreen></iframe>
+      </div>
     </section>
   </main>
 
   <footer>
     <p>© 2025 Innovation Program | Naum Muro, Luis Mendoza</p>
   </footer>
-  <script src="script.js"></script>
 </body>
 </html>
