@@ -1,16 +1,78 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Padres</title>
+  <title>Padres | Konvive</title>
   <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      background-color: #f9fafc;
+    }
+
+    header, footer {
+      background-color: #263238;
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      padding: 0;
+      margin: 0;
+    }
+
+    nav li a {
+      color: white;
+      text-decoration: none;
+      padding: 10px 16px;
+      border-radius: 6px;
+      transition: background 0.3s;
+    }
+
+    nav li a:hover {
+      background-color: #455a64;
+    }
+
+    .contenedor-padres {
+      padding: 50px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .contenedor-padres h2 {
+      text-align: center;
+      font-size: 2.4rem;
+      margin-bottom: 30px;
+      color: #263238;
+    }
+
+    .contenedor-padres p, .contenedor-padres ul, .contenedor-padres h3 {
+      color: #444;
+      line-height: 1.6;
+    }
+
+    .contenedor-padres h3 {
+      margin-top: 40px;
+      color: #0d47a1;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+  </style>
 </head>
 <body>
   <header>
     <nav>
-      <h1>Innovation Program</h1>
+      <h1>Konvive - Innovation Program</h1>
       <ul>
         <li><a href="quienes-somos.html">Quiénes somos</a></li>
         <li><a href="educacion-r.html">Educación R</a></li>
@@ -25,15 +87,53 @@
   </header>
 
   <main>
-    <section>
-      <h2>Padres</h2>
-      <p>Trabajando...</p>
+    <section class="contenedor-padres">
+      <h2>Guía para Padres</h2>
+      <p>En esta sección brindamos orientación a las familias para que puedan fomentar una convivencia sana desde casa y apoyar emocionalmente a sus hijos en situaciones de acoso o exclusión.</p>
+
+      <h3>👨‍👩‍👧‍👦 Cómo prevenir desde el hogar</h3>
+      <ul>
+        <li>Fomentar el respeto y la empatía desde pequeños.</li>
+        <li>Conversar sobre las emociones y cómo gestionarlas.</li>
+        <li>Supervisar los espacios digitales y promover un uso responsable.</li>
+        <li>Detectar signos tempranos de exclusión o cambios de ánimo.</li>
+      </ul>
+
+      <h3>💬 Comunicación efectiva con sus hijos</h3>
+      <ul>
+        <li>Practicar la escucha activa y sin juzgar.</li>
+        <li>Evitar minimizar los problemas que sus hijos compartan.</li>
+        <li>Ofrecer soluciones conjuntas y generar confianza.</li>
+        <li>Fortalecer el vínculo familiar con rutinas y momentos de calidad.</li>
+      </ul>
+
+      <h3>🧠 En caso de ser víctima</h3>
+      <ul>
+        <li>Brindar apoyo emocional y evitar culpabilizar.</li>
+        <li>Contactar al colegio y seguir el protocolo.</li>
+        <li>Buscar orientación psicológica si es necesario.</li>
+        <li>Reforzar la autoestima del menor con acompañamiento positivo.</li>
+      </ul>
+
+      <h3>⚠️ En caso de que sea agresor</h3>
+      <ul>
+        <li>Dialogar sin agresión para entender el motivo.</li>
+        <li>Explicar las consecuencias de sus acciones.</li>
+        <li>Fomentar la reparación del daño y el aprendizaje emocional.</li>
+        <li>Coordinar con el colegio medidas de acompañamiento.</li>
+      </ul>
+
+      <h3>📂 Recursos descargables</h3>
+      <ul>
+        <li>Guías prácticas para padres (PDF).</li>
+        <li>Videos sobre crianza respetuosa.</li>
+        <li>Enlaces de interés sobre salud emocional y escolar.</li>
+      </ul>
     </section>
   </main>
 
   <footer>
     <p>© 2025 Innovation Program | Naum Muro, Luis Mendoza</p>
   </footer>
-  <script src="script.js"></script>
 </body>
 </html>
