@@ -1,16 +1,94 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Foro y dudas</title>
+  <title>Foro y Dudas | Konvive</title>
   <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      background-color: #f4f6f8;
+    }
+
+    header, footer {
+      background-color: #263238;
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      padding: 0;
+      margin: 0;
+    }
+
+    nav li a {
+      color: white;
+      text-decoration: none;
+      padding: 10px 16px;
+      border-radius: 6px;
+      transition: background 0.3s;
+    }
+
+    nav li a:hover {
+      background-color: #455a64;
+    }
+
+    .foro-container {
+      max-width: 900px;
+      margin: 50px auto;
+      padding: 20px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+
+    .foro-container h2 {
+      text-align: center;
+      color: #0d47a1;
+      margin-bottom: 20px;
+    }
+
+    form textarea, form input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    form button {
+      background-color: #0d47a1;
+      color: white;
+      padding: 10px 16px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .pregunta {
+      background: #f1f1f1;
+      border-radius: 8px;
+      padding: 15px;
+      margin-top: 15px;
+    }
+
+    .pregunta strong {
+      color: #0d47a1;
+    }
+  </style>
 </head>
 <body>
   <header>
     <nav>
-      <h1>Innovation Program</h1>
+      <h1>Konvive - Innovation Program</h1>
       <ul>
         <li><a href="quienes-somos.html">Quiénes somos</a></li>
         <li><a href="educacion-r.html">Educación R</a></li>
@@ -25,20 +103,60 @@
   </header>
 
   <main>
-    <section>
-      <h2>Foro y dudas</h2>
-      
-<div class="card">
-  <p>Simulación de chat: "Hola, gracias por escribir. En breve responderemos tu duda."</p>
-  <input type="text" placeholder="Escribe tu duda..." disabled>
-</div>
-
+    <section class="foro-container">
+      <h2>Foro y Dudas</h2>
+      <form id="formulario-foro">
+        <input type="text" id="nombre" placeholder="Tu nombre (opcional)" />
+        <textarea id="pregunta" placeholder="Escribe tu duda o comentario" rows="4" required></textarea>
+        <button type="submit">Enviar</button>
+      </form>
+      <div id="lista-preguntas"></div>
     </section>
   </main>
 
   <footer>
     <p>© 2025 Innovation Program | Naum Muro, Luis Mendoza</p>
   </footer>
-  <script src="script.js"></script>
+
+  <script>
+    const form = document.getElementById('formulario-foro');
+    const lista = document.getElementById('lista-preguntas');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const nombre = document.getElementById('nombre').value.trim() || 'Anónimo';
+      const pregunta = document.getElementById('pregunta').value.trim();
+
+      if (pregunta === '') return;
+
+      const nuevaPregunta = {
+        nombre,
+        pregunta,
+        fecha: new Date().toLocaleString()
+      };
+
+      let preguntas = JSON.parse(localStorage.getItem('foroKonvive')) || [];
+      preguntas.unshift(nuevaPregunta);
+      localStorage.setItem('foroKonvive', JSON.stringify(preguntas));
+
+      form.reset();
+      mostrarPreguntas();
+    });
+
+    function mostrarPreguntas() {
+      const preguntas = JSON.parse(localStorage.getItem('foroKonvive')) || [];
+      lista.innerHTML = '';
+
+      preguntas.forEach(p => {
+        const div = document.createElement('div');
+        div.classList.add('pregunta');
+        div.innerHTML = `<strong>${p.nombre}</strong> <small>(${p.fecha})</small><br>${p.pregunta}`;
+        lista.appendChild(div);
+      });
+    }
+
+    mostrarPreguntas();
+  </script>
 </body>
 </html>
