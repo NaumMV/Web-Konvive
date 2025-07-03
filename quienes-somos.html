@@ -4,22 +4,22 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Quiénes somos | Konvive</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter&family=Raleway:wght@600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@600;700&family=Open+Sans&display=swap" rel="stylesheet">
   <style>
     :root {
       --principal: #1b105a;
       --blanco: #ffffff;
-      --gris-claro: #f4f4f7;
+      --gris-claro: #f6f5fc;
       --azul-acento: #3a7ce1;
-      --beige: #fef9f6;
-      --texto: #111111;
+      --texto: #111;
     }
 
     body {
       margin: 0;
-      font-family: 'Inter', sans-serif;
-      background-color: var(--beige);
+      font-family: 'Open Sans', sans-serif;
+      background-color: var(--gris-claro);
       color: var(--texto);
+      line-height: 1.6;
     }
 
     /* HEADER */
@@ -36,6 +36,7 @@
     .logo {
       font-size: 1.7rem;
       font-family: 'Raleway', sans-serif;
+      font-weight: 700;
     }
 
     .menu-icon {
@@ -59,6 +60,7 @@
       padding: 8px 12px;
       border-radius: 6px;
       transition: background 0.3s ease;
+      font-size: 1rem;
     }
 
     nav li a:hover {
@@ -72,9 +74,10 @@
     }
 
     .hero h2 {
-      font-size: 2.5rem;
+      font-size: 2.8rem;
       margin-bottom: 10px;
       color: var(--principal);
+      font-family: 'Raleway', sans-serif;
     }
 
     .hero p {
@@ -95,12 +98,20 @@
       border-radius: 16px;
       padding: 25px;
       margin-bottom: 30px;
-      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .section:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
     }
 
     .section h3 {
       color: var(--principal);
       margin-top: 0;
+      font-size: 1.6rem;
+      font-family: 'Raleway', sans-serif;
     }
 
     .grid-2col {
@@ -123,6 +134,9 @@
     .combined-card .part h4 {
       color: var(--azul-acento);
       margin: 0 0 5px;
+      font-size: 1.2rem;
+      font-weight: 700;
+      font-family: 'Raleway', sans-serif;
     }
 
     .timeline {
@@ -133,11 +147,26 @@
       margin-bottom: 25px;
       padding-left: 20px;
       border-left: 3px solid var(--principal);
+      position: relative;
+    }
+
+    .timeline-step::before {
+      content: "•";
+      position: absolute;
+      left: -10px;
+      top: 0;
+      color: var(--principal);
+      font-size: 1.5rem;
     }
 
     .timeline-step h4 {
       margin: 0;
       color: var(--principal);
+      font-family: 'Raleway', sans-serif;
+    }
+
+    .timeline-step p {
+      margin: 5px 0 0;
     }
 
     footer {
@@ -145,6 +174,7 @@
       color: white;
       text-align: center;
       padding: 20px;
+      font-size: 0.95rem;
     }
 
     @media (max-width: 768px) {
@@ -158,6 +188,10 @@
 
       .grid-2col {
         flex-direction: column;
+      }
+
+      .hero h2 {
+        font-size: 2.2rem;
       }
     }
   </style>
@@ -191,7 +225,7 @@
   <main>
     <!-- EQUIPO -->
     <div class="section">
-      <h3>Nuestro equipo</h3>
+      <h3>🤝 Nuestro equipo</h3>
       <p>Somos Naum Muro, Luis Mendoza y Nicolás Silva, estudiantes comprometidos con la transformación social a través de la educación. Nos unimos bajo el nombre “Los amigos de Jeison” para desarrollar una propuesta que permita reducir la violencia escolar en el Perú.</p>
     </div>
 
@@ -200,11 +234,11 @@
       <!-- Usuario + Necesidad -->
       <div class="col section combined-card">
         <div class="part">
-          <h4>Usuario</h4>
+          <h4>🧍 Usuario</h4>
           <p>Estudiantes de secundaria de instituciones educativas públicas y privadas que enfrentan entornos escolares con presencia de violencia o falta de integración.</p>
         </div>
         <div class="part">
-          <h4>Necesidad</h4>
+          <h4>📌 Necesidad</h4>
           <p>Reducir y prevenir los casos de bullying y violencia escolar mediante una propuesta integral que involucre a toda la comunidad educativa.</p>
         </div>
       </div>
@@ -212,11 +246,11 @@
       <!-- Visión + Misión -->
       <div class="col section combined-card">
         <div class="part">
-          <h4>Visión</h4>
+          <h4>🌱 Visión</h4>
           <p>Ser una propuesta educativa innovadora que contribuya activamente a construir espacios escolares seguros, respetuosos y libres de cualquier forma de violencia.</p>
         </div>
         <div class="part">
-          <h4>Misión</h4>
+          <h4>🚀 Misión</h4>
           <p>Implementar un ecosistema educativo integral basado en el respeto, la reflexión y el reconocimiento, brindando herramientas sostenibles para erradicar el acoso escolar.</p>
         </div>
       </div>
@@ -224,32 +258,31 @@
 
     <!-- Pregunta reto -->
     <div class="section">
-      <h3>Pregunta reto</h3>
+      <h3>❓ Pregunta reto</h3>
       <p>¿Cómo podríamos ayudar a los estudiantes de secundaria a reducir el bullying en los centros educativos, considerando el notorio incremento de estos casos a nivel nacional?</p>
     </div>
 
     <!-- Propuesta de valor -->
     <div class="section">
-      <h3>Propuesta de valor</h3>
+      <h3>💎 Propuesta de valor</h3>
       <p>Konvive ofrece una web interactiva, metodología de aula, acompañamiento psicológico, capacitación docente y guía para padres, enmarcada en la Educación R. Está diseñada para ser deseable, realizable, sostenible e innovadora en contextos escolares reales.</p>
     </div>
 
     <!-- PROBLEMÁTICA + TIMELINE -->
-    <div class="section" style="background-color: #f3eefe;">
-      <h3>Problemática</h3>
+    <div class="section" style="background-color: #f3f1fd;">
+      <h3>🚨 Problemática</h3>
       <p><strong>“6 de cada 10 escolares han vivido violencia escolar.”</strong></p>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.
-        Fusce vitae orci nec velit luctus faucibus. Etiam tincidunt nisi a odio commodo, non varius erat mattis.
       </p>
 
       <div class="timeline">
         <div class="timeline-step">
-          <h4>🟣 Inicio del proyecto</h4>
+          <h4>🔹 Inicio del proyecto</h4>
           <p>Idea original y formación del equipo “Los amigos de Jeison”.</p>
         </div>
         <div class="timeline-step">
-          <h4>🔎 Investigación</h4>
+          <h4>🔍 Investigación</h4>
           <p>Recopilación de datos sobre bullying en el Perú (SISEVE, encuestas).</p>
         </div>
         <div class="timeline-step">
