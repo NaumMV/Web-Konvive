@@ -1,63 +1,138 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Quiénes somos | Konvive</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter&family=Raleway:wght@600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter&family=Raleway:wght@600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
   <style>
-    /* Estilos generales */
+    :root {
+      --azul: #0b3c91;
+      --blanco: #ffffff;
+      --beige: #fef9f6;
+      --gris: #f1f5f9;
+      --text: #111;
+    }
+
     body {
       margin: 0;
       font-family: 'Inter', sans-serif;
-      background-color: #fef9f6;
-      color: #111;
+      background-color: var(--beige);
+      color: var(--text);
     }
 
     header {
+      background-color: var(--azul);
+      padding: 20px 30px;
       display: flex;
-      align-items: center;
       justify-content: space-between;
-      background-color: #0b3c91;
-      padding: 16px 24px;
+      align-items: center;
       color: white;
     }
 
+    .logo {
+      font-size: 1.7rem;
+      font-family: 'Raleway', sans-serif;
+    }
+
     .menu-icon {
+      display: none;
       font-size: 28px;
       cursor: pointer;
     }
 
-    .logo {
-      font-size: 1.8rem;
-      font-family: 'Raleway', sans-serif;
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      padding: 0;
+      margin: 0;
     }
 
+    nav li a {
+      color: white;
+      text-decoration: none;
+      padding: 8px 12px;
+      border-radius: 6px;
+      transition: background 0.3s ease;
+    }
+
+    nav li a:hover {
+      background-color: #1251b2;
+    }
+
+    /* HERO SECTION */
+    .hero {
+      text-align: center;
+      padding: 60px 20px 40px;
+    }
+
+    .hero h2 {
+      font-size: 2.3rem;
+      margin-bottom: 12px;
+      color: var(--azul);
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin: auto;
+      color: #333;
+    }
+
+    /* SECTIONS */
     main {
       max-width: 1100px;
       margin: 0 auto;
-      padding: 40px 20px;
-    }
-
-    h2 {
-      text-align: center;
-      font-size: 2rem;
-      margin-bottom: 40px;
+      padding: 20px;
     }
 
     .section {
-      background: white;
-      border-radius: 12px;
+      background-color: var(--blanco);
+      border-radius: 16px;
+      padding: 30px;
+      margin-bottom: 40px;
       box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
-      padding: 20px 30px;
-      margin-bottom: 25px;
+      transition: transform 0.3s ease;
+    }
+
+    .section:hover {
+      transform: translateY(-4px);
+    }
+
+    .section h3 {
+      margin-top: 0;
+      color: var(--azul);
+    }
+
+    .team-cards {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .team-card {
+      background: var(--gris);
+      padding: 20px;
+      border-radius: 12px;
+      width: 240px;
+      text-align: center;
+    }
+
+    .team-card img {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 100%;
+      margin-bottom: 10px;
     }
 
     .grid-2col {
       display: flex;
-      gap: 30px;
       flex-wrap: wrap;
+      gap: 30px;
     }
 
     .col {
@@ -65,101 +140,128 @@
       min-width: 280px;
     }
 
-    .small-box {
-      background-color: #f1f5f9;
-      padding: 20px;
-      border-radius: 12px;
-      margin-bottom: 20px;
-    }
-
-    .small-box h3 {
-      margin-top: 0;
-      color: #0b3c91;
-    }
-
-    h3 {
-      color: #0b3c91;
-    }
-
     footer {
-      background-color: #0b3c91;
-      text-align: center;
+      background-color: var(--azul);
       color: white;
-      padding: 16px;
-      margin-top: 50px;
+      text-align: center;
+      padding: 20px;
     }
 
     @media (max-width: 768px) {
-      .grid-2col {
-        flex-direction: column;
+      nav ul {
+        display: none;
+      }
+
+      .menu-icon {
+        display: block;
+      }
+
+      .hero h2 {
+        font-size: 2rem;
+      }
+
+      .section {
+        padding: 20px;
       }
     }
   </style>
 </head>
 <body>
 
+  <!-- HEADER -->
   <header>
-    <div class="menu-icon">&#9776;</div>
     <div class="logo">Konvive</div>
+    <div class="menu-icon">&#9776;</div>
+    <nav>
+      <ul>
+        <li><a href="quienes-somos.html">Quiénes somos</a></li>
+        <li><a href="educacion-r.html">Educación R</a></li>
+        <li><a href="plan-estudios.html">Plan de estudios</a></li>
+        <li><a href="plan-accion.html">Plan de acción</a></li>
+        <li><a href="capacitacion.html">Capacitación</a></li>
+        <li><a href="padres.html">Padres</a></li>
+        <li><a href="reporta-caso.html">Reporta un caso</a></li>
+        <li><a href="foro.html">Foro y dudas</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <main>
+  <!-- HERO -->
+  <section class="hero">
     <h2>¿Quiénes somos?</h2>
+    <p>Un equipo con una misión clara: transformar la escuela desde la raíz con innovación, empatía y acción real.</p>
+  </section>
+
+  <main>
 
     <!-- Nuestro equipo -->
     <div class="section">
       <h3>Nuestro equipo</h3>
-      <p>Somos Naum Muro, Luis Mendoza y Nicolás Silva, estudiantes comprometidos con la transformación social a través de la educación. Nos unimos bajo el nombre “Los amigos de Jeison” para desarrollar una propuesta que permita reducir la violencia escolar en el Perú.</p>
+      <div class="team-cards">
+        <div class="team-card">
+          <img src="img/naum.png" alt="Naum">
+          <p><strong>Naum Muro</strong></p>
+          <p>Co-creador e impulsor de soluciones educativas con impacto real.</p>
+        </div>
+        <div class="team-card">
+          <img src="img/luis.png" alt="Luis">
+          <p><strong>Luis Mendoza</strong></p>
+          <p>Diseñador de experiencias para estudiantes y comunidades escolares.</p>
+        </div>
+        <div class="team-card">
+          <img src="img/nico.png" alt="Nicolás">
+          <p><strong>Nicolás Silva</strong></p>
+          <p>Analista y desarrollador del enfoque de convivencia escolar.</p>
+        </div>
+      </div>
     </div>
 
+    <!-- Usuario + Necesidad + Pregunta -->
     <div class="grid-2col">
-      <!-- Columna izquierda: Usuario y necesidad -->
       <div class="col">
-        <div class="section small-box">
+        <div class="section">
           <h3>Usuario</h3>
           <p>Estudiantes de secundaria de instituciones educativas públicas y privadas que enfrentan entornos escolares con presencia de violencia o falta de integración.</p>
         </div>
-        <div class="section small-box">
+        <div class="section">
           <h3>Necesidad</h3>
-          <p>Reducir y prevenir los casos de bullying y violencia escolar mediante una propuesta integral que involucre a toda la comunidad educativa: estudiantes, docentes, padres y autoridades.</p>
+          <p>Reducir y prevenir los casos de bullying y violencia escolar mediante una propuesta integral que involucre a toda la comunidad educativa.</p>
+        </div>
+        <div class="section">
+          <h3>Pregunta reto</h3>
+          <p>¿Cómo podríamos ayudar a los estudiantes de secundaria a reducir el bullying en los centros educativos, considerando el notorio incremento de estos casos a nivel nacional?</p>
         </div>
       </div>
 
-      <!-- Columna derecha: Visión y misión -->
+      <!-- Visión + Misión + Propuesta -->
       <div class="col">
-        <div class="section small-box">
+        <div class="section">
           <h3>Visión</h3>
           <p>Ser una propuesta educativa innovadora que contribuya activamente a construir espacios escolares seguros, respetuosos y libres de cualquier forma de violencia.</p>
         </div>
-        <div class="section small-box">
+        <div class="section">
           <h3>Misión</h3>
-          <p>Implementar un ecosistema educativo integral basado en el respeto, la reflexión y el reconocimiento, brindando herramientas prácticas y sostenibles para erradicar el acoso escolar en todas sus formas.</p>
+          <p>Implementar un ecosistema educativo integral basado en el respeto, la reflexión y el reconocimiento, brindando herramientas sostenibles para erradicar el acoso escolar.</p>
+        </div>
+        <div class="section">
+          <h3>Propuesta de valor</h3>
+          <p>Konvive ofrece una web interactiva, metodología de aula, acompañamiento psicológico, capacitación docente y guía para padres, enmarcada en la Educación R.</p>
         </div>
       </div>
     </div>
 
-    <!-- Pregunta reto -->
-    <div class="section">
-      <h3>Pregunta reto</h3>
-      <p>¿Cómo podríamos ayudar a los estudiantes de secundaria a reducir el bullying en los centros educativos, considerando el notorio incremento de estos casos a nivel nacional?</p>
-    </div>
-
-    <!-- Propuesta de valor -->
-    <div class="section">
-      <h3>Propuesta de valor</h3>
-      <p>Konvive es una solución que ofrece una web interactiva, metodología de aula, acompañamiento psicológico, capacitación docente y guía para padres, enmarcada en la Educación R. Está diseñada para ser deseable, realizable, sostenible e innovadora en contextos escolares reales.</p>
-    </div>
-
     <!-- Problemática -->
-    <div class="section">
+    <div class="section" style="background-color: #fef3c7;">
       <h3>Problemática</h3>
-      <p>En el Perú, 6 de cada 10 escolares afirman haber sido testigos o víctimas de bullying. El Ministerio de Educación, mediante la plataforma SISEVE, reporta un aumento progresivo de casos de acoso escolar, ciberacoso y exclusión entre estudiantes, afectando su bienestar emocional y rendimiento académico.</p>
-      <p>La falta de herramientas efectivas para prevenir e intervenir ante estas situaciones representa un desafío urgente para las comunidades educativas.</p>
+      <p><strong>“6 de cada 10 escolares han vivido violencia escolar.”</strong></p>
+      <p>El Minedu, a través de la plataforma SISEVE, reporta un aumento progresivo de casos de acoso escolar, ciberacoso y exclusión, afectando el bienestar emocional y el rendimiento académico de miles de estudiantes peruanos.</p>
     </div>
+
   </main>
 
+  <!-- FOOTER -->
   <footer>
-    <p>© 2025 Innovation Program | Naum Muro, Luis Mendoza, Nicolas Silva</p>
+    <p>© 2025 Innovation Program | Naum Muro, Luis Mendoza</p>
   </footer>
 
 </body>
