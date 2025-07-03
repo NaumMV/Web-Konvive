@@ -1,174 +1,166 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Quiénes somos</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiénes somos | Konvive</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter&family=Raleway:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
   <style>
+    /* Estilos generales */
     body {
-      font-family: 'Inter', sans-serif;
       margin: 0;
+      font-family: 'Inter', sans-serif;
       background-color: #fef9f6;
       color: #111;
     }
 
-    header, footer {
-      background-color: #0b3c91;
-      color: white;
-      text-align: center;
-      padding: 20px 0;
-    }
-
-    nav ul {
-      list-style: none;
+    header {
       display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 15px;
-      padding: 0;
-      margin: 0;
-    }
-
-    nav li a {
+      align-items: center;
+      justify-content: space-between;
+      background-color: #0b3c91;
+      padding: 16px 24px;
       color: white;
-      text-decoration: none;
-      padding: 10px 16px;
-      border-radius: 6px;
-      transition: background 0.3s;
     }
 
-    nav li a:hover {
-      background-color: #1251b2;
+    .menu-icon {
+      font-size: 28px;
+      cursor: pointer;
     }
 
-    h1, h2, h3 {
+    .logo {
+      font-size: 1.8rem;
       font-family: 'Raleway', sans-serif;
     }
 
     main {
-      padding: 60px 5%;
       max-width: 1100px;
       margin: 0 auto;
+      padding: 40px 20px;
     }
 
     h2 {
       text-align: center;
-      font-size: 2.6rem;
+      font-size: 2rem;
       margin-bottom: 40px;
-      color: #0b3c91;
     }
 
-    .section-box {
+    .section {
       background: white;
-      border-radius: 16px;
-      box-shadow: 0 8px 30px rgba(0,0,0,0.05);
-      padding: 30px;
-      margin-bottom: 35px;
-      transition: transform 0.3s ease;
+      border-radius: 12px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+      padding: 20px 30px;
+      margin-bottom: 25px;
     }
 
-    .section-box:hover {
-      transform: translateY(-5px);
+    .grid-2col {
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
     }
 
-    .section-box h3 {
+    .col {
+      flex: 1;
+      min-width: 280px;
+    }
+
+    .small-box {
+      background-color: #f1f5f9;
+      padding: 20px;
+      border-radius: 12px;
+      margin-bottom: 20px;
+    }
+
+    .small-box h3 {
       margin-top: 0;
       color: #0b3c91;
-      font-size: 1.5rem;
     }
 
-    .section-box p {
-      line-height: 1.6;
-      color: #333;
-      margin-top: 10px;
+    h3 {
+      color: #0b3c91;
     }
 
-    footer p {
-      margin: 0;
-      font-size: 0.95rem;
+    footer {
+      background-color: #0b3c91;
+      text-align: center;
+      color: white;
+      padding: 16px;
+      margin-top: 50px;
     }
 
     @media (max-width: 768px) {
-      h2 {
-        font-size: 2rem;
-      }
-
-      .section-box {
-        padding: 20px;
-      }
-
-      .section-box h3 {
-        font-size: 1.2rem;
+      .grid-2col {
+        flex-direction: column;
       }
     }
   </style>
 </head>
 <body>
+
   <header>
-    <nav>
-      <h1>Konvive - Innovation Program</h1>
-      <ul>
-        <li><a href="quienes-somos.html">Quiénes somos</a></li>
-        <li><a href="educacion-r.html">Educación R</a></li>
-        <li><a href="plan-estudios.html">Plan de estudios</a></li>
-        <li><a href="plan-accion.html">Plan de acción</a></li>
-        <li><a href="capacitacion.html">Capacitación</a></li>
-        <li><a href="padres.html">Padres</a></li>
-        <li><a href="reporta-caso.html">Reporta un caso</a></li>
-        <li><a href="foro.html">Foro y dudas</a></li>
-      </ul>
-    </nav>
+    <div class="menu-icon">&#9776;</div>
+    <div class="logo">Konvive</div>
   </header>
 
   <main>
-    <h2>Quiénes somos</h2>
+    <h2>¿Quiénes somos?</h2>
 
-    <div class="section-box">
+    <!-- Nuestro equipo -->
+    <div class="section">
       <h3>Nuestro equipo</h3>
       <p>Somos Naum Muro, Luis Mendoza y Nicolás Silva, estudiantes comprometidos con la transformación social a través de la educación. Nos unimos bajo el nombre “Los amigos de Jeison” para desarrollar una propuesta que permita reducir la violencia escolar en el Perú.</p>
     </div>
 
-    <div class="section-box">
-      <h3>Problemática</h3>
-      <p>En el Perú, 6 de cada 10 escolares afirman haber sido testigos o víctimas de bullying. El Ministerio de Educación, mediante la plataforma SISEVE, reporta un aumento progresivo de casos de acoso escolar, ciberacoso y exclusión entre estudiantes, afectando su bienestar emocional y rendimiento académico.</p>
-      <p>La falta de herramientas efectivas para prevenir e intervenir ante estas situaciones representa un desafío urgente para las comunidades educativas.</p>
+    <div class="grid-2col">
+      <!-- Columna izquierda: Usuario y necesidad -->
+      <div class="col">
+        <div class="section small-box">
+          <h3>Usuario</h3>
+          <p>Estudiantes de secundaria de instituciones educativas públicas y privadas que enfrentan entornos escolares con presencia de violencia o falta de integración.</p>
+        </div>
+        <div class="section small-box">
+          <h3>Necesidad</h3>
+          <p>Reducir y prevenir los casos de bullying y violencia escolar mediante una propuesta integral que involucre a toda la comunidad educativa: estudiantes, docentes, padres y autoridades.</p>
+        </div>
+      </div>
+
+      <!-- Columna derecha: Visión y misión -->
+      <div class="col">
+        <div class="section small-box">
+          <h3>Visión</h3>
+          <p>Ser una propuesta educativa innovadora que contribuya activamente a construir espacios escolares seguros, respetuosos y libres de cualquier forma de violencia.</p>
+        </div>
+        <div class="section small-box">
+          <h3>Misión</h3>
+          <p>Implementar un ecosistema educativo integral basado en el respeto, la reflexión y el reconocimiento, brindando herramientas prácticas y sostenibles para erradicar el acoso escolar en todas sus formas.</p>
+        </div>
+      </div>
     </div>
 
-    <div class="section-box">
-      <h3>Usuario</h3>
-      <p>Estudiantes de secundaria de instituciones educativas públicas y privadas que enfrentan entornos escolares con presencia de violencia o falta de integración.</p>
-    </div>
-
-    <div class="section-box">
-      <h3>Necesidad</h3>
-      <p>Reducir y prevenir los casos de bullying y violencia escolar mediante una propuesta integral que involucre a toda la comunidad educativa: estudiantes, docentes, padres y autoridades.</p>
-    </div>
-
-    <div class="section-box">
+    <!-- Pregunta reto -->
+    <div class="section">
       <h3>Pregunta reto</h3>
       <p>¿Cómo podríamos ayudar a los estudiantes de secundaria a reducir el bullying en los centros educativos, considerando el notorio incremento de estos casos a nivel nacional?</p>
     </div>
 
-    <div class="section-box">
-      <h3>Visión</h3>
-      <p>Ser una propuesta educativa innovadora que contribuya activamente a construir espacios escolares seguros, respetuosos y libres de cualquier forma de violencia.</p>
-    </div>
-
-    <div class="section-box">
-      <h3>Misión</h3>
-      <p>Implementar un ecosistema educativo integral basado en el respeto, la reflexión y el reconocimiento, brindando herramientas prácticas y sostenibles para erradicar el acoso escolar en todas sus formas.</p>
-    </div>
-
-    <div class="section-box">
+    <!-- Propuesta de valor -->
+    <div class="section">
       <h3>Propuesta de valor</h3>
       <p>Konvive es una solución que ofrece una web interactiva, metodología de aula, acompañamiento psicológico, capacitación docente y guía para padres, enmarcada en la Educación R. Está diseñada para ser deseable, realizable, sostenible e innovadora en contextos escolares reales.</p>
+    </div>
+
+    <!-- Problemática -->
+    <div class="section">
+      <h3>Problemática</h3>
+      <p>En el Perú, 6 de cada 10 escolares afirman haber sido testigos o víctimas de bullying. El Ministerio de Educación, mediante la plataforma SISEVE, reporta un aumento progresivo de casos de acoso escolar, ciberacoso y exclusión entre estudiantes, afectando su bienestar emocional y rendimiento académico.</p>
+      <p>La falta de herramientas efectivas para prevenir e intervenir ante estas situaciones representa un desafío urgente para las comunidades educativas.</p>
     </div>
   </main>
 
   <footer>
-    <p>© 2025 Innovation Program | Naum Muro, Luis Mendoza</p>
+    <p>© 2025 Innovation Program | Naum Muro, Luis Mendoza, Nicolas Silva</p>
   </footer>
+
 </body>
 </html>
