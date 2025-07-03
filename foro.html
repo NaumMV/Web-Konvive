@@ -3,22 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Foro y dudas | Konvive</title>
+  <title>Reporta un caso | Konvive</title>
   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@600&family=Open+Sans&display=swap" rel="stylesheet" />
   <style>
     :root {
       --principal: #1b105a;
       --fondo: #f6f5fc;
-      --blanco: #ffffff;
-      --acento: #3a7ce1;
-      --texto: #111;
+      --gris: #666;
+      --blanco: #fff;
     }
 
     body {
       margin: 0;
       font-family: 'Open Sans', sans-serif;
       background-color: var(--fondo);
-      color: var(--texto);
     }
 
     header {
@@ -57,39 +55,35 @@
       background-color: #2a1e8c;
     }
 
-    .main-container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 30px;
-      max-width: 1200px;
+    main {
+      max-width: 900px;
       margin: 0 auto;
       padding: 40px 20px;
-    }
-
-    .foro, .chatbot {
-      flex: 1;
-      min-width: 320px;
-      background: var(--blanco);
-      border-radius: 12px;
-      padding: 20px;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.06);
     }
 
     h2 {
       font-family: 'Raleway', sans-serif;
       font-size: 2.2rem;
       color: var(--principal);
-      margin-bottom: 20px;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    form {
+      background-color: var(--blanco);
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
     }
 
     label {
-      font-weight: bold;
       display: block;
-      margin-bottom: 8px;
+      margin-bottom: 6px;
+      font-weight: bold;
       color: var(--principal);
     }
 
-    textarea, input {
+    input, textarea, select {
       width: 100%;
       padding: 10px;
       border-radius: 8px;
@@ -101,7 +95,7 @@
     button {
       background-color: var(--principal);
       color: white;
-      padding: 10px 20px;
+      padding: 12px 24px;
       border: none;
       border-radius: 8px;
       font-weight: bold;
@@ -113,110 +107,47 @@
       background-color: #2a1e8c;
     }
 
-    .duda {
-      background: var(--fondo);
-      padding: 14px;
-      margin-bottom: 12px;
-      border-left: 4px solid var(--acento);
-      border-radius: 8px;
+    .info-post-form {
+      margin-top: 40px;
+      background: var(--blanco);
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
     }
 
-    .duda strong {
-      color: var(--acento);
-    }
-
-    /* ChatBot */
-    .chat-window {
-      height: 400px;
-      overflow-y: auto;
-      border-radius: 10px;
-      background: #f0effb;
-      padding: 15px;
+    .info-post-form h3 {
+      color: var(--principal);
       margin-bottom: 15px;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
     }
 
-    .message {
-      padding: 10px 14px;
-      border-radius: 18px;
-      max-width: 80%;
-      font-size: 0.95rem;
+    .linea-info {
+      margin: 15px 0;
     }
 
-    .user {
-      background-color: #dce0f7;
-      align-self: flex-end;
+    .linea-info strong {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--principal);
     }
 
-    .bot {
-      background-color: #e6e2ff;
-      align-self: flex-start;
-    }
-
-    .chat-input {
-      display: flex;
-      gap: 10px;
-    }
-
-    .chat-input input {
-      flex: 1;
+    .nota-legal {
+      font-size: 0.8rem;
+      color: var(--gris);
+      margin-top: 30px;
+      line-height: 1.5;
     }
 
     footer {
       background-color: var(--principal);
       color: white;
       padding: 30px 20px;
-      margin-top: 40px;
-    }
-
-    footer .footer-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      gap: 30px;
-      max-width: 1100px;
-      margin: auto;
-    }
-
-    .footer-col {
-      flex: 1;
-      min-width: 240px;
-    }
-
-    .footer-col h4 {
-      font-family: 'Raleway', sans-serif;
-      margin-bottom: 12px;
-      font-size: 1.1rem;
-    }
-
-    .footer-col p, .footer-col a {
-      color: #ddd;
-      font-size: 0.95rem;
-      text-decoration: none;
-    }
-
-    .social-icons {
-      display: flex;
-      gap: 12px;
-      margin-top: 10px;
-    }
-
-    .social-icons span {
-      background-color: #ffffff20;
-      padding: 6px 10px;
-      border-radius: 8px;
-      font-size: 0.9rem;
+      margin-top: 60px;
+      text-align: center;
     }
 
     @media (max-width: 768px) {
       nav ul {
         display: none;
-      }
-
-      .main-container {
-        flex-direction: column;
       }
     }
   </style>
@@ -239,111 +170,97 @@
     </nav>
   </header>
 
-  <main class="main-container">
-    <!-- Foro -->
-    <section class="foro">
-      <h2>💬 Foro de dudas</h2>
-      <form id="formularioDuda">
-        <label for="nombre">Tu nombre</label>
-        <input type="text" id="nombre" placeholder="Escribe tu nombre" required />
-        <label for="mensaje">Tu duda o comentario</label>
-        <textarea id="mensaje" rows="4" placeholder="Escribe tu pregunta aquí..." required></textarea>
-        <button type="submit">Enviar duda</button>
-      </form>
-      <div id="listaDudas"></div>
-    </section>
+  <main>
+    <h2>📢 Reporta un caso</h2>
+    <form id="formularioReporte">
+      <label for="nombres">Nombres</label>
+      <input type="text" id="nombres" required />
 
-    <!-- Chat IA -->
-    <section class="chatbot">
-      <h2>🤖 KonviveBot</h2>
-      <div class="chat-window" id="chatWindow">
-        <div class="message bot">Hola 👋 soy KonviveBot. ¿En qué puedo ayudarte hoy?</div>
+      <label for="apellidos">Apellidos</label>
+      <input type="text" id="apellidos" required />
+
+      <label for="dni">DNI</label>
+      <input type="text" id="dni" required />
+
+      <label for="email">Correo electrónico</label>
+      <input type="email" id="email" required />
+
+      <label for="tipo">Tipo de caso</label>
+      <select id="tipo" required>
+        <option value="">Selecciona una opción</option>
+        <option value="bullying">Bullying</option>
+        <option value="ciberacoso">Ciberacoso</option>
+        <option value="violencia física">Violencia física</option>
+        <option value="violencia sexual">Violencia sexual</option>
+        <option value="exclusión">Exclusión social</option>
+      </select>
+
+      <label for="descripcion">Describe el caso</label>
+      <textarea id="descripcion" rows="4" required></textarea>
+
+      <label for="prueba">Subir evidencia (opcional)</label>
+      <input type="file" id="prueba" accept="image/*,video/*,application/pdf" />
+
+      <button type="submit">Enviar reporte</button>
+    </form>
+
+    <div class="info-post-form">
+      <h3>¿Qué pasa después de reportar?</h3>
+
+      <div class="linea-info">
+        <strong>Si eres testigo y acabas de reportar:</strong>
+        <p>Debes saber que se supervisará que los protocolos de atención se realicen en el tiempo oportuno y tomando en cuenta la importancia y sensibilidad del caso.</p>
       </div>
-      <div class="chat-input">
-        <input type="text" id="chatInput" placeholder="Escribe tu mensaje..." />
-        <button onclick="enviarMensaje()">Enviar</button>
+
+      <div class="linea-info">
+        <strong>Si eres víctima y acabas de reportar:</strong>
+        <p>Debes saber que no tienes ninguna culpa en esta situación y que el reporte es totalmente confidencial.</p>
       </div>
-    </section>
+
+      <div class="linea-info">
+        <strong>SI SE TRATA DE UN CASO DE VIOLENCIA ESCOLAR ENTRE ESTUDIANTES</strong>
+        <p>El Minedu, a través de la DRE y UGEL, tomará las acciones necesarias para brindar protección a los afectados y restablecer la convivencia escolar.</p>
+      </div>
+
+      <div class="linea-info">
+        <strong>VIOLENCIA SEXUAL DEL PERSONAL DE UNA IE A UN ESTUDIANTE</strong>
+        <p>La medida que se toma es separar de inmediato de las aulas al presunto agresor hasta que acabe la investigación y así evitar que se ponga en riesgo a más estudiantes. La sanción administrativa máxima puede ser la destitución del puesto en el caso de escuelas públicas(1)(2), o la finalización del contrato laboral en el caso de escuelas privadas(3).</p>
+      </div>
+
+      <p class="nota-legal">
+        (1) Ley N.° 29944, Ley de Reforma Magisterial.  
+        (2) Ley N.º 30057, Ley del Servicio Civil y su reglamento general.  
+        (3) Decreto Supremo N.° 003-97-TR, Ley de Productividad y Competitividad Laboral.
+      </p>
+    </div>
   </main>
 
   <footer>
-    <div class="footer-container">
-      <div class="footer-col">
-        <h4>📍 Contacto</h4>
-        <p>📞 +51 987 654 321</p>
-        <p>✉️ contacto@konvive.org</p>
-      </div>
-      <div class="footer-col">
-        <h4>🌐 Redes sociales</h4>
-        <div class="social-icons">
-          <span>📸 IG</span>
-          <span>📘 FB</span>
-          <span>🎵 TikTok</span>
-        </div>
-      </div>
-      <div class="footer-col">
-        <h4> Nuestro propósito</h4>
-        <p>Educando con empatía, guiando con innovación.</p>
-      </div>
-    </div>
-    <p style="text-align:center; margin-top:20px;">© 2025 Innovation Program | Naum Muro, Luis Mendoza, Nicolas Silva</p>
+    © 2025 Innovation Program | Naum Muro, Luis Mendoza
   </footer>
 
   <script>
-    // Foro
-    const form = document.getElementById('formularioDuda');
-    const lista = document.getElementById('listaDudas');
-
-    const renderDudas = () => {
-      const dudas = JSON.parse(localStorage.getItem('dudas')) || [];
-      lista.innerHTML = '';
-      dudas.forEach(({ nombre, mensaje }) => {
-        const div = document.createElement('div');
-        div.className = 'duda';
-        div.innerHTML = `<strong>${nombre} pregunta:</strong><p>${mensaje}</p>`;
-        lista.prepend(div);
-      });
-    };
-
-    form.addEventListener('submit', e => {
+    const form = document.getElementById('formularioReporte');
+    form.addEventListener('submit', (e) => {
       e.preventDefault();
-      const nombre = document.getElementById('nombre').value.trim();
-      const mensaje = document.getElementById('mensaje').value.trim();
-      if (!nombre || !mensaje) return;
-      const dudas = JSON.parse(localStorage.getItem('dudas')) || [];
-      dudas.push({ nombre, mensaje });
-      localStorage.setItem('dudas', JSON.stringify(dudas));
+
+      const data = {
+        nombres: document.getElementById('nombres').value.trim(),
+        apellidos: document.getElementById('apellidos').value.trim(),
+        dni: document.getElementById('dni').value.trim(),
+        email: document.getElementById('email').value.trim(),
+        tipo: document.getElementById('tipo').value,
+        descripcion: document.getElementById('descripcion').value.trim(),
+      };
+
+      const reportes = JSON.parse(localStorage.getItem('reportesKonvive')) || [];
+      reportes.push(data);
+      localStorage.setItem('reportesKonvive', JSON.stringify(reportes));
+
+      alert('✅ Tu reporte ha sido enviado de forma confidencial. ¡Gracias por tu valentía!');
       form.reset();
-      renderDudas();
     });
+  </script>
 
-    window.addEventListener('DOMContentLoaded', renderDudas);
-
-    // Chat IA
-    function enviarMensaje() {
-      const input = document.getElementById('chatInput');
-      const chatWindow = document.getElementById('chatWindow');
-      const texto = input.value.trim();
-      if (!texto) return;
-
-      const userMsg = document.createElement('div');
-      userMsg.className = 'message user';
-      userMsg.textContent = texto;
-      chatWindow.appendChild(userMsg);
-
-      setTimeout(() => {
-        const botMsg = document.createElement('div');
-        botMsg.className = 'message bot';
-        botMsg.textContent = obtenerRespuesta(texto);
-        chatWindow.appendChild(botMsg);
-        chatWindow.scrollTop = chatWindow.scrollHeight;
-      }, 500);
-
-      input.value = '';
-    }
-
-    function obtenerRespuesta(texto) {
-      const t = texto.toLowerCase();
-      if (t.includes('bullying')) return 'El bullying es un problema serio. ¿Te gustaría saber cómo prevenirlo o qué hacer si ocurre?';
-      if (t.includes('padres')) return 'Puedes compartir nuestras guías con tus padres desde la sección "Padres".';
-      if (t.includes('ayuda')) return 'Estoy aquí para ayudarte. ¿Tu
+</body>
+</html>
