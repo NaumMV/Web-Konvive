@@ -5,30 +5,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Quiénes somos | Konvive</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter&family=Raleway:wght@600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
   <style>
     :root {
-      --azul: #0b3c91;
+      --principal: #1b105a;
       --blanco: #ffffff;
+      --gris-claro: #f4f4f7;
+      --azul-acento: #3a7ce1;
       --beige: #fef9f6;
-      --gris: #f1f5f9;
-      --text: #111;
+      --texto: #111111;
     }
 
     body {
       margin: 0;
       font-family: 'Inter', sans-serif;
       background-color: var(--beige);
-      color: var(--text);
+      color: var(--texto);
     }
 
+    /* HEADER */
     header {
-      background-color: var(--azul);
+      background-color: var(--principal);
+      color: white;
       padding: 20px 30px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      color: white;
+      flex-wrap: wrap;
     }
 
     .logo {
@@ -48,6 +50,7 @@
       gap: 20px;
       padding: 0;
       margin: 0;
+      flex-wrap: wrap;
     }
 
     nav li a {
@@ -59,80 +62,51 @@
     }
 
     nav li a:hover {
-      background-color: #1251b2;
+      background-color: #2a1e8c;
     }
 
-    /* HERO SECTION */
+    /* HERO */
     .hero {
       text-align: center;
-      padding: 60px 20px 40px;
+      padding: 60px 20px 30px;
     }
 
     .hero h2 {
-      font-size: 2.3rem;
-      margin-bottom: 12px;
-      color: var(--azul);
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+      color: var(--principal);
     }
 
     .hero p {
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       max-width: 700px;
-      margin: auto;
-      color: #333;
+      margin: 0 auto;
     }
 
-    /* SECTIONS */
+    /* MAIN CONTENT */
     main {
       max-width: 1100px;
-      margin: 0 auto;
-      padding: 20px;
+      margin: auto;
+      padding: 30px 20px;
     }
 
     .section {
       background-color: var(--blanco);
       border-radius: 16px;
-      padding: 30px;
-      margin-bottom: 40px;
+      padding: 25px;
+      margin-bottom: 30px;
       box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
-      transition: transform 0.3s ease;
-    }
-
-    .section:hover {
-      transform: translateY(-4px);
     }
 
     .section h3 {
+      color: var(--principal);
       margin-top: 0;
-      color: var(--azul);
-    }
-
-    .team-cards {
-      display: flex;
-      gap: 20px;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-
-    .team-card {
-      background: var(--gris);
-      padding: 20px;
-      border-radius: 12px;
-      width: 240px;
-      text-align: center;
-    }
-
-    .team-card img {
-      width: 100px;
-      height: 100px;
-      object-fit: cover;
-      border-radius: 100%;
-      margin-bottom: 10px;
     }
 
     .grid-2col {
       display: flex;
       flex-wrap: wrap;
-      gap: 30px;
+      gap: 20px;
     }
 
     .col {
@@ -140,8 +114,34 @@
       min-width: 280px;
     }
 
+    .combined-card {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .combined-card .part h4 {
+      color: var(--azul-acento);
+      margin: 0 0 5px;
+    }
+
+    .timeline {
+      padding-top: 20px;
+    }
+
+    .timeline-step {
+      margin-bottom: 25px;
+      padding-left: 20px;
+      border-left: 3px solid var(--principal);
+    }
+
+    .timeline-step h4 {
+      margin: 0;
+      color: var(--principal);
+    }
+
     footer {
-      background-color: var(--azul);
+      background-color: var(--principal);
       color: white;
       text-align: center;
       padding: 20px;
@@ -156,12 +156,8 @@
         display: block;
       }
 
-      .hero h2 {
-        font-size: 2rem;
-      }
-
-      .section {
-        padding: 20px;
+      .grid-2col {
+        flex-direction: column;
       }
     }
   </style>
@@ -193,73 +189,85 @@
   </section>
 
   <main>
-
-    <!-- Nuestro equipo -->
+    <!-- EQUIPO -->
     <div class="section">
       <h3>Nuestro equipo</h3>
-      <div class="team-cards">
-        <div class="team-card">
-          <img src="img/naum.png" alt="Naum">
-          <p><strong>Naum Muro</strong></p>
-          <p>Co-creador e impulsor de soluciones educativas con impacto real.</p>
-        </div>
-        <div class="team-card">
-          <img src="img/luis.png" alt="Luis">
-          <p><strong>Luis Mendoza</strong></p>
-          <p>Diseñador de experiencias para estudiantes y comunidades escolares.</p>
-        </div>
-        <div class="team-card">
-          <img src="img/nico.png" alt="Nicolás">
-          <p><strong>Nicolás Silva</strong></p>
-          <p>Analista y desarrollador del enfoque de convivencia escolar.</p>
-        </div>
-      </div>
+      <p>Somos Naum Muro, Luis Mendoza y Nicolás Silva, estudiantes comprometidos con la transformación social a través de la educación. Nos unimos bajo el nombre “Los amigos de Jeison” para desarrollar una propuesta que permita reducir la violencia escolar en el Perú.</p>
     </div>
 
-    <!-- Usuario + Necesidad + Pregunta -->
+    <!-- COMBINADAS -->
     <div class="grid-2col">
-      <div class="col">
-        <div class="section">
-          <h3>Usuario</h3>
+      <!-- Usuario + Necesidad -->
+      <div class="col section combined-card">
+        <div class="part">
+          <h4>Usuario</h4>
           <p>Estudiantes de secundaria de instituciones educativas públicas y privadas que enfrentan entornos escolares con presencia de violencia o falta de integración.</p>
         </div>
-        <div class="section">
-          <h3>Necesidad</h3>
+        <div class="part">
+          <h4>Necesidad</h4>
           <p>Reducir y prevenir los casos de bullying y violencia escolar mediante una propuesta integral que involucre a toda la comunidad educativa.</p>
         </div>
-        <div class="section">
-          <h3>Pregunta reto</h3>
-          <p>¿Cómo podríamos ayudar a los estudiantes de secundaria a reducir el bullying en los centros educativos, considerando el notorio incremento de estos casos a nivel nacional?</p>
-        </div>
       </div>
 
-      <!-- Visión + Misión + Propuesta -->
-      <div class="col">
-        <div class="section">
-          <h3>Visión</h3>
+      <!-- Visión + Misión -->
+      <div class="col section combined-card">
+        <div class="part">
+          <h4>Visión</h4>
           <p>Ser una propuesta educativa innovadora que contribuya activamente a construir espacios escolares seguros, respetuosos y libres de cualquier forma de violencia.</p>
         </div>
-        <div class="section">
-          <h3>Misión</h3>
+        <div class="part">
+          <h4>Misión</h4>
           <p>Implementar un ecosistema educativo integral basado en el respeto, la reflexión y el reconocimiento, brindando herramientas sostenibles para erradicar el acoso escolar.</p>
-        </div>
-        <div class="section">
-          <h3>Propuesta de valor</h3>
-          <p>Konvive ofrece una web interactiva, metodología de aula, acompañamiento psicológico, capacitación docente y guía para padres, enmarcada en la Educación R.</p>
         </div>
       </div>
     </div>
 
-    <!-- Problemática -->
-    <div class="section" style="background-color: #fef3c7;">
-      <h3>Problemática</h3>
-      <p><strong>“6 de cada 10 escolares han vivido violencia escolar.”</strong></p>
-      <p>El Minedu, a través de la plataforma SISEVE, reporta un aumento progresivo de casos de acoso escolar, ciberacoso y exclusión, afectando el bienestar emocional y el rendimiento académico de miles de estudiantes peruanos.</p>
+    <!-- Pregunta reto -->
+    <div class="section">
+      <h3>Pregunta reto</h3>
+      <p>¿Cómo podríamos ayudar a los estudiantes de secundaria a reducir el bullying en los centros educativos, considerando el notorio incremento de estos casos a nivel nacional?</p>
     </div>
 
+    <!-- Propuesta de valor -->
+    <div class="section">
+      <h3>Propuesta de valor</h3>
+      <p>Konvive ofrece una web interactiva, metodología de aula, acompañamiento psicológico, capacitación docente y guía para padres, enmarcada en la Educación R. Está diseñada para ser deseable, realizable, sostenible e innovadora en contextos escolares reales.</p>
+    </div>
+
+    <!-- PROBLEMÁTICA + TIMELINE -->
+    <div class="section" style="background-color: #f3eefe;">
+      <h3>Problemática</h3>
+      <p><strong>“6 de cada 10 escolares han vivido violencia escolar.”</strong></p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.
+        Fusce vitae orci nec velit luctus faucibus. Etiam tincidunt nisi a odio commodo, non varius erat mattis.
+      </p>
+
+      <div class="timeline">
+        <div class="timeline-step">
+          <h4>🟣 Inicio del proyecto</h4>
+          <p>Idea original y formación del equipo “Los amigos de Jeison”.</p>
+        </div>
+        <div class="timeline-step">
+          <h4>🔎 Investigación</h4>
+          <p>Recopilación de datos sobre bullying en el Perú (SISEVE, encuestas).</p>
+        </div>
+        <div class="timeline-step">
+          <h4>💡 Propuesta inicial</h4>
+          <p>Primera estructura del plan educativo basado en Educación R.</p>
+        </div>
+        <div class="timeline-step">
+          <h4>🌐 Desarrollo web</h4>
+          <p>Diseño e implementación de Konvive como plataforma interactiva.</p>
+        </div>
+        <div class="timeline-step">
+          <h4>🚀 Versión actual</h4>
+          <p>Refinamiento visual, mejora UX/UI y expansión de funcionalidades.</p>
+        </div>
+      </div>
+    </div>
   </main>
 
-  <!-- FOOTER -->
   <footer>
     <p>© 2025 Innovation Program | Naum Muro, Luis Mendoza</p>
   </footer>
