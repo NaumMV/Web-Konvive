@@ -4,111 +4,159 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Reporta un caso | Konvive</title>
-  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@600&family=Open+Sans&display=swap" rel="stylesheet" />
   <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      margin: 0;
-      background-color: #f9fafc;
+    :root {
+      --principal: #1b105a;
+      --fondo: #f6f5fc;
+      --gris: #666;
+      --blanco: #fff;
     }
 
-    header, footer {
-      background-color: #263238;
+    body {
+      margin: 0;
+      font-family: 'Open Sans', sans-serif;
+      background-color: var(--fondo);
+    }
+
+    header {
+      background-color: var(--principal);
       color: white;
-      text-align: center;
-      padding: 20px 0;
+      padding: 20px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      font-size: 1.7rem;
+      font-family: 'Raleway', sans-serif;
     }
 
     nav ul {
       list-style: none;
       display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
       gap: 15px;
       padding: 0;
       margin: 0;
+      flex-wrap: wrap;
     }
 
     nav li a {
       color: white;
       text-decoration: none;
-      padding: 10px 16px;
+      padding: 8px 12px;
       border-radius: 6px;
       transition: background 0.3s;
     }
 
     nav li a:hover {
-      background-color: #455a64;
+      background-color: #2a1e8c;
     }
 
-    .contenedor-reporte {
-      padding: 50px 20px;
+    main {
       max-width: 900px;
-      margin: auto;
+      margin: 0 auto;
+      padding: 40px 20px;
     }
 
-    .contenedor-reporte h2 {
-      text-align: center;
-      font-size: 2.4rem;
-      margin-bottom: 30px;
-      color: #263238;
-    }
-
-    .contenedor-reporte p {
-      color: #444;
-      line-height: 1.6;
+    h2 {
+      font-family: 'Raleway', sans-serif;
+      font-size: 2.2rem;
+      color: var(--principal);
       text-align: center;
       margin-bottom: 30px;
     }
 
     form {
-      background-color: #fff;
+      background-color: var(--blanco);
       padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
     }
 
     label {
       display: block;
-      margin: 15px 0 5px;
-      color: #333;
+      margin-bottom: 6px;
+      font-weight: bold;
+      color: var(--principal);
     }
 
-    input, textarea {
+    input, textarea, select {
       width: 100%;
       padding: 10px;
-      border-radius: 6px;
+      border-radius: 8px;
       border: 1px solid #ccc;
+      margin-bottom: 20px;
+      font-family: 'Open Sans', sans-serif;
     }
 
     button {
-      margin-top: 20px;
-      padding: 12px 20px;
-      background-color: #0d47a1;
+      background-color: var(--principal);
       color: white;
+      padding: 12px 24px;
       border: none;
-      border-radius: 6px;
+      border-radius: 8px;
       font-weight: bold;
       cursor: pointer;
       transition: background 0.3s;
     }
 
     button:hover {
-      background-color: #1565c0;
+      background-color: #2a1e8c;
     }
 
-    .nota {
+    .info-post-form {
+      margin-top: 40px;
+      background: var(--blanco);
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    }
+
+    .info-post-form h3 {
+      color: var(--principal);
+      margin-bottom: 15px;
+    }
+
+    .linea-info {
+      margin: 15px 0;
+    }
+
+    .linea-info strong {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--principal);
+    }
+
+    .nota-legal {
+      font-size: 0.8rem;
+      color: var(--gris);
+      margin-top: 30px;
+      line-height: 1.5;
+    }
+
+    footer {
+      background-color: var(--principal);
+      color: white;
+      padding: 30px 20px;
+      margin-top: 60px;
       text-align: center;
-      font-size: 0.9rem;
-      color: #777;
-      margin-top: 20px;
+    }
+
+    @media (max-width: 768px) {
+      nav ul {
+        display: none;
+      }
     }
   </style>
 </head>
 <body>
+
   <header>
+    <div class="logo">Konvive</div>
     <nav>
-      <h1>Konvive - Innovation Program</h1>
       <ul>
         <li><a href="quienes-somos.html">Quiénes somos</a></li>
         <li><a href="educacion-r.html">Educación R</a></li>
@@ -123,50 +171,96 @@
   </header>
 
   <main>
-    <section class="contenedor-reporte">
-      <h2>Reporta un caso</h2>
-      <p>Este espacio está destinado a comunicar de forma confidencial cualquier situación de acoso o violencia escolar. Tu reporte será atendido por el equipo encargado siguiendo un protocolo de protección y acompañamiento.</p>
+    <h2>📢 Reporta un caso</h2>
+    <form id="formularioReporte">
+      <label for="nombres">Nombres</label>
+      <input type="text" id="nombres" required />
 
-      <form onsubmit="guardarCaso(event)">
-        <label for="nombre">Nombre del estudiante (opcional)</label>
-        <input type="text" id="nombre" name="nombre" />
+      <label for="apellidos">Apellidos</label>
+      <input type="text" id="apellidos" required />
 
-        <label for="detalle">Describe lo ocurrido</label>
-        <textarea id="detalle" name="detalle" rows="5" required></textarea>
+      <label for="dni">DNI</label>
+      <input type="text" id="dni" required />
 
-        <label for="contacto">Correo electrónico o contacto (opcional)</label>
-        <input type="email" id="contacto" name="contacto" />
+      <label for="email">Correo electrónico</label>
+      <input type="email" id="email" required />
 
-        <button type="submit">Enviar reporte</button>
-        <p class="nota">Este formulario es anónimo y no será visible para otros usuarios.</p>
-      </form>
-    </section>
+      <label for="tipo">Tipo de caso</label>
+      <select id="tipo" required>
+        <option value="">Selecciona una opción</option>
+        <option value="bullying">Bullying</option>
+        <option value="ciberacoso">Ciberacoso</option>
+        <option value="violencia física">Violencia física</option>
+        <option value="violencia sexual">Violencia sexual</option>
+        <option value="exclusión">Exclusión social</option>
+      </select>
+
+      <label for="descripcion">Describe el caso</label>
+      <textarea id="descripcion" rows="4" required></textarea>
+
+      <label for="prueba">Subir evidencia (opcional)</label>
+      <input type="file" id="prueba" accept="image/*,video/*,application/pdf" />
+
+      <button type="submit">Enviar reporte</button>
+    </form>
+
+    <div class="info-post-form">
+      <h3>¿Qué pasa después de reportar?</h3>
+
+      <div class="linea-info">
+        <strong>Si eres testigo y acabas de reportar:</strong>
+        <p>Debes saber que se supervisará que los protocolos de atención se realicen en el tiempo oportuno y tomando en cuenta la importancia y sensibilidad del caso.</p>
+      </div>
+
+      <div class="linea-info">
+        <strong>Si eres víctima y acabas de reportar:</strong>
+        <p>Debes saber que no tienes ninguna culpa en esta situación y que el reporte es totalmente confidencial.</p>
+      </div>
+
+      <div class="linea-info">
+        <strong>SI SE TRATA DE UN CASO DE VIOLENCIA ESCOLAR ENTRE ESTUDIANTES</strong>
+        <p>El Minedu, a través de la DRE y UGEL, tomará las acciones necesarias para brindar protección a los afectados y restablecer la convivencia escolar.</p>
+      </div>
+
+      <div class="linea-info">
+        <strong>VIOLENCIA SEXUAL DEL PERSONAL DE UNA IE A UN ESTUDIANTE</strong>
+        <p>La medida que se toma es separar de inmediato de las aulas al presunto agresor hasta que acabe la investigación y así evitar que se ponga en riesgo a más estudiantes. La sanción administrativa máxima puede ser la destitución del puesto en el caso de escuelas públicas(1)(2), o la finalización del contrato laboral en el caso de escuelas privadas(3).</p>
+      </div>
+
+      <p class="nota-legal">
+        (1) Ley N.° 29944, Ley de Reforma Magisterial.  
+        (2) Ley N.º 30057, Ley del Servicio Civil y su reglamento general.  
+        (3) Decreto Supremo N.° 003-97-TR, Ley de Productividad y Competitividad Laboral.
+      </p>
+    </div>
   </main>
 
   <footer>
-    <p>© 2025 Innovation Program | Naum Muro, Luis Mendoza</p>
+    © 2025 Innovation Program | Naum Muro, Luis Mendoza
   </footer>
 
   <script>
-    function guardarCaso(e) {
+    const form = document.getElementById('formularioReporte');
+    form.addEventListener('submit', (e) => {
       e.preventDefault();
-      const nombre = document.getElementById("nombre").value;
-      const detalle = document.getElementById("detalle").value;
-      const contacto = document.getElementById("contacto").value;
 
-      const reporte = {
-        nombre,
-        detalle,
-        contacto,
-        fecha: new Date().toLocaleString()
+      const data = {
+        nombres: document.getElementById('nombres').value.trim(),
+        apellidos: document.getElementById('apellidos').value.trim(),
+        dni: document.getElementById('dni').value.trim(),
+        email: document.getElementById('email').value.trim(),
+        tipo: document.getElementById('tipo').value,
+        descripcion: document.getElementById('descripcion').value.trim(),
       };
 
-      let reportes = JSON.parse(localStorage.getItem("reportesKonvive")) || [];
-      reportes.push(reporte);
-      localStorage.setItem("reportesKonvive", JSON.stringify(reportes));
-      alert("Gracias por tu reporte. Será evaluado por el equipo responsable.");
-      document.querySelector("form").reset();
-    }
+      const reportes = JSON.parse(localStorage.getItem('reportesKonvive')) || [];
+      reportes.push(data);
+      localStorage.setItem('reportesKonvive', JSON.stringify(reportes));
+
+      alert('✅ Tu reporte ha sido enviado de forma confidencial. ¡Gracias por tu valentía!');
+      form.reset();
+    });
   </script>
+
 </body>
 </html>
