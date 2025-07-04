@@ -4,75 +4,153 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Capacitación | Konvive</title>
-  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@600&family=Open+Sans&display=swap" rel="stylesheet" />
   <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      margin: 0;
-      background-color: #f9fafc;
+    :root {
+      --principal: #1b105a;
+      --fondo: #f6f5fc;
+      --blanco: #ffffff;
+      --acento: #3a7ce1;
+      --texto: #111;
     }
 
-    header, footer {
-      background-color: #263238;
+    body {
+      margin: 0;
+      font-family: 'Open Sans', sans-serif;
+      background-color: var(--fondo);
+      color: var(--texto);
+    }
+
+    header {
+      background-color: var(--principal);
       color: white;
-      text-align: center;
-      padding: 20px 0;
+      padding: 20px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      font-size: 1.7rem;
+      font-family: 'Raleway', sans-serif;
     }
 
     nav ul {
       list-style: none;
       display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
       gap: 15px;
       padding: 0;
       margin: 0;
+      flex-wrap: wrap;
     }
 
     nav li a {
       color: white;
       text-decoration: none;
-      padding: 10px 16px;
+      padding: 8px 12px;
       border-radius: 6px;
       transition: background 0.3s;
     }
 
     nav li a:hover {
-      background-color: #455a64;
+      background-color: #2a1e8c;
     }
 
-    .contenedor-capacitacion {
-      padding: 50px 20px;
+    main {
       max-width: 1100px;
       margin: auto;
+      padding: 40px 20px;
     }
 
-    .contenedor-capacitacion h2 {
+    h2 {
+      font-family: 'Raleway', sans-serif;
+      font-size: 2.2rem;
+      color: var(--principal);
+      margin-bottom: 20px;
       text-align: center;
-      font-size: 2.4rem;
+    }
+
+    .bloque {
+      background-color: var(--blanco);
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+      padding: 30px;
       margin-bottom: 30px;
-      color: #263238;
     }
 
-    .contenedor-capacitacion p, .contenedor-capacitacion ul, .contenedor-capacitacion h3 {
-      color: #444;
-      line-height: 1.6;
+    .bloque h3 {
+      color: var(--principal);
+      margin-bottom: 10px;
     }
 
-    .contenedor-capacitacion h3 {
-      margin-top: 40px;
-      color: #0d47a1;
+    .modulos, .videos {
+      display: grid;
+      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     }
 
-    ul {
-      padding-left: 20px;
+    .modulo, .video {
+      background-color: #ffffff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+    }
+
+    .modulo h4, .video h4 {
+      color: var(--acento);
+      margin-bottom: 10px;
+    }
+
+    .modulo button, .video button {
+      background-color: var(--principal);
+      color: white;
+      padding: 10px 18px;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    blockquote {
+      font-style: italic;
+      color: #555;
+      border-left: 4px solid var(--acento);
+      padding-left: 12px;
+      margin: 10px 0;
+    }
+
+    form textarea, form input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+
+    form button {
+      background-color: var(--principal);
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    footer {
+      background-color: var(--principal);
+      color: white;
+      padding: 30px 20px;
+      margin-top: 60px;
+      text-align: center;
     }
   </style>
 </head>
 <body>
   <header>
+    <div class="logo">Konvive</div>
     <nav>
-      <h1>Konvive - Innovation Program</h1>
       <ul>
         <li><a href="quienes-somos.html">Quiénes somos</a></li>
         <li><a href="educacion-r.html">Educación R</a></li>
@@ -87,38 +165,81 @@
   </header>
 
   <main>
-    <section class="contenedor-capacitacion">
-      <h2>Capacitación para Docentes</h2>
-      <p>La sección de capacitación está orientada a brindar a los docentes las herramientas necesarias para afrontar situaciones de conflicto escolar, implementar estrategias de integración y promover una formación integral basada en la Educación R.</p>
+    <h2>📚 Capacitación Docente</h2>
 
-      <h3>📘 Contenido formativo</h3>
-      <ul>
-        <li>Presentaciones, guías y manuales descargables.</li>
-        <li>Videotutoriales sobre resolución de conflictos y desarrollo socioemocional.</li>
-        <li>Material adaptado para sesiones de tutoría y actividades en el aula.</li>
-      </ul>
+    <div class="bloque">
+      <h3>🧠 ¿Por qué capacitamos?</h3>
+      <p>En Konvive creemos que el cambio en el aula inicia con docentes acompañados, preparados y escuchados. Esta capacitación está pensada para ti, que buscas una forma diferente de enseñar y conectar con tus estudiantes.</p>
+    </div>
 
-      <h3>🛠️ Implementación en el aula</h3>
+    <div class="bloque">
+      <h3>🔧 Lo que recibirás</h3>
       <ul>
-        <li>Actividades prácticas para fomentar el respeto y la inclusión.</li>
-        <li>Dinámicas de grupo para reducir la exclusión y fortalecer el compañerismo.</li>
-        <li>Propuestas de tareas y proyectos colaborativos.</li>
+        <li>Herramientas prácticas listas para usar</li>
+        <li>Dinámicas que funcionan en situaciones reales</li>
+        <li>Soporte emocional y acompañamiento</li>
+        <li>Reflexión personal y crecimiento profesional</li>
       </ul>
+    </div>
 
-      <h3>🎯 Formación de valores y liderazgo</h3>
-      <ul>
-        <li>Estrategias para desarrollar el liderazgo positivo.</li>
-        <li>Implementación de valores como base de la convivencia.</li>
-        <li>Evaluación continua del progreso emocional y social de los estudiantes.</li>
-      </ul>
+    <div class="bloque">
+      <h3>📘 Módulos de formación</h3>
+      <div class="modulos">
+        <div class="modulo">
+          <h4>Módulo 1: Educación R</h4>
+          <p>Descubre cómo integrar respeto, reflexión y reconciliación en tu aula.</p>
+          <button>Ver módulo</button>
+        </div>
+        <div class="modulo">
+          <h4>Módulo 2: Manejo de conflictos</h4>
+          <p>Estrategias para intervenir sin escalar la tensión.</p>
+          <button>Ver módulo</button>
+        </div>
+        <div class="modulo">
+          <h4>Módulo 3: Dinámicas efectivas</h4>
+          <p>Actividades con propósito para mejorar la convivencia.</p>
+          <button>Ver módulo</button>
+        </div>
+        <div class="modulo">
+          <h4>Módulo 4: Tutorías con propósito</h4>
+          <p>Transforma tus espacios de tutoría en oportunidades de conexión.</p>
+          <button>Ver módulo</button>
+        </div>
+      </div>
+    </div>
 
-      <h3>🔄 Evaluación y retroalimentación</h3>
-      <ul>
-        <li>Espacios para compartir experiencias y recibir orientación.</li>
-        <li>Encuestas para ajustar las capacitaciones a las necesidades reales.</li>
-        <li>Seguimiento a la implementación mediante rúbricas y checklist.</li>
-      </ul>
-    </section>
+    <div class="bloque">
+      <h3>🎬 Microcápsulas</h3>
+      <div class="videos">
+        <div class="video">
+          <h4>Cómo iniciar un círculo de diálogo</h4>
+          <button>Ver video</button>
+        </div>
+        <div class="video">
+          <h4>Prevención de exclusión</h4>
+          <button>Ver video</button>
+        </div>
+        <div class="video">
+          <h4>Confianza en el aula</h4>
+          <button>Ver video</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="bloque">
+      <h3>📣 Testimonios reales</h3>
+      <blockquote>"Después del módulo 1, mis estudiantes hablan con más respeto entre ellos. ¡Funciona de verdad!"</blockquote>
+      <blockquote>"Usé las dinámicas de integración en tutoría y vi un cambio en el ambiente del aula en una semana."</blockquote>
+    </div>
+
+    <div class="bloque">
+      <h3>✉️ Comparte tu experiencia o duda</h3>
+      <form>
+        <input type="text" placeholder="Tu nombre (opcional)" />
+        <textarea rows="4" placeholder="Escribe aquí tu experiencia, sugerencia o duda..."></textarea>
+        <button type="submit">Enviar</button>
+      </form>
+    </div>
   </main>
 
   <footer>
