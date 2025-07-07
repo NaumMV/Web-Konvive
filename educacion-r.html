@@ -4,54 +4,79 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Educación R | Konvive</title>
-  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@600&family=Open+Sans&display=swap" rel="stylesheet" />
   <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      margin: 0;
-      background-color: #f9fafc;
+    :root {
+      --principal: #1b105a;
+      --fondo: #f6f5fc;
+      --blanco: #ffffff;
+      --acento: #3a7ce1;
+      --texto: #111;
     }
 
-    header, footer {
-      background-color: #263238;
+    body {
+      margin: 0;
+      font-family: 'Open Sans', sans-serif;
+      background-color: var(--fondo);
+      color: var(--texto);
+    }
+
+    header {
+      background-color: var(--principal);
       color: white;
-      text-align: center;
-      padding: 20px 0;
+      padding: 20px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      font-size: 1.7rem;
+      font-family: 'Raleway', sans-serif;
     }
 
     nav ul {
       list-style: none;
       display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
       gap: 15px;
       padding: 0;
       margin: 0;
+      flex-wrap: wrap;
     }
 
     nav li a {
       color: white;
       text-decoration: none;
-      padding: 10px 16px;
+      padding: 8px 12px;
       border-radius: 6px;
       transition: background 0.3s;
     }
 
     nav li a:hover {
-      background-color: #455a64;
+      background-color: #2a1e8c;
     }
 
-    .educacion-r {
+    main {
       padding: 50px 20px;
-      max-width: 1100px;
+      max-width: 1200px;
       margin: auto;
     }
 
-    .educacion-r h2 {
-      text-align: center;
+    h2 {
+      font-family: 'Raleway', sans-serif;
       font-size: 2.4rem;
+      text-align: center;
+      color: var(--principal);
       margin-bottom: 20px;
-      color: #263238;
+    }
+
+    .intro {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto 40px;
+      font-size: 1.1rem;
+      color: #444;
     }
 
     .pilares-resumen {
@@ -64,21 +89,13 @@
 
     .pilar {
       text-align: center;
-      background: #ffffff;
+      background: white;
       padding: 15px 20px;
       border-radius: 12px;
       box-shadow: 0 2px 10px rgba(0,0,0,0.05);
       min-width: 120px;
       font-size: 1rem;
-      color: #263238;
-    }
-
-    .educacion-r .intro {
-      text-align: center;
-      max-width: 800px;
-      margin: 0 auto 40px;
-      font-size: 1.1rem;
-      color: #444;
+      color: var(--principal);
     }
 
     .grid-ejes {
@@ -89,7 +106,7 @@
     }
 
     .eje {
-      background: white;
+      background: var(--blanco);
       padding: 25px;
       border-radius: 14px;
       box-shadow: 0 2px 12px rgba(0,0,0,0.06);
@@ -101,7 +118,7 @@
     }
 
     .eje h3 {
-      color: #0d47a1;
+      color: var(--acento);
       margin-bottom: 10px;
     }
 
@@ -114,7 +131,7 @@
       text-align: center;
       margin: 60px 0 20px;
       font-size: 1.6rem;
-      color: #263238;
+      color: var(--principal);
     }
 
     .acciones button {
@@ -124,7 +141,7 @@
       margin: 15px auto;
       padding: 14px;
       border: none;
-      background: #0d47a1;
+      background: var(--acento);
       color: white;
       border-radius: 10px;
       font-weight: bold;
@@ -134,11 +151,11 @@
     }
 
     .acciones button:hover {
-      background: #1565c0;
+      background: #215dbf;
     }
 
     .accion {
-      background: #ffffff;
+      background: var(--blanco);
       border-radius: 10px;
       box-shadow: 0 1px 5px rgba(0,0,0,0.05);
       max-width: 700px;
@@ -171,9 +188,9 @@
     }
 
     .testimonio {
-      background: #f1f8e9;
+      background: #e8f5e9;
       padding: 25px;
-      border-left: 5px solid #8bc34a;
+      border-left: 5px solid #66bb6a;
       margin: 40px auto;
       max-width: 700px;
       font-style: italic;
@@ -181,20 +198,31 @@
       color: #33691e;
     }
 
+    footer {
+      background-color: var(--principal);
+      color: white;
+      padding: 30px 20px;
+      margin-top: 40px;
+      text-align: center;
+    }
+
     @keyframes fadeIn {
       from {opacity: 0;}
       to {opacity: 1;}
     }
 
-    footer p {
-      margin: 0;
+    @media (max-width: 768px) {
+      nav ul {
+        display: none;
+      }
     }
   </style>
 </head>
 <body>
+
   <header>
+    <div class="logo">Konvive</div>
     <nav>
-      <h1>Konvive - Innovation Program</h1>
       <ul>
         <li><a href="quienes-somos.html">Quiénes somos</a></li>
         <li><a href="educacion-r.html">Educación R</a></li>
@@ -209,128 +237,126 @@
   </header>
 
   <main>
-    <section class="educacion-r">
-      <h2>Educación R</h2>
-      <p class="intro">
-        Nuestra propuesta educativa se basa en una metodología transformadora enfocada en el <strong>Respeto, Reconocimiento, Reflexión y Reconciliación</strong>. Con estos pilares, buscamos formar comunidades escolares libres de violencia, inclusivas y emocionalmente sanas.
-      </p>
+    <h2>Educación R</h2>
+    <p class="intro">
+      Nuestra propuesta educativa se basa en una metodología transformadora enfocada en el <strong>Respeto, Reconocimiento, Reflexión y Reconciliación</strong>. Con estos pilares, buscamos formar comunidades escolares libres de violencia, inclusivas y emocionalmente sanas.
+    </p>
 
-      <div class="pilares-resumen">
-        <div class="pilar">✋<br><strong>Respeto</strong></div>
-        <div class="pilar">🎖️<br><strong>Reconocimiento</strong></div>
-        <div class="pilar">💭<br><strong>Reflexión</strong></div>
-        <div class="pilar">🤝<br><strong>Reconciliación</strong></div>
+    <div class="pilares-resumen">
+      <div class="pilar">✋<br><strong>Respeto</strong></div>
+      <div class="pilar">🎖️<br><strong>Reconocimiento</strong></div>
+      <div class="pilar">💭<br><strong>Reflexión</strong></div>
+      <div class="pilar">🤝<br><strong>Reconciliación</strong></div>
+    </div>
+
+    <div class="grid-ejes">
+      <div class="eje">
+        <h3>✋ Respeto</h3>
+        <ul>
+          <li>Ambientes seguros y valorados</li>
+          <li>Normas y acuerdos de aula</li>
+          <li>Escucha activa y trato amable</li>
+        </ul>
+      </div>
+      <div class="eje">
+        <h3>🎖️ Reconocimiento</h3>
+        <ul>
+          <li>Conciencia emocional</li>
+          <li>Reconocimiento de logros y esfuerzos</li>
+          <li>Valoración de habilidades individuales</li>
+        </ul>
+      </div>
+      <div class="eje">
+        <h3>💭 Reflexión</h3>
+        <ul>
+          <li>Bitácoras semanales</li>
+          <li>Evaluación grupal y retroalimentación</li>
+          <li>Espacios para pensar antes de actuar</li>
+        </ul>
+      </div>
+      <div class="eje">
+        <h3>🤝 Reconciliación</h3>
+        <ul>
+          <li>Mediación entre pares</li>
+          <li>Círculos restaurativos</li>
+          <li>Cartas o mensajes de reparación</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="testimonio">
+      “Gracias a Educación R, aprendí a escuchar y resolver conflictos sin pelear. Ahora soy parte de la brigada de convivencia.” — <strong>Valeria, 4to grado</strong>
+    </div>
+
+    <h3 class="subtitulo">🛡️ Plan de acción ante casos de bullying o violencia</h3>
+
+    <div class="acciones">
+      <button onclick="toggleAccion('prevencion')">🔍 Prevención</button>
+      <div id="prevencion" class="accion">
+        <ul>
+          <li>Campañas de sensibilización</li>
+          <li>Talleres sobre bullying y ciberbullying</li>
+          <li>Formación de brigadas de convivencia</li>
+          <li>Acuerdos de aula firmados</li>
+          <li>Integración de Educación R en sesiones</li>
+        </ul>
       </div>
 
-      <div class="grid-ejes">
-        <div class="eje">
-          <h3>✋ Respeto</h3>
-          <ul>
-            <li>Ambientes seguros y valorados</li>
-            <li>Normas y acuerdos de aula</li>
-            <li>Escucha activa y trato amable</li>
-          </ul>
-        </div>
-        <div class="eje">
-          <h3>🎖️ Reconocimiento</h3>
-          <ul>
-            <li>Conciencia emocional</li>
-            <li>Reconocimiento de logros y esfuerzos</li>
-            <li>Valoración de habilidades individuales</li>
-          </ul>
-        </div>
-        <div class="eje">
-          <h3>💭 Reflexión</h3>
-          <ul>
-            <li>Bitácoras semanales</li>
-            <li>Evaluación grupal y retroalimentación</li>
-            <li>Espacios para pensar antes de actuar</li>
-          </ul>
-        </div>
-        <div class="eje">
-          <h3>🤝 Reconciliación</h3>
-          <ul>
-            <li>Mediación entre pares</li>
-            <li>Círculos restaurativos</li>
-            <li>Cartas o mensajes de reparación</li>
-          </ul>
-        </div>
+      <button onclick="toggleAccion('deteccion')">🧠 Detección</button>
+      <div id="deteccion" class="accion">
+        <ul>
+          <li>Detectar cambios de conducta</li>
+          <li>Observar uso del celular o aislamiento</li>
+          <li>Alertas por docentes, padres o alumnos</li>
+        </ul>
       </div>
 
-      <div class="testimonio">
-        “Gracias a Educación R, aprendí a escuchar y resolver conflictos sin pelear. Ahora soy parte de la brigada de convivencia.” — <strong>Valeria, 4to grado</strong>
+      <button onclick="toggleAccion('actuacion')">🚨 Actuación inmediata</button>
+      <div id="actuacion" class="accion">
+        <ol>
+          <li>Escuchar sin juzgar</li>
+          <li>Garantizar confidencialidad</li>
+          <li>Notificar a tutor o psicólogo</li>
+          <li>Separar al agresor si hay riesgo</li>
+          <li>Aplicar protocolo del colegio</li>
+        </ol>
       </div>
 
-      <h3 class="subtitulo">🛡️ Plan de acción ante casos de bullying o violencia</h3>
-
-      <div class="acciones">
-        <button onclick="toggleAccion('prevencion')">🔍 Prevención</button>
-        <div id="prevencion" class="accion">
-          <ul>
-            <li>Campañas de sensibilización</li>
-            <li>Talleres sobre bullying y ciberbullying</li>
-            <li>Formación de brigadas de convivencia</li>
-            <li>Acuerdos de aula firmados</li>
-            <li>Integración de Educación R en sesiones</li>
-          </ul>
-        </div>
-
-        <button onclick="toggleAccion('deteccion')">🧠 Detección</button>
-        <div id="deteccion" class="accion">
-          <ul>
-            <li>Detectar cambios de conducta</li>
-            <li>Observar uso del celular o aislamiento</li>
-            <li>Alertas por docentes, padres o alumnos</li>
-          </ul>
-        </div>
-
-        <button onclick="toggleAccion('actuacion')">🚨 Actuación inmediata</button>
-        <div id="actuacion" class="accion">
-          <ol>
-            <li>Escuchar sin juzgar</li>
-            <li>Garantizar confidencialidad</li>
-            <li>Notificar a tutor o psicólogo</li>
-            <li>Separar al agresor si hay riesgo</li>
-            <li>Aplicar protocolo del colegio</li>
-          </ol>
-        </div>
-
-        <button onclick="toggleAccion('intervencion')">🗣️ Intervención y acompañamiento</button>
-        <div id="intervencion" class="accion">
-          <ul>
-            <li>Entrevistas con ambas partes</li>
-            <li>Compromisos firmados</li>
-            <li>Derivación psicológica</li>
-            <li>Actividades restaurativas</li>
-          </ul>
-        </div>
-
-        <button onclick="toggleAccion('seguimiento')">🔁 Seguimiento</button>
-        <div id="seguimiento" class="accion">
-          <ul>
-            <li>Evaluaciones de clima escolar</li>
-            <li>Observación del agresor</li>
-            <li>Refuerzo de normas</li>
-          </ul>
-        </div>
+      <button onclick="toggleAccion('intervencion')">🗣️ Intervención y acompañamiento</button>
+      <div id="intervencion" class="accion">
+        <ul>
+          <li>Entrevistas con ambas partes</li>
+          <li>Compromisos firmados</li>
+          <li>Derivación psicológica</li>
+          <li>Actividades restaurativas</li>
+        </ul>
       </div>
 
-      <div class="extra">
-        <h4>📚 Recursos complementarios</h4>
-        <a href="guia-educacion-r.pdf" class="btn-descarga">📘 Guía del estudiante (PDF)</a>
-        <a href="bitacora-modelo.pdf" class="btn-descarga">🗂️ Bitácora semanal (PDF)</a>
-
-        <h4 style="margin-top: 40px">📜 Reglamento Interno</h4>
-        <a href="reglamento-interno.pdf" class="btn-descarga">📥 Descargar Reglamento Interno (PDF)</a>
-
-        <h4 style="margin-top: 30px">🧾 Protocolo Interno (Resumen)</h4>
-        <p>Etapas claras con responsables y acciones para cada fase del proceso. Disponible en nuestra sección de Plan de Acción.</p>
+      <button onclick="toggleAccion('seguimiento')">🔁 Seguimiento</button>
+      <div id="seguimiento" class="accion">
+        <ul>
+          <li>Evaluaciones de clima escolar</li>
+          <li>Observación del agresor</li>
+          <li>Refuerzo de normas</li>
+        </ul>
       </div>
-    </section>
+    </div>
+
+    <div class="extra">
+      <h4>📚 Recursos complementarios</h4>
+      <a href="guia-educacion-r.pdf" class="btn-descarga">📘 Guía del estudiante (PDF)</a>
+      <a href="bitacora-modelo.pdf" class="btn-descarga">🗂️ Bitácora semanal (PDF)</a>
+
+      <h4 style="margin-top: 40px">📜 Reglamento Interno</h4>
+      <a href="reglamento-interno.pdf" class="btn-descarga">📥 Descargar Reglamento Interno</a>
+
+      <h4 style="margin-top: 30px">🧾 Protocolo Interno</h4>
+      <p>Etapas claras con responsables y acciones para cada fase del proceso. Disponible en la sección de Plan de Acción.</p>
+    </div>
   </main>
 
   <footer>
-    <p>© 2025 Innovation Program | Naum Muro, Luis Mendoza, Nicolas Silva</p>
+    <p>© 2025 Innovation Program | Naum Muro, Luis Mendoza</p>
   </footer>
 
   <script>
@@ -339,5 +365,6 @@
       elem.style.display = (elem.style.display === "block") ? "none" : "block";
     }
   </script>
+
 </body>
 </html>
