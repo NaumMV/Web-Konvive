@@ -4,75 +4,134 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Plan de acción | Konvive</title>
-  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@600&family=Open+Sans&display=swap" rel="stylesheet" />
   <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      margin: 0;
-      background-color: #f9fafc;
+    :root {
+      --principal: #1b105a;
+      --fondo: #f6f5fc;
+      --blanco: #fff;
+      --gris: #555;
+      --acento: #3a7ce1;
     }
 
-    header, footer {
-      background-color: #263238;
+    body {
+      margin: 0;
+      font-family: 'Open Sans', sans-serif;
+      background-color: var(--fondo);
+      color: var(--gris);
+    }
+
+    header {
+      background-color: var(--principal);
       color: white;
-      text-align: center;
-      padding: 20px 0;
+      padding: 20px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      font-size: 1.7rem;
+      font-family: 'Raleway', sans-serif;
     }
 
     nav ul {
       list-style: none;
       display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
       gap: 15px;
       padding: 0;
       margin: 0;
+      flex-wrap: wrap;
     }
 
     nav li a {
       color: white;
       text-decoration: none;
-      padding: 10px 16px;
+      padding: 8px 12px;
       border-radius: 6px;
       transition: background 0.3s;
     }
 
     nav li a:hover {
-      background-color: #455a64;
+      background-color: #2a1e8c;
     }
 
-    .contenedor-plan {
-      padding: 50px 20px;
+    main {
       max-width: 1100px;
       margin: auto;
+      padding: 50px 20px;
     }
 
-    .contenedor-plan h2 {
+    h2 {
+      font-family: 'Raleway', sans-serif;
+      font-size: 2.3rem;
+      color: var(--principal);
       text-align: center;
-      font-size: 2.4rem;
       margin-bottom: 30px;
-      color: #263238;
     }
 
-    .contenedor-plan p, .contenedor-plan ul, .contenedor-plan h3 {
-      color: #444;
-      line-height: 1.6;
+    .intro {
+      text-align: center;
+      max-width: 800px;
+      margin: auto;
+      font-size: 1.1rem;
+      color: #333;
     }
 
-    .contenedor-plan h3 {
-      margin-top: 40px;
-      color: #0d47a1;
+    .bloque {
+      background: var(--blanco);
+      border-radius: 12px;
+      padding: 25px;
+      margin: 30px 0;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
     }
 
-    ul {
+    .bloque h3 {
+      color: var(--principal);
+      margin-bottom: 12px;
+    }
+
+    .bloque ul {
       padding-left: 20px;
+    }
+
+    .timeline {
+      display: flex;
+      gap: 15px;
+      overflow-x: auto;
+      padding: 20px 0;
+    }
+
+    .etapa {
+      min-width: 180px;
+      background: #eae6ff;
+      border-left: 6px solid var(--principal);
+      border-radius: 8px;
+      padding: 15px;
+      font-size: 0.95rem;
+    }
+
+    .nota-legal {
+      font-size: 0.8rem;
+      color: #888;
+      margin-top: 20px;
+      line-height: 1.5;
+    }
+
+    footer {
+      background-color: var(--principal);
+      color: white;
+      padding: 30px 20px;
+      text-align: center;
+      margin-top: 60px;
     }
   </style>
 </head>
 <body>
   <header>
+    <div class="logo">Konvive</div>
     <nav>
-      <h1>Konvive - Innovation Program</h1>
       <ul>
         <li><a href="quienes-somos.html">Quiénes somos</a></li>
         <li><a href="educacion-r.html">Educación R</a></li>
@@ -87,49 +146,69 @@
   </header>
 
   <main>
-    <section class="contenedor-plan">
-      <h2>Plan de acción</h2>
-      <p>Para garantizar entornos escolares seguros, el Plan de Acción Konvive articula prevención, intervención y seguimiento de casos de violencia escolar mediante la colaboración entre instituciones educativas, familias y especialistas.</p>
+    <h2>🗂️ Plan de Acción</h2>
+    <p class="intro">
+      Este plan es nuestra guía estratégica para que Konvive funcione de manera efectiva en tu institución. Incluye las fases clave, los actores involucrados y las medidas necesarias para atender los casos con empatía y firmeza.
+    </p>
 
-      <h3>🔹 Normativa y sanciones</h3>
+    <div class="bloque">
+      <h3>📌 Fases del Plan</h3>
       <ul>
-        <li>Reglamento interno y protocolos actualizados.</li>
-        <li>Sanciones progresivas según la gravedad del caso.</li>
-        <li>Articulación con UGEL y Ministerio de Educación.</li>
+        <li><strong>Diagnóstico:</strong> encuestas, entrevistas, observación en el aula.</li>
+        <li><strong>Diseño:</strong> personalización del enfoque y selección de recursos.</li>
+        <li><strong>Aplicación:</strong> ejecución durante tutorías, clases y dinámicas.</li>
+        <li><strong>Evaluación:</strong> revisión de avances, retroalimentación y ajustes.</li>
       </ul>
+    </div>
 
-      <h3>🔹 Intervención de profesionales</h3>
-      <ul>
-        <li>Equipo Konvive de psicólogos, mediadores y orientadores.</li>
-        <li>Integración con los profesionales del colegio.</li>
-        <li>Acciones coordinadas y derivaciones responsables.</li>
-      </ul>
+    <div class="bloque">
+      <h3>🗓️ Cronograma General</h3>
+      <div class="timeline">
+        <div class="etapa"><strong>Marzo</strong><br />Inicio del diagnóstico</div>
+        <div class="etapa"><strong>Abril - Junio</strong><br />Aplicación de actividades</div>
+        <div class="etapa"><strong>Julio</strong><br />Evaluación semestral</div>
+        <div class="etapa"><strong>Agosto - Noviembre</strong><br />Fortalecimiento y seguimiento</div>
+        <div class="etapa"><strong>Diciembre</strong><br />Cierre y conclusiones</div>
+      </div>
+    </div>
 
-      <h3>🔹 Trabajo con padres y apoderados</h3>
+    <div class="bloque">
+      <h3>🧩 Actores Involucrados</h3>
       <ul>
-        <li>Reuniones para orientar sobre crianza, comunicación y apoyo emocional.</li>
-        <li>Acceso a recursos, guías y charlas virtuales o presenciales.</li>
-        <li>Participación activa en círculos restaurativos o acompañamientos.</li>
+        <li><strong>Docentes:</strong> aplicación del plan en sesiones y tutorías.</li>
+        <li><strong>Estudiantes:</strong> participación activa y feedback.</li>
+        <li><strong>Padres:</strong> acompañamiento y refuerzo desde casa.</li>
+        <li><strong>Directivos:</strong> coordinación general, seguimiento y reportes.</li>
       </ul>
+    </div>
 
-      <h3>🔹 Procedimientos</h3>
+    <div class="bloque">
+      <h3>⚖️ Procedimiento para directivos ante un caso</h3>
       <ul>
-        <li>Registro de casos con evidencias (fotos, testimonios, partes disciplinarios).</li>
-        <li>Plan de acción específico por caso, con responsables y plazos.</li>
-        <li>Evaluación del impacto posterior de la intervención.</li>
+        <li>📌 Aplicar el Reglamento Interno y registrar el caso.</li>
+        <li>📌 Informar a tutor y contactar a los padres.</li>
+        <li>📌 Activar protocolo de atención según el tipo de violencia.</li>
+        <li>📌 Notificar a UGEL o autoridades si corresponde.</li>
+        <li>📌 Asegurar apoyo psicológico y seguimiento.</li>
       </ul>
+      <p class="nota-legal">
+        Normativa aplicable: Ley N.° 29719, Ley N.° 30364, R.M. N.° 274-2020-MINEDU.
+      </p>
+    </div>
 
-      <h3>🔹 Informes y seguimiento</h3>
+    <div class="bloque">
+      <h3>📎 Recursos y materiales de apoyo</h3>
       <ul>
-        <li>Informes mensuales del equipo Konvive hacia la institución educativa.</li>
-        <li>Entrevistas de seguimiento a víctimas, agresores y testigos.</li>
-        <li>Actualización del protocolo institucional en función de los resultados.</li>
+        <li>📘 Manual para directivos y docentes</li>
+        <li>🎥 Video explicativo de implementación</li>
+        <li>📄 Plantilla para informes mensuales</li>
+        <li>📞 Contactos UGEL y psicólogos de la red</li>
       </ul>
-    </section>
+    </div>
   </main>
 
   <footer>
-    <p>© 2025 Innovation Program | Naum Muro, Luis Mendoza</p>
+    © 2025 Innovation Program | Naum Muro, Luis Mendoza
   </footer>
 </body>
 </html>
