@@ -4,75 +4,127 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Padres | Konvive</title>
-  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@600&family=Open+Sans&display=swap" rel="stylesheet" />
   <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      margin: 0;
-      background-color: #f9fafc;
+    :root {
+      --principal: #1b105a;
+      --fondo: #f6f5fc;
+      --blanco: #fff;
+      --gris: #666;
     }
 
-    header, footer {
-      background-color: #263238;
+    body {
+      margin: 0;
+      font-family: 'Open Sans', sans-serif;
+      background-color: var(--fondo);
+    }
+
+    header {
+      background-color: var(--principal);
       color: white;
-      text-align: center;
-      padding: 20px 0;
+      padding: 20px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      font-size: 1.7rem;
+      font-family: 'Raleway', sans-serif;
     }
 
     nav ul {
       list-style: none;
       display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
       gap: 15px;
       padding: 0;
       margin: 0;
+      flex-wrap: wrap;
     }
 
     nav li a {
       color: white;
       text-decoration: none;
-      padding: 10px 16px;
+      padding: 8px 12px;
       border-radius: 6px;
       transition: background 0.3s;
     }
 
     nav li a:hover {
-      background-color: #455a64;
+      background-color: #2a1e8c;
     }
 
-    .contenedor-padres {
-      padding: 50px 20px;
-      max-width: 1100px;
+    main {
+      max-width: 1000px;
       margin: auto;
+      padding: 40px 20px;
     }
 
-    .contenedor-padres h2 {
-      text-align: center;
-      font-size: 2.4rem;
-      margin-bottom: 30px;
-      color: #263238;
+    h2, h3 {
+      font-family: 'Raleway', sans-serif;
+      color: var(--principal);
     }
 
-    .contenedor-padres p, .contenedor-padres ul, .contenedor-padres h3 {
-      color: #444;
+    p {
+      color: #333;
       line-height: 1.6;
     }
 
-    .contenedor-padres h3 {
-      margin-top: 40px;
-      color: #0d47a1;
+    .bloque {
+      background-color: var(--blanco);
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      margin-bottom: 30px;
     }
 
     ul {
       padding-left: 20px;
     }
+
+    iframe {
+      width: 100%;
+      height: 315px;
+      border-radius: 10px;
+      border: none;
+      margin-top: 15px;
+    }
+
+    footer {
+      background-color: var(--principal);
+      color: white;
+      padding: 30px 20px;
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .procedimiento {
+      background-color: #edeaff;
+      padding: 25px;
+      border-radius: 12px;
+    }
+
+    .procedimiento h4 {
+      color: #1b105a;
+      margin-bottom: 10px;
+    }
+
+    .procedimiento ul {
+      padding-left: 20px;
+    }
+
+    @media (max-width: 768px) {
+      nav ul {
+        display: none;
+      }
+    }
   </style>
 </head>
 <body>
   <header>
+    <div class="logo">Konvive</div>
     <nav>
-      <h1>Konvive - Innovation Program</h1>
       <ul>
         <li><a href="quienes-somos.html">Quiénes somos</a></li>
         <li><a href="educacion-r.html">Educación R</a></li>
@@ -87,53 +139,61 @@
   </header>
 
   <main>
-    <section class="contenedor-padres">
-      <h2>Guía para Padres</h2>
-      <p>En esta sección brindamos orientación a las familias para que puedan fomentar una convivencia sana desde casa y apoyar emocionalmente a sus hijos en situaciones de acoso o exclusión.</p>
+    <h2>👨‍👩‍👧‍👦 Familias que construyen</h2>
+    <div class="bloque">
+      <p>En Konvive, creemos que las familias son el primer espacio donde se forma el respeto. Aquí encontrarás recursos, consejos y orientación para acompañar a tu hij@ en su desarrollo emocional y social.</p>
+    </div>
 
-      <h3>👨‍👩‍👧‍👦 Cómo prevenir desde el hogar</h3>
+    <div class="bloque">
+      <h3>🛠️ Recursos prácticos</h3>
       <ul>
-        <li>Fomentar el respeto y la empatía desde pequeños.</li>
-        <li>Conversar sobre las emociones y cómo gestionarlas.</li>
-        <li>Supervisar los espacios digitales y promover un uso responsable.</li>
-        <li>Detectar signos tempranos de exclusión o cambios de ánimo.</li>
+        <li>📄 <a href="#">Guía para fortalecer el diálogo en casa</a></li>
+        <li>🧠 <a href="#">Señales de alerta emocional en adolescentes</a></li>
+        <li>📅 <a href="#">Checklist semanal para acompañar emociones</a></li>
       </ul>
+    </div>
 
-      <h3>💬 Comunicación efectiva con sus hijos</h3>
-      <ul>
-        <li>Practicar la escucha activa y sin juzgar.</li>
-        <li>Evitar minimizar los problemas que sus hijos compartan.</li>
-        <li>Ofrecer soluciones conjuntas y generar confianza.</li>
-        <li>Fortalecer el vínculo familiar con rutinas y momentos de calidad.</li>
-      </ul>
+    <div class="bloque">
+      <h3>🎥 Videos orientativos</h3>
+      <p>Breves materiales para ayudarte a entender mejor cómo actuar:</p>
+      <iframe src="https://www.youtube.com/embed/jkHIyC3EjLg" allowfullscreen></iframe>
+    </div>
 
-      <h3>🧠 En caso de ser víctima</h3>
+    <div class="bloque">
+      <h3>❓ Preguntas frecuentes</h3>
       <ul>
-        <li>Brindar apoyo emocional y evitar culpabilizar.</li>
-        <li>Contactar al colegio y seguir el protocolo.</li>
-        <li>Buscar orientación psicológica si es necesario.</li>
-        <li>Reforzar la autoestima del menor con acompañamiento positivo.</li>
+        <li>¿Cómo sé si mi hijo sufre violencia?</li>
+        <li>¿Qué hago si mi hijo no me quiere contar lo que pasa?</li>
+        <li>¿A quién acudo si noto algo extraño?</li>
       </ul>
+    </div>
 
-      <h3>⚠️ En caso de que sea agresor</h3>
+    <div class="bloque procedimiento">
+      <h3>🛡️ Procedimiento en casos de violencia</h3>
+      <h4>Si tu hij@ es víctima:</h4>
       <ul>
-        <li>Dialogar sin agresión para entender el motivo.</li>
-        <li>Explicar las consecuencias de sus acciones.</li>
-        <li>Fomentar la reparación del daño y el aprendizaje emocional.</li>
-        <li>Coordinar con el colegio medidas de acompañamiento.</li>
+        <li>Reporta el caso desde la sección correspondiente.</li>
+        <li>La escuela activará protocolos de atención inmediata.</li>
+        <li>Se prioriza la confidencialidad y el bienestar emocional.</li>
       </ul>
+      <h4>Si tu hij@ es el agresor:</h4>
+      <ul>
+        <li>Recibirás información y citación de parte del colegio.</li>
+        <li>El objetivo será corregir conductas con orientación, no solo sancionar.</li>
+        <li>Tu participación activa es clave en el proceso de reconciliación.</li>
+      </ul>
+      <h4>Medidas escolares y legales:</h4>
+      <p>Dependiendo de la gravedad, se aplicarán sanciones según la normativa del Minedu y las leyes vigentes. Siempre se informará y acompañará a los padres.</p>
+    </div>
 
-      <h3>📂 Recursos descargables</h3>
-      <ul>
-        <li>Guías prácticas para padres (PDF).</li>
-        <li>Videos sobre crianza respetuosa.</li>
-        <li>Enlaces de interés sobre salud emocional y escolar.</li>
-      </ul>
-    </section>
+    <div class="bloque">
+      <h3>🤝 Estamos para ayudarte</h3>
+      <p>Si tienes dudas, puedes usar el <a href="foro.html">foro</a> o <a href="reporta-caso.html">reportar un caso</a>. Tu voz es importante. 💬</p>
+    </div>
   </main>
 
   <footer>
-    <p>© 2025 Innovation Program | Naum Muro, Luis Mendoza</p>
+    © 2025 Innovation Program | Naum Muro, Luis Mendoza
   </footer>
 </body>
 </html>
