@@ -3,13 +3,125 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Inicio</title>
+  <title>Inicio | Konvive - Innovation Program</title>
+
+  <!-- SEO -->
+  <meta name="description" content="Konvive es una web educativa enfocada en prevenir la violencia escolar y fomentar la convivencia. Conoce nuestro plan, herramientas y comunidad." />
+  <meta name="keywords" content="web Konvive, Konvive web, violencia escolar, bullying, convivencia, innovación educativa, Naum Muro, Luis Mendoza, educación R" />
+  <meta name="author" content="Naum Muro, Luis Mendoza" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://naummv.github.io/Web-Konvive/" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Konvive | Innovation Program" />
+  <meta property="og:description" content="Educación para prevenir la violencia escolar con un enfoque restaurativo, humano y responsable." />
+  <meta property="og:image" content="https://naummv.github.io/Web-Konvive/portada-konvive.jpg" />
+  <meta property="og:url" content="https://naummv.github.io/Web-Konvive/" />
+  <meta property="og:type" content="website" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@600&family=Open+Sans&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
+  <style>
+    :root {
+      --principal: #1b105a;
+      --fondo: #f9fafc;
+      --texto: #111;
+      --acento: #3a7ce1;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Open Sans', sans-serif;
+      background-color: var(--fondo);
+      color: var(--texto);
+    }
+
+    header {
+      background-color: var(--principal);
+      color: white;
+      padding: 20px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-family: 'Raleway', sans-serif;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 16px;
+      padding: 0;
+      margin: 0;
+      flex-wrap: wrap;
+    }
+
+    nav li a {
+      color: white;
+      text-decoration: none;
+      padding: 8px 14px;
+      border-radius: 8px;
+      transition: background 0.3s;
+    }
+
+    nav li a:hover {
+      background-color: #2a1e8c;
+    }
+
+    main {
+      max-width: 1000px;
+      margin: 60px auto 30px;
+      padding: 0 20px;
+      text-align: center;
+    }
+
+    h2 {
+      font-size: 2.4rem;
+      color: var(--principal);
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 1.1rem;
+      color: #444;
+    }
+
+    .inicio-img {
+      margin-top: 30px;
+      max-width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    }
+
+    footer {
+      background-color: var(--principal);
+      color: white;
+      text-align: center;
+      padding: 30px 20px;
+      margin-top: 50px;
+    }
+
+    @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+      }
+    }
+  </style>
 </head>
 <body>
+
   <header>
+    <div class="logo">Konvive</div>
     <nav>
-      <h1>Innovation Program</h1>
       <ul>
         <li><a href="quienes-somos.html">Quiénes somos</a></li>
         <li><a href="educacion-r.html">Educación R</a></li>
@@ -25,8 +137,9 @@
 
   <main>
     <section>
-      <h2>Inicio</h2>
-      <p>Bienvenido al Innovation Program. Usa el menú para navegar por las secciones.</p>
+      <h2>Bienvenido a Konvive</h2>
+      <p>Una iniciativa del Innovation Program para transformar la convivencia escolar. Conoce nuestras herramientas, enfoques y acciones ante casos de violencia o bullying.</p>
+      <img src="portada-konvive.jpg" alt="Konvive portada" class="inicio-img" />
     </section>
   </main>
 
@@ -34,7 +147,7 @@
     <p>© 2025 Innovation Program | Naum Muro, Luis Mendoza</p>
   </footer>
 
-  <!-- 🔒 Protección de acceso -->
+  <!-- Protección de acceso -->
   <script>
     const tiempo = parseInt(localStorage.getItem("tiempoAcceso"));
     const minutosPermitidos = 30;
@@ -47,7 +160,6 @@
     }
   </script>
 
-  <!-- Tu script principal -->
   <script src="script.js"></script>
 </body>
 </html>
