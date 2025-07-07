@@ -11,6 +11,7 @@
       --fondo: #f6f5fc;
       --gris: #666;
       --blanco: #fff;
+      --hover: #2a1e8c;
     }
 
     body {
@@ -19,10 +20,11 @@
       background-color: var(--fondo);
     }
 
+    /* HEADER */
     header {
       background-color: var(--principal);
       color: white;
-      padding: 20px 30px;
+      padding: 18px 24px;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -30,8 +32,13 @@
     }
 
     .logo {
-      font-size: 1.7rem;
+      font-size: 1.6rem;
       font-family: 'Raleway', sans-serif;
+      font-weight: bold;
+    }
+
+    nav {
+      position: relative;
     }
 
     nav ul {
@@ -40,7 +47,6 @@
       gap: 15px;
       padding: 0;
       margin: 0;
-      flex-wrap: wrap;
     }
 
     nav li a {
@@ -52,9 +58,46 @@
     }
 
     nav li a:hover {
-      background-color: #2a1e8c;
+      background-color: var(--hover);
     }
 
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+    }
+
+    .menu-toggle span {
+      width: 25px;
+      height: 3px;
+      background-color: white;
+      border-radius: 2px;
+    }
+
+    @media (max-width: 768px) {
+      nav ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: var(--principal);
+        width: 100vw;
+        padding: 20px;
+        z-index: 100;
+      }
+
+      nav ul.show {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: flex;
+      }
+    }
+
+    /* CONTENIDO */
     main {
       max-width: 900px;
       margin: 0 auto;
@@ -104,7 +147,7 @@
     }
 
     button:hover {
-      background-color: #2a1e8c;
+      background-color: var(--hover);
     }
 
     .info-post-form {
@@ -144,20 +187,19 @@
       margin-top: 60px;
       text-align: center;
     }
-
-    @media (max-width: 768px) {
-      nav ul {
-        display: none;
-      }
-    }
   </style>
 </head>
 <body>
 
   <header>
     <div class="logo">Konvive</div>
+    <div class="menu-toggle" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
     <nav>
-      <ul>
+      <ul id="menu">
         <li><a href="quienes-somos.html">Quiénes somos</a></li>
         <li><a href="educacion-r.html">Educación R</a></li>
         <li><a href="plan-estudios.html">Plan de estudios</a></li>
@@ -209,28 +251,28 @@
 
       <div class="linea-info">
         <strong>Si eres testigo y acabas de reportar:</strong>
-        <p>Debes saber que se supervisará que los protocolos de atención se realicen en el tiempo oportuno y tomando en cuenta la importancia y sensibilidad del caso.</p>
+        <p>Se supervisará que los protocolos de atención se realicen a tiempo y con sensibilidad.</p>
       </div>
 
       <div class="linea-info">
         <strong>Si eres víctima y acabas de reportar:</strong>
-        <p>Debes saber que no tienes ninguna culpa en esta situación y que el reporte es totalmente confidencial.</p>
+        <p>No tienes ninguna culpa. El reporte es totalmente confidencial.</p>
       </div>
 
       <div class="linea-info">
-        <strong>SI SE TRATA DE UN CASO DE VIOLENCIA ESCOLAR ENTRE ESTUDIANTES</strong>
-        <p>El Minedu, a través de la DRE y UGEL, tomará las acciones necesarias para brindar protección a los afectados y restablecer la convivencia escolar.</p>
+        <strong>VIOLENCIA ESCOLAR ENTRE ESTUDIANTES</strong>
+        <p>El Minedu, a través de la DRE y UGEL, tomará acciones para restablecer la convivencia escolar.</p>
       </div>
 
       <div class="linea-info">
-        <strong>VIOLENCIA SEXUAL DEL PERSONAL DE UNA IE A UN ESTUDIANTE</strong>
-        <p>La medida que se toma es separar de inmediato de las aulas al presunto agresor hasta que acabe la investigación y así evitar que se ponga en riesgo a más estudiantes. La sanción administrativa máxima puede ser la destitución del puesto en el caso de escuelas públicas(1)(2), o la finalización del contrato laboral en el caso de escuelas privadas(3).</p>
+        <strong>VIOLENCIA SEXUAL DEL PERSONAL A ESTUDIANTE</strong>
+        <p>Se separa al presunto agresor y se inicia investigación. Sanción máxima: destitución o término de contrato.</p>
       </div>
 
       <p class="nota-legal">
-        (1) Ley N.° 29944, Ley de Reforma Magisterial.  
-        (2) Ley N.º 30057, Ley del Servicio Civil y su reglamento general.  
-        (3) Decreto Supremo N.° 003-97-TR, Ley de Productividad y Competitividad Laboral.
+        (1) Ley N.º 29944, Reforma Magisterial.  
+        (2) Ley N.º 30057, Servicio Civil.  
+        (3) D.S. N.º 003-97-TR, Competitividad Laboral.
       </p>
     </div>
   </main>
@@ -240,6 +282,11 @@
   </footer>
 
   <script>
+    function toggleMenu() {
+      const menu = document.getElementById("menu");
+      menu.classList.toggle("show");
+    }
+
     const form = document.getElementById('formularioReporte');
     form.addEventListener('submit', (e) => {
       e.preventDefault();
@@ -261,6 +308,5 @@
       form.reset();
     });
   </script>
-
 </body>
 </html>
