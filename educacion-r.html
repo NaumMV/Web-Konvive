@@ -54,6 +54,25 @@
       color: #263238;
     }
 
+    .pilares-resumen {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin: 30px 0;
+      flex-wrap: wrap;
+    }
+
+    .pilar {
+      text-align: center;
+      background: #ffffff;
+      padding: 15px 20px;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      min-width: 120px;
+      font-size: 1rem;
+      color: #263238;
+    }
+
     .educacion-r .intro {
       text-align: center;
       max-width: 800px;
@@ -143,7 +162,7 @@
       border-radius: 8px;
       text-decoration: none;
       font-weight: bold;
-      margin-top: 10px;
+      margin: 10px;
       transition: background 0.3s;
     }
 
@@ -151,9 +170,24 @@
       background-color: #1b5e20;
     }
 
+    .testimonio {
+      background: #f1f8e9;
+      padding: 25px;
+      border-left: 5px solid #8bc34a;
+      margin: 40px auto;
+      max-width: 700px;
+      font-style: italic;
+      border-radius: 10px;
+      color: #33691e;
+    }
+
     @keyframes fadeIn {
       from {opacity: 0;}
       to {opacity: 1;}
+    }
+
+    footer p {
+      margin: 0;
     }
   </style>
 </head>
@@ -181,9 +215,16 @@
         Nuestra propuesta educativa se basa en una metodología transformadora enfocada en el <strong>Respeto, Reconocimiento, Reflexión y Reconciliación</strong>. Con estos pilares, buscamos formar comunidades escolares libres de violencia, inclusivas y emocionalmente sanas.
       </p>
 
+      <div class="pilares-resumen">
+        <div class="pilar">✋<br><strong>Respeto</strong></div>
+        <div class="pilar">🎖️<br><strong>Reconocimiento</strong></div>
+        <div class="pilar">💭<br><strong>Reflexión</strong></div>
+        <div class="pilar">🤝<br><strong>Reconciliación</strong></div>
+      </div>
+
       <div class="grid-ejes">
         <div class="eje">
-          <h3>1. Respeto</h3>
+          <h3>✋ Respeto</h3>
           <ul>
             <li>Ambientes seguros y valorados</li>
             <li>Normas y acuerdos de aula</li>
@@ -191,7 +232,7 @@
           </ul>
         </div>
         <div class="eje">
-          <h3>2. Reconocimiento</h3>
+          <h3>🎖️ Reconocimiento</h3>
           <ul>
             <li>Conciencia emocional</li>
             <li>Reconocimiento de logros y esfuerzos</li>
@@ -199,7 +240,7 @@
           </ul>
         </div>
         <div class="eje">
-          <h3>3. Reflexión</h3>
+          <h3>💭 Reflexión</h3>
           <ul>
             <li>Bitácoras semanales</li>
             <li>Evaluación grupal y retroalimentación</li>
@@ -207,13 +248,17 @@
           </ul>
         </div>
         <div class="eje">
-          <h3>4. Reconciliación</h3>
+          <h3>🤝 Reconciliación</h3>
           <ul>
             <li>Mediación entre pares</li>
             <li>Círculos restaurativos</li>
             <li>Cartas o mensajes de reparación</li>
           </ul>
         </div>
+      </div>
+
+      <div class="testimonio">
+        “Gracias a Educación R, aprendí a escuchar y resolver conflictos sin pelear. Ahora soy parte de la brigada de convivencia.” — <strong>Valeria, 4to grado</strong>
       </div>
 
       <h3 class="subtitulo">🛡️ Plan de acción ante casos de bullying o violencia</h3>
@@ -271,8 +316,12 @@
       </div>
 
       <div class="extra">
-        <h4>📜 Reglamento Interno</h4>
-        <a href="reglamento-interno.pdf" download class="btn-descarga">📥 Descargar Reglamento Interno (PDF)</a>
+        <h4>📚 Recursos complementarios</h4>
+        <a href="guia-educacion-r.pdf" class="btn-descarga">📘 Guía del estudiante (PDF)</a>
+        <a href="bitacora-modelo.pdf" class="btn-descarga">🗂️ Bitácora semanal (PDF)</a>
+
+        <h4 style="margin-top: 40px">📜 Reglamento Interno</h4>
+        <a href="reglamento-interno.pdf" class="btn-descarga">📥 Descargar Reglamento Interno (PDF)</a>
 
         <h4 style="margin-top: 30px">🧾 Protocolo Interno (Resumen)</h4>
         <p>Etapas claras con responsables y acciones para cada fase del proceso. Disponible en nuestra sección de Plan de Acción.</p>
