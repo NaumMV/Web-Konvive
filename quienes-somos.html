@@ -23,7 +23,6 @@
       line-height: 1.6;
     }
 
-    /* HEADER */
     header {
       background-color: var(--principal);
       color: white;
@@ -31,7 +30,9 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      flex-wrap: wrap;
+      position: sticky;
+      top: 0;
+      z-index: 999;
     }
 
     .logo {
@@ -53,7 +54,7 @@
     nav ul {
       list-style: none;
       display: flex;
-      gap: 20px;
+      gap: 16px;
       padding: 0;
       margin: 0;
       flex-wrap: wrap;
@@ -62,7 +63,7 @@
     nav li a {
       color: white;
       text-decoration: none;
-      padding: 8px 12px;
+      padding: 10px 16px;
       border-radius: 6px;
       transition: background 0.3s ease;
       font-size: 1rem;
@@ -72,6 +73,7 @@
       background-color: var(--hover);
     }
 
+    /* RESPONSIVE MENU */
     @media (max-width: 768px) {
       .menu-icon {
         display: block;
@@ -80,10 +82,10 @@
       nav ul {
         display: none;
         flex-direction: column;
+        background-color: var(--principal);
         position: absolute;
         top: 60px;
         right: 0;
-        background-color: var(--principal);
         width: 100vw;
         padding: 20px;
         z-index: 100;
@@ -92,9 +94,12 @@
       nav ul.show {
         display: flex;
       }
+
+      nav li {
+        margin-bottom: 10px;
+      }
     }
 
-    /* HERO */
     .hero {
       text-align: center;
       padding: 60px 20px 30px;
@@ -113,7 +118,6 @@
       margin: 0 auto;
     }
 
-    /* MAIN */
     main {
       max-width: 1100px;
       margin: auto;
@@ -202,6 +206,7 @@
       text-align: center;
       padding: 20px;
       font-size: 0.95rem;
+      margin-top: 50px;
     }
   </style>
 </head>
@@ -234,7 +239,7 @@
   <main>
     <!-- EQUIPO -->
     <div class="section">
-      <h3> Nuestro equipo</h3>
+      <h3>Nuestro equipo</h3>
       <p>Somos Naum Muro, Luis Mendoza y Nicolás Silva, estudiantes comprometidos con la transformación social a través de la educación. Nos unimos bajo el nombre “Los amigos de Jeison” para desarrollar una propuesta que permita reducir la violencia escolar en el Perú.</p>
     </div>
 
@@ -242,22 +247,22 @@
     <div class="grid-2col">
       <div class="col section combined-card">
         <div class="part">
-          <h4> Usuario</h4>
+          <h4>Usuario</h4>
           <p>Estudiantes de secundaria de instituciones educativas públicas y privadas que enfrentan entornos escolares con presencia de violencia o falta de integración.</p>
         </div>
         <div class="part">
-          <h4> Necesidad</h4>
+          <h4>Necesidad</h4>
           <p>Reducir y prevenir los casos de bullying y violencia escolar mediante una propuesta integral que involucre a toda la comunidad educativa.</p>
         </div>
       </div>
 
       <div class="col section combined-card">
         <div class="part">
-          <h4> Visión</h4>
+          <h4>Visión</h4>
           <p>Ser una propuesta educativa innovadora que contribuya activamente a construir espacios escolares seguros, respetuosos y libres de cualquier forma de violencia.</p>
         </div>
         <div class="part">
-          <h4> Misión</h4>
+          <h4>Misión</h4>
           <p>Implementar un ecosistema educativo integral basado en el respeto, la reflexión y el reconocimiento, brindando herramientas sostenibles para erradicar el acoso escolar.</p>
         </div>
       </div>
@@ -265,21 +270,21 @@
 
     <!-- PREGUNTA RETO -->
     <div class="section">
-      <h3> Pregunta reto</h3>
+      <h3>Pregunta reto</h3>
       <p>¿Cómo podríamos ayudar a los estudiantes de secundaria a reducir el bullying en los centros educativos, considerando el notorio incremento de estos casos a nivel nacional?</p>
     </div>
 
     <!-- PROPUESTA DE VALOR -->
     <div class="section">
-      <h3> Propuesta de valor</h3>
+      <h3>Propuesta de valor</h3>
       <p>Konvive ofrece una web interactiva, metodología de aula, acompañamiento psicológico, capacitación docente y guía para padres, enmarcada en la Educación R. Está diseñada para ser deseable, realizable, sostenible e innovadora en contextos escolares reales.</p>
     </div>
 
     <!-- PROBLEMÁTICA + TIMELINE -->
     <div class="section" style="background-color: #f3f1fd;">
-      <h3> Problemática</h3>
+      <h3>Problemática</h3>
       <p><strong>“6 de cada 10 escolares han vivido violencia escolar.”</strong></p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.</p>
+      <p>Esto refleja una realidad crítica en los colegios del país. El miedo, la exclusión y el maltrato afectan el rendimiento, la autoestima y la seguridad de miles de estudiantes a diario.</p>
 
       <div class="timeline">
         <div class="timeline-step">
@@ -314,7 +319,15 @@
     function toggleMenu() {
       document.getElementById("menu").classList.toggle("show");
     }
-  </script>
 
+    // Cierra el menú al hacer clic fuera (opcional)
+    window.addEventListener('click', function (e) {
+      const menu = document.getElementById("menu");
+      const icon = document.querySelector(".menu-icon");
+      if (!menu.contains(e.target) && !icon.contains(e.target)) {
+        menu.classList.remove("show");
+      }
+    });
+  </script>
 </body>
 </html>
