@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Quiénes somos | Konvive</title>
-  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@600;700&family=Open+Sans&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@600;700&family=Open+Sans&display=swap" rel="stylesheet" />
   <style>
     :root {
       --principal: #1b105a;
@@ -26,13 +26,14 @@
     header {
       background-color: var(--principal);
       color: white;
-      padding: 18px 24px;
+      padding: 20px 24px;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      flex-wrap: wrap;
       position: sticky;
       top: 0;
-      z-index: 999;
+      z-index: 1000;
     }
 
     .logo {
@@ -74,7 +75,6 @@
       background-color: var(--hover);
     }
 
-    /* RESPONSIVE */
     @media (max-width: 768px) {
       .menu-icon {
         display: block;
@@ -89,7 +89,7 @@
         right: 0;
         width: 100vw;
         padding: 20px;
-        z-index: 100;
+        z-index: 999;
       }
 
       nav ul.show {
@@ -321,17 +321,14 @@
       document.getElementById("menu").classList.toggle("show");
     }
 
-    // Activar el enlace del menú según la página actual
     const currentPage = location.pathname.split("/").pop();
     const menuLinks = document.querySelectorAll("nav ul li a");
-
     menuLinks.forEach(link => {
       if (link.getAttribute("href") === currentPage) {
         link.classList.add("activo");
       }
     });
 
-    // Cierra el menú en móviles al hacer clic fuera
     window.addEventListener("click", function (e) {
       const menu = document.getElementById("menu");
       const icon = document.querySelector(".menu-icon");
