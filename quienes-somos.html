@@ -69,11 +69,12 @@
       font-size: 1rem;
     }
 
-    nav li a:hover {
+    nav li a:hover,
+    nav li a.activo {
       background-color: var(--hover);
     }
 
-    /* RESPONSIVE MENU */
+    /* RESPONSIVE */
     @media (max-width: 768px) {
       .menu-icon {
         display: block;
@@ -320,8 +321,18 @@
       document.getElementById("menu").classList.toggle("show");
     }
 
-    // Cierra el menú al hacer clic fuera (opcional)
-    window.addEventListener('click', function (e) {
+    // Activar el enlace del menú según la página actual
+    const currentPage = location.pathname.split("/").pop();
+    const menuLinks = document.querySelectorAll("nav ul li a");
+
+    menuLinks.forEach(link => {
+      if (link.getAttribute("href") === currentPage) {
+        link.classList.add("activo");
+      }
+    });
+
+    // Cierra el menú en móviles al hacer clic fuera
+    window.addEventListener("click", function (e) {
       const menu = document.getElementById("menu");
       const icon = document.querySelector(".menu-icon");
       if (!menu.contains(e.target) && !icon.contains(e.target)) {
