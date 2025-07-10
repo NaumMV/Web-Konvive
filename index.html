@@ -195,10 +195,15 @@
 
     footer {
       background-color: var(--principal);
-      color: white;
+      color: white !important;
       text-align: center;
       padding: 30px 20px;
       margin-top: 50px;
+    }
+
+    footer p {
+      margin: 0;
+      color: white !important;
     }
 
     @media (max-width: 768px) {
@@ -237,6 +242,8 @@
       <h2>Bienvenido a Konvive</h2>
       <p>Una iniciativa del Innovation Program para transformar la convivencia escolar. Conoce nuestras herramientas, enfoques y acciones ante casos de violencia o bullying.</p>
       <img src="portada-konvive.jpg" alt="Konvive portada" class="inicio-img" />
+      <br><br>
+      <a href="quienes-somos.html" style="display:inline-block; padding:12px 24px; background:#1b105a; color:white; border-radius:8px; text-decoration:none;">Conócenos</a>
     </section>
   </main>
 
@@ -270,7 +277,25 @@
     </div>
   </section>
 
-  <!-- Resto del contenido como redes sociales y footer -->
+  <section class="redes-sociales">
+    <h2>🔗 Conéctate con nosotros</h2>
+    <p>Sé parte del cambio también en redes. Síguenos y entérate de nuestras actividades, tips para padres, novedades del programa y más.</p>
+    <div class="iconos-redes">
+      <a href="https://www.instagram.com/kon.vive" target="_blank" title="Instagram">
+        <svg viewBox="0 0 24 24"><path d="M7 2C4.243 2 2 4.243 2 7v10c0 2.757 2.243 5 5 5h10c2.757 0 5-2.243 5-5V7c0-2.757-2.243-5-5-5H7zm10 2a3 3 0 013 3v10a3 3 0 01-3 3H7a3 3 0 01-3-3V7a3 3 0 013-3h10zM12 7a5 5 0 100 10 5 5 0 000-10zm0 2a3 3 0 110 6 3 3 0 010-6zm4.5-3a1.5 1.5 0 100 3 1.5 1.5 0 000-3z"/></svg>
+      </a>
+      <a href="https://www.facebook.com/profile.php?id=61578204418703" target="_blank" title="Facebook">
+        <svg viewBox="0 0 24 24"><path d="M22 12a10 10 0 10-11.6 9.9v-7H8v-2.9h2.4v-2.2c0-2.4 1.4-3.8 3.6-3.8 1 0 2 .2 2 .2v2.3h-1.1c-1.1 0-1.4.7-1.4 1.4v1.7H18l-.4 2.9h-2.8v7A10 10 0 0022 12z"/></svg>
+      </a>
+      <a href="#" target="_blank" title="TikTok (próximamente)">
+        <svg viewBox="0 0 24 24"><path d="M16.5 1a5.4 5.4 0 003.5 1v3a8.4 8.4 0 01-3.5-.7V14a5.5 5.5 0 11-5.5-5.5h.5v3.5a2 2 0 102 2V1h3z"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Innovation Program | Naum Muro, Luis Mendoza</p>
+  </footer>
 
 </body>
 </html>
