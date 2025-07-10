@@ -15,7 +15,6 @@
   <!-- Fonts & Icons -->
   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@600;700&family=Open+Sans&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-papO0BvI6Qdh2CEWyYjTIXkUmgS3rW0iD2HGWa+lBuhffPMqkgkZV8w4qvApzB8OqE9lRQ2ZVlGoTxqBWh91jQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
   <style>
     :root {
@@ -39,212 +38,233 @@
       scroll-behavior: smooth;
     }
 
-    header {
+    #modal-bienvenida {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+    }
+
+    #modal-bienvenida .contenido-modal {
+      background: white;
+      padding: 40px;
+      border-radius: 16px;
+      max-width: 500px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      animation: fadeInDown 0.5s ease;
+    }
+
+    #modal-bienvenida h3 {
+      color: var(--principal);
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+    }
+
+    #modal-bienvenida p {
+      font-size: 1.1rem;
+      color: #444;
+      margin-bottom: 30px;
+    }
+
+    #modal-bienvenida button {
       background: var(--principal);
-      padding: 20px 40px;
+      color: white;
+      padding: 10px 24px;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    #modal-bienvenida button:hover {
+      background: var(--acento);
+    }
+
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    header {
+      background-color: var(--principal);
+      color: white;
+      padding: 20px 30px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      color: white;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-family: 'Raleway', sans-serif;
     }
 
     .logo a {
       color: white;
-      font-size: 2rem;
-      font-family: 'Raleway', sans-serif;
       text-decoration: none;
-      font-weight: 700;
-      letter-spacing: 1px;
     }
 
     nav ul {
       list-style: none;
       display: flex;
-      gap: 20px;
+      gap: 16px;
+      padding: 0;
+      margin: 0;
+      flex-wrap: wrap;
     }
 
     nav li a {
       color: white;
       text-decoration: none;
-      font-weight: 600;
-      padding: 10px 16px;
+      padding: 8px 14px;
       border-radius: 8px;
-      transition: background 0.3s ease;
+      transition: background 0.3s;
     }
 
     nav li a:hover {
-      background: rgba(255, 255, 255, 0.2);
+      background-color: #2a1e8c;
     }
 
     main {
+      max-width: 1000px;
+      margin: 60px auto 30px;
+      padding: 0 20px;
       text-align: center;
-      padding: 100px 20px 60px;
     }
 
-    main h2 {
-      font-family: 'Raleway', sans-serif;
-      font-size: 3rem;
+    h2 {
+      font-size: 2.4rem;
       color: var(--principal);
-      margin-bottom: 20px;
+      margin-bottom: 10px;
+      font-family: 'Raleway', sans-serif;
     }
 
-    main p {
-      font-size: 1.2rem;
-      max-width: 900px;
-      margin: auto;
+    p {
+      font-size: 1.1rem;
       color: #444;
     }
 
     .inicio-img {
-      margin-top: 40px;
-      max-width: 85%;
-      border-radius: 16px;
-      box-shadow: 0 15px 40px rgba(0,0,0,0.1);
-    }
-
-    .boton-conocenos {
-      display: inline-block;
-      margin-top: 40px;
-      padding: 14px 32px;
-      background: var(--principal);
-      color: white;
+      margin-top: 30px;
+      max-width: 100%;
       border-radius: 12px;
-      font-weight: bold;
-      font-size: 1rem;
-      text-decoration: none;
-      transition: all 0.3s ease;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
-    }
-
-    .boton-conocenos:hover {
-      background: var(--acento);
-      transform: scale(1.07);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
     }
 
     .alianzas {
-      padding: 80px 20px;
-      background: white;
+      background-color: #fff;
+      padding: 40px 20px;
       text-align: center;
-    }
-
-    .alianzas h2 {
-      font-size: 2.4rem;
-      font-family: 'Raleway', sans-serif;
-      color: var(--principal);
-      margin-bottom: 40px;
     }
 
     .logos-alianzas {
       display: flex;
-      justify-content: center;
-      gap: 60px;
       flex-wrap: wrap;
-      align-items: center;
+      justify-content: center;
+      gap: 40px;
+      margin-top: 20px;
     }
 
     .logos-alianzas img {
       max-height: 100px;
-      transition: transform 0.4s ease, filter 0.4s ease;
-      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
-    }
-
-    .logos-alianzas img:hover {
-      transform: scale(1.1);
-      filter: brightness(1.1);
+      object-fit: contain;
     }
 
     .ventajas {
       background: #edeaff;
-      padding: 100px 20px;
-      text-align: center;
-    }
-
-    .ventajas h2 {
-      font-size: 2.6rem;
-      font-family: 'Raleway', sans-serif;
-      color: var(--principal);
-      margin-bottom: 60px;
-    }
-
-    .ventajas .contenido {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 40px;
-      max-width: 1200px;
-      margin: auto;
-    }
-
-    .card {
-      background: white;
-      padding: 40px 30px;
-      border-radius: 18px;
-      box-shadow: 0 8px 30px rgba(0,0,0,0.08);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 12px 35px rgba(0,0,0,0.12);
-    }
-
-    .card h3 {
-      font-size: 1.4rem;
-      color: var(--principal);
-      margin-bottom: 16px;
-    }
-
-    .card p {
-      color: #555;
-      font-size: 1rem;
-    }
-
-    .iconos-redes {
-      background: #fff;
       padding: 50px 20px;
       text-align: center;
     }
 
-    .iconos-redes a {
-      font-size: 36px;
-      margin: 0 18px;
+    .ventajas .contenido {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .ventajas .card {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      flex: 1 1 250px;
+      max-width: 300px;
+    }
+
+    .ventajas .card h3 {
+      font-size: 1.2rem;
       color: var(--principal);
-      transition: all 0.3s ease;
+      margin-bottom: 10px;
+    }
+
+    .redes-sociales {
+      background: #edeaff;
+      padding: 50px 20px;
+      text-align: center;
+    }
+
+    .redes-sociales h2 {
+      font-family: 'Raleway', sans-serif;
+      color: var(--principal);
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    .iconos-redes {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 20px;
+    }
+
+    .iconos-redes a {
+      color: white;
+      font-size: 1.8rem;
+      transition: transform 0.3s ease;
     }
 
     .iconos-redes a:hover {
-      color: var(--acento);
       transform: scale(1.2);
+      color: var(--acento);
     }
 
     footer {
-      background: var(--principal);
+      background-color: var(--principal);
       color: white;
       text-align: center;
-      padding: 40px 20px;
-    }
-
-    @media (max-width: 768px) {
-      nav ul {
-        flex-direction: column;
-        gap: 14px;
-        align-items: center;
-      }
-
-      .inicio-img {
-        max-width: 95%;
-      }
-
-      .logos-alianzas {
-        gap: 40px;
-      }
+      padding: 30px 20px;
+      margin-top: 50px;
     }
   </style>
 </head>
 <body>
+
+  <div id="modal-bienvenida">
+    <div class="contenido-modal">
+      <h3>Atención</h3>
+      <p>Esta web aún está en desarrollo. Es una maqueta funcional creada por estudiantes. Con tu apoyo y el de nuestra comunidad, ¡seguirá mejorando!</p>
+      <button onclick="document.getElementById('modal-bienvenida').style.display='none'">Entendido</button>
+    </div>
+  </div>
+
   <header>
     <div class="logo"><a href="index.html">Konvive</a></div>
     <nav>
@@ -261,57 +281,54 @@
     </nav>
   </header>
 
-  <main data-aos="fade-up">
-    <h2>Bienvenido a Konvive</h2>
-    <p>Una iniciativa del Innovation Program para transformar la convivencia escolar. Conoce nuestras herramientas, enfoques y acciones ante casos de violencia o bullying.</p>
-    <img src="portada-konvive.jpg" alt="Konvive portada" class="inicio-img" />
-    <br>
-    <a href="quienes-somos.html" class="boton-conocenos">Conócenos</a>
+  <main>
+    <section>
+      <h2>Bienvenido a Konvive</h2>
+      <p>Una iniciativa del Innovation Program para transformar la convivencia escolar. Conoce nuestras herramientas, enfoques y acciones ante casos de violencia o bullying.</p>
+      <img src="portada-konvive.jpg" alt="Konvive portada" class="inicio-img" />
+      <br><br>
+      <a href="quienes-somos.html" style="display:inline-block; padding:12px 24px; background:#1b105a; color:white; border-radius:8px; text-decoration:none;">Conócenos</a>
+    </section>
   </main>
 
-  <section class="alianzas" data-aos="zoom-in">
+  <section class="alianzas">
     <h2>Alianzas Estratégicas</h2>
     <div class="logos-alianzas">
       <img src="https://icedep.com/wp-content/uploads/2025/03/svsfvs.png" alt="ICEDep" />
-      <img src="https://i.postimg.cc/0jFZqSmD/siseve-logo-recortado.png" alt="SiSeVe" />
+      <img src="https://play-lh.googleusercontent.com/UrTU6h_78zYb6l4mk_vE74cDSm9xlCq5AbLVXBNvbYiw8YlOxIP0AcW98SMk5l5pEQ" alt="SiSeVe" style="background:transparent;border-radius:8px;" />
     </div>
   </section>
 
-  <section class="ventajas" data-aos="fade-up">
+  <section class="ventajas">
     <h2>¿Por qué confiar en Konvive?</h2>
     <div class="contenido">
       <div class="card">
         <h3>Sabemos lo que hacemos</h3>
-        <p>Contamos con herramientas y un equipo especializado con experiencia real en educación y gestión escolar.</p>
+        <p>Contamos con las herramientas necesarias, así como un equipo especializado con experiencia en el campo educativo.</p>
       </div>
       <div class="card">
-        <h3>Metodología Innovadora</h3>
-        <p>Basamos nuestras acciones en valores, empatía, solución de conflictos y desarrollo integral.</p>
+        <h3>Metodología innovadora</h3>
+        <p>Buscamos representar el cambio, la acción basada en valores, empatía y solución de conflictos.</p>
       </div>
       <div class="card">
-        <h3>Recursos Accesibles</h3>
-        <p>Materiales digitales, guías, foros y más, siempre disponibles y de fácil acceso para toda la comunidad.</p>
+        <h3>Recursos accesibles</h3>
+        <p>Accede desde cualquier lugar a contenidos útiles en la formación y cambio en las escuelas.</p>
       </div>
       <div class="card">
-        <h3>Intervención Real</h3>
-        <p>Actuamos desde la raíz, involucrando a docentes, padres y estudiantes en soluciones prácticas.</p>
+        <h3>Actuamos desde la raíz</h3>
+        <p>Involucramos a estudiantes, docentes y padres con herramientas y evaluaciones prácticas.</p>
       </div>
     </div>
   </section>
 
-  <section class="iconos-redes" data-aos="fade-up">
-    <a href="https://www.instagram.com/kon.vive" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
-    <a href="https://www.facebook.com/profile.php?id=61578204418703" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
-    <a href="https://www.tiktok.com/@konvivee?_t=ZM-8xtf6H2DN16&_r=1" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
-  </section>
-
-  <footer data-aos="fade-in">
+  <footer>
     <p>© 2025 Innovation Program | Naum Muro, Luis Mendoza</p>
+    <div class="iconos-redes">
+      <a href="https://www.instagram.com/kon.vive" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.facebook.com/profile.php?id=61578204418703" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
+      <a href="https://www.tiktok.com/@konvivee?_t=ZM-8xtf6H2DN16&_r=1" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
+    </div>
   </footer>
 
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    AOS.init();
-  </script>
 </body>
 </html>
