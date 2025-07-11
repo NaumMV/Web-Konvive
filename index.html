@@ -98,11 +98,45 @@
       }
     }
 
-    header, footer {
+    header {
       background-color: var(--principal);
       color: white;
-      text-align: center;
-      padding: 20px;
+      padding: 20px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-family: 'Raleway', sans-serif;
+    }
+
+    .logo a {
+      color: white;
+      text-decoration: none;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 16px;
+      padding: 0;
+      margin: 0;
+      flex-wrap: wrap;
+    }
+
+    nav li a {
+      color: white;
+      text-decoration: none;
+      padding: 8px 14px;
+      border-radius: 8px;
+      transition: background 0.3s;
+    }
+
+    nav li a:hover {
+      background-color: #2a1e8c;
     }
 
     main {
@@ -171,6 +205,14 @@
       transform: scale(1.2);
       color: var(--acento);
     }
+
+    footer {
+      background-color: var(--principal);
+      color: white;
+      text-align: center;
+      padding: 30px 20px;
+      margin-top: 50px;
+    }
   </style>
 </head>
 <body>
@@ -184,12 +226,28 @@
   </div>
 
   <header>
-    <h1>Bienvenidos a Konvive</h1>
-    <p>Una iniciativa del Innovation Program para transformar la convivencia escolar. Conoce nuestras herramientas, enfoques y acciones ante casos de violencia o bullying.</p>
-    <a href="quienes-somos.html" style="margin-top: 15px; display:inline-block; padding:10px 20px; background:white; color:var(--principal); font-weight:bold; border-radius:8px; text-decoration:none;">Conócenos a Fondo</a>
+    <div class="logo"><a href="index.html">Konvive</a></div>
+    <nav>
+      <ul>
+        <li><a href="quienes-somos.html">Quiénes somos</a></li>
+        <li><a href="educacion-r.html">Educación R</a></li>
+        <li><a href="plan-estudios.html">Plan de estudios</a></li>
+        <li><a href="plan-accion.html">Plan de acción</a></li>
+        <li><a href="capacitacion.html">Capacitación</a></li>
+        <li><a href="padres.html">Padres</a></li>
+        <li><a href="reporta-caso.html">Reporta un caso</a></li>
+        <li><a href="foro.html">Foro y dudas</a></li>
+      </ul>
+    </nav>
   </header>
 
   <main>
+    <section style="margin-bottom: 40px;">
+      <h1>Bienvenidos a Konvive</h1>
+      <p>Una iniciativa del Innovation Program para transformar la convivencia escolar. Conoce nuestras herramientas, enfoques y acciones ante casos de violencia o bullying.</p>
+      <a href="quienes-somos.html" style="margin-top: 15px; display:inline-block; padding:10px 20px; background:#1b105a; color:white; font-weight:bold; border-radius:8px; text-decoration:none;">Conócenos a Fondo</a>
+    </section>
+
     <img src="portada-konvive.jpg" alt="Portada Konvive" class="inicio-img" />
 
     <h2 style="margin-top: 60px;">Alianzas Estratégicas</h2>
