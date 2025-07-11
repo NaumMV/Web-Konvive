@@ -17,11 +17,11 @@
 
   <style>
     :root {
-      --principal: #3D2C5E;
-      --acento: #CCE6C5;
-      --fondo: linear-gradient(to bottom right, #f3f4f8, #eaeaf6);
-      --claro: #ffffff;
+      --morado: #3D2C5E;
+      --verde: #CCE6C5;
       --texto: #1b1b1b;
+      --claro: #ffffff;
+      --acento: #7a66b8;
     }
 
     * {
@@ -32,75 +32,13 @@
 
     body {
       font-family: 'Open Sans', sans-serif;
-      background: var(--fondo);
+      background: linear-gradient(to bottom right, var(--verde), #f7f8fb);
       color: var(--texto);
       scroll-behavior: smooth;
     }
 
-    #modal-bienvenida {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.6);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 9999;
-    }
-
-    #modal-bienvenida .contenido-modal {
-      background: white;
-      padding: 40px;
-      border-radius: 16px;
-      max-width: 500px;
-      text-align: center;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-      animation: fadeInDown 0.5s ease;
-    }
-
-    #modal-bienvenida h3 {
-      color: var(--principal);
-      font-size: 1.8rem;
-      margin-bottom: 20px;
-    }
-
-    #modal-bienvenida p {
-      font-size: 1.1rem;
-      color: #444;
-      margin-bottom: 30px;
-    }
-
-    #modal-bienvenida button {
-      background: var(--principal);
-      color: white;
-      padding: 10px 24px;
-      border: none;
-      border-radius: 8px;
-      font-weight: bold;
-      cursor: pointer;
-      transition: background 0.3s ease;
-    }
-
-    #modal-bienvenida button:hover {
-      background: var(--acento);
-      color: black;
-    }
-
-    @keyframes fadeInDown {
-      from {
-        opacity: 0;
-        transform: translateY(-20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
     header {
-      background-color: var(--principal);
+      background-color: var(--morado);
       color: white;
       padding: 20px 30px;
       display: flex;
@@ -137,20 +75,87 @@
     }
 
     nav li a:hover {
-      background-color: var(--acento);
-      color: black;
+      background-color: #2e2152;
+    }
+
+    #modal-bienvenida {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+    }
+
+    #modal-bienvenida .contenido-modal {
+      background: white;
+      padding: 40px;
+      border-radius: 16px;
+      max-width: 500px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    }
+
+    #modal-bienvenida h3 {
+      color: var(--morado);
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+    }
+
+    #modal-bienvenida p {
+      font-size: 1.1rem;
+      color: #444;
+      margin-bottom: 30px;
+    }
+
+    #modal-bienvenida button {
+      background: var(--morado);
+      color: white;
+      padding: 10px 24px;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
     }
 
     main {
-      max-width: 1000px;
-      margin: 60px auto;
-      padding: 20px;
+      padding: 40px 20px;
       text-align: center;
     }
 
+    .hero {
+      background: linear-gradient(145deg, var(--morado), #4e3d78);
+      color: white;
+      padding: 80px 20px;
+      text-align: center;
+      border-radius: 0 0 30px 30px;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      font-family: 'Raleway', sans-serif;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-top: 10px;
+    }
+
+    .hero small {
+      display: block;
+      margin-top: 8px;
+      font-size: 0.9rem;
+      color: #dcd2f2;
+    }
+
     .inicio-img {
+      margin-top: 40px;
       max-width: 100%;
-      border-radius: 12px;
+      border-radius: 20px;
       box-shadow: 0 8px 20px rgba(0,0,0,0.08);
     }
 
@@ -158,43 +163,48 @@
       display: flex;
       justify-content: center;
       gap: 60px;
-      margin: 40px 0;
+      margin: 60px 0;
+      flex-wrap: wrap;
     }
 
     .logos-alianzas img {
       max-height: 100px;
+      filter: drop-shadow(0 0 3px rgba(0,0,0,0.1));
     }
 
     .info-cards {
       display: flex;
-      justify-content: space-around;
+      justify-content: center;
+      gap: 30px;
       flex-wrap: wrap;
-      margin-top: 50px;
     }
 
     .info-card {
       background: white;
+      padding: 24px;
       border-radius: 12px;
-      padding: 20px;
-      margin: 10px;
       max-width: 280px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.05);
     }
 
     .info-card h3 {
-      color: var(--principal);
+      color: var(--morado);
       margin-bottom: 10px;
     }
 
-    .info-card p {
-      color: #555;
+    footer {
+      background: var(--morado);
+      color: white;
+      padding: 30px 20px;
+      text-align: center;
+      margin-top: 60px;
     }
 
     .iconos-redes {
       display: flex;
       justify-content: center;
       gap: 30px;
-      margin-top: 20px;
+      margin-top: 10px;
     }
 
     .iconos-redes a {
@@ -205,21 +215,75 @@
 
     .iconos-redes a:hover {
       transform: scale(1.2);
-      color: var(--acento);
-    }
-
-    footer {
-      background-color: var(--principal);
-      color: white;
-      text-align: center;
-      padding: 30px 20px;
-      margin-top: 50px;
+      color: var(--verde);
     }
   </style>
 </head>
 <body>
 
-  <!-- ...resto del código permanece igual... -->
+  <div id="modal-bienvenida">
+    <div class="contenido-modal">
+      <h3>Atención</h3>
+      <p>Esta web aún está en desarrollo. Es una maqueta funcional creada por estudiantes. Con tu apoyo y el de nuestra comunidad, ¡seguirá mejorando!</p>
+      <button onclick="document.getElementById('modal-bienvenida').style.display='none'">Entendido</button>
+    </div>
+  </div>
+
+  <header>
+    <div class="logo"><a href="index.html">Konvive</a></div>
+    <nav>
+      <ul>
+        <li><a href="quienes-somos.html">Quiénes somos</a></li>
+        <li><a href="educacion-r.html">Educación R</a></li>
+        <li><a href="plan-estudios.html">Plan de estudios</a></li>
+        <li><a href="plan-accion.html">Plan de acción</a></li>
+        <li><a href="capacitacion.html">Capacitación</a></li>
+        <li><a href="padres.html">Padres</a></li>
+        <li><a href="reporta-caso.html">Reporta un caso</a></li>
+        <li><a href="foro.html">Foro y dudas</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>No hablamos de cambio. Lo hacemos.</h1>
+    <p>La idea original. La solución real.</p>
+    <small>Un proyecto de jóvenes para toda la comunidad educativa.</small>
+  </section>
+
+  <main>
+    <img src="portada-konvive.jpg" alt="Portada Konvive" class="inicio-img" />
+
+    <h2 style="margin-top: 60px; color: var(--morado); font-family: Raleway;">Alianzas Estratégicas</h2>
+    <div class="logos-alianzas">
+      <img src="https://www.transparentpng.com/thumb/logo/white-siseve-logo-free-download-png-15.png" alt="SiSeVe" />
+      <img src="https://i.imgur.com/6cIoYFb.png" alt="ICEDep Azul Marino" />
+    </div>
+
+    <div class="info-cards">
+      <div class="info-card">
+        <h3>Prevención desde la raíz</h3>
+        <p>Trabajamos desde los primeros indicios de violencia para erradicarla antes de que se normalice en las escuelas.</p>
+      </div>
+      <div class="info-card">
+        <h3>Compromiso estudiantil</h3>
+        <p>Este proyecto nace de jóvenes comprometidos que entienden los problemas reales en los colegios.</p>
+      </div>
+      <div class="info-card">
+        <h3>Soluciones reales</h3>
+        <p>Integramos herramientas accesibles, recursos y estrategias innovadoras para una convivencia efectiva.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2025 Innovation Program | Naum Muro, Luis Mendoza</p>
+    <div class="iconos-redes">
+      <a href="https://www.instagram.com/kon.vive" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.facebook.com/profile.php?id=61578204418703" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
+      <a href="https://www.tiktok.com/@konvivee?_t=ZM-8xtf6H2DN16&_r=1" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
+    </div>
+  </footer>
 
 </body>
 </html>
