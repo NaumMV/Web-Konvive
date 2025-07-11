@@ -14,7 +14,7 @@
 
   <!-- Fonts & Icons -->
   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@600;700&family=Open+Sans&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-papO0BvI6Qdh2CEWyYjTIXkUmgS3rW0iD2HGWa+lBuhffPMqkgkZV8w4qvApzB8OqE9lRQ2ZVlGoTxqBWh91jQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" />
 
   <style>
     :root {
@@ -99,133 +99,60 @@
       }
     }
 
-    header {
+    header, footer {
       background-color: var(--principal);
       color: white;
-      padding: 20px 30px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-
-    .logo {
-      font-size: 1.8rem;
-      font-family: 'Raleway', sans-serif;
-    }
-
-    .logo a {
-      color: white;
-      text-decoration: none;
-    }
-
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 16px;
-      padding: 0;
-      margin: 0;
-      flex-wrap: wrap;
-    }
-
-    nav li a {
-      color: white;
-      text-decoration: none;
-      padding: 8px 14px;
-      border-radius: 8px;
-      transition: background 0.3s;
-    }
-
-    nav li a:hover {
-      background-color: #2a1e8c;
+      text-align: center;
+      padding: 20px;
     }
 
     main {
       max-width: 1000px;
-      margin: 60px auto 30px;
-      padding: 0 20px;
+      margin: 60px auto;
+      padding: 20px;
       text-align: center;
     }
 
-    h2 {
-      font-size: 2.4rem;
-      color: var(--principal);
-      margin-bottom: 10px;
-      font-family: 'Raleway', sans-serif;
-    }
-
-    p {
-      font-size: 1.1rem;
-      color: #444;
-    }
-
     .inicio-img {
-      margin-top: 30px;
       max-width: 100%;
       border-radius: 12px;
       box-shadow: 0 8px 20px rgba(0,0,0,0.08);
     }
 
-    .alianzas {
-      background-color: #fff;
-      padding: 40px 20px;
-      text-align: center;
-    }
-
     .logos-alianzas {
       display: flex;
-      flex-wrap: wrap;
       justify-content: center;
-      gap: 40px;
-      margin-top: 20px;
+      gap: 60px;
+      margin: 40px 0;
     }
 
     .logos-alianzas img {
       max-height: 100px;
-      object-fit: contain;
     }
 
-    .ventajas {
-      background: #edeaff;
-      padding: 50px 20px;
-      text-align: center;
-    }
-
-    .ventajas .contenido {
+    .info-cards {
       display: flex;
+      justify-content: space-around;
       flex-wrap: wrap;
-      justify-content: center;
-      gap: 30px;
-      max-width: 1000px;
-      margin: auto;
+      margin-top: 50px;
     }
 
-    .ventajas .card {
+    .info-card {
       background: white;
+      border-radius: 12px;
       padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-      flex: 1 1 250px;
-      max-width: 300px;
+      margin: 10px;
+      max-width: 280px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
     }
 
-    .ventajas .card h3 {
-      font-size: 1.2rem;
+    .info-card h3 {
       color: var(--principal);
       margin-bottom: 10px;
     }
 
-    .redes-sociales {
-      background: #edeaff;
-      padding: 50px 20px;
-      text-align: center;
-    }
-
-    .redes-sociales h2 {
-      font-family: 'Raleway', sans-serif;
-      color: var(--principal);
-      font-size: 2rem;
-      margin-bottom: 10px;
+    .info-card p {
+      color: #555;
     }
 
     .iconos-redes {
@@ -245,18 +172,9 @@
       transform: scale(1.2);
       color: var(--acento);
     }
-
-    footer {
-      background-color: var(--principal);
-      color: white;
-      text-align: center;
-      padding: 30px 20px;
-      margin-top: 50px;
-    }
   </style>
 </head>
 <body>
-
   <div id="modal-bienvenida">
     <div class="contenido-modal">
       <h3>Atención</h3>
@@ -266,60 +184,35 @@
   </div>
 
   <header>
-    <div class="logo"><a href="index.html">Konvive</a></div>
-    <nav>
-      <ul>
-        <li><a href="quienes-somos.html">Quiénes somos</a></li>
-        <li><a href="educacion-r.html">Educación R</a></li>
-        <li><a href="plan-estudios.html">Plan de estudios</a></li>
-        <li><a href="plan-accion.html">Plan de acción</a></li>
-        <li><a href="capacitacion.html">Capacitación</a></li>
-        <li><a href="padres.html">Padres</a></li>
-        <li><a href="reporta-caso.html">Reporta un caso</a></li>
-        <li><a href="foro.html">Foro y dudas</a></li>
-      </ul>
-    </nav>
+    <h1>Bienvenidos a Konvive</h1>
+    <p>Una iniciativa del Innovation Program para transformar la convivencia escolar. Conoce nuestras herramientas, enfoques y acciones ante casos de violencia o bullying.</p>
+    <a href="quienes-somos.html" style="margin-top: 15px; display:inline-block; padding:10px 20px; background:white; color:var(--principal); font-weight:bold; border-radius:8px; text-decoration:none;">Conócenos a Fondo</a>
   </header>
 
   <main>
-    <section>
-      <h2>Bienvenido a Konvive</h2>
-      <p>Una iniciativa del Innovation Program para transformar la convivencia escolar. Conoce nuestras herramientas, enfoques y acciones ante casos de violencia o bullying.</p>
-      <img src="portada-konvive.jpg" alt="Konvive portada" class="inicio-img" />
-      <br><br>
-      <a href="quienes-somos.html" style="display:inline-block; padding:12px 24px; background:#1b105a; color:white; border-radius:8px; text-decoration:none;">Conócenos</a>
-    </section>
-  </main>
+    <img src="portada-konvive.jpg" alt="Portada Konvive" class="inicio-img" />
 
-  <section class="alianzas">
-    <h2>Alianzas Estratégicas</h2>
+    <h2 style="margin-top: 60px;">Alianzas Estratégicas</h2>
     <div class="logos-alianzas">
+      <img src="https://play-lh.googleusercontent.com/UrTU6h_78zYb6l4mk_vE74cDSm9xlCq5AbLVXBNvbYiw8YlOxIP0AcW98SMk5l5pEQ" alt="SiSeVe" />
       <img src="https://icedep.com/wp-content/uploads/2025/03/svsfvs.png" alt="ICEDep" />
-      <img src="https://play-lh.googleusercontent.com/UrTU6h_78zYb6l4mk_vE74cDSm9xlCq5AbLVXBNvbYiw8YlOxIP0AcW98SMk5l5pEQ" alt="SiSeVe" style="background:transparent;border-radius:8px;" />
     </div>
-  </section>
 
-  <section class="ventajas">
-    <h2>¿Por qué confiar en Konvive?</h2>
-    <div class="contenido">
-      <div class="card">
-        <h3>Sabemos lo que hacemos</h3>
-        <p>Contamos con las herramientas necesarias, así como un equipo especializado con experiencia en el campo educativo.</p>
+    <div class="info-cards">
+      <div class="info-card">
+        <h3>Prevención desde la raíz</h3>
+        <p>Trabajamos desde los primeros indicios de violencia para erradicarla antes de que se normalice en las escuelas.</p>
       </div>
-      <div class="card">
-        <h3>Metodología innovadora</h3>
-        <p>Buscamos representar el cambio, la acción basada en valores, empatía y solución de conflictos.</p>
+      <div class="info-card">
+        <h3>Compromiso estudiantil</h3>
+        <p>Este proyecto nace de jóvenes comprometidos que entienden los problemas reales en los colegios.</p>
       </div>
-      <div class="card">
-        <h3>Recursos accesibles</h3>
-        <p>Accede desde cualquier lugar a contenidos útiles en la formación y cambio en las escuelas.</p>
-      </div>
-      <div class="card">
-        <h3>Actuamos desde la raíz</h3>
-        <p>Involucramos a estudiantes, docentes y padres con herramientas y evaluaciones prácticas.</p>
+      <div class="info-card">
+        <h3>Soluciones reales</h3>
+        <p>Integramos herramientas accesibles, recursos y estrategias innovadoras para una convivencia efectiva.</p>
       </div>
     </div>
-  </section>
+  </main>
 
   <footer>
     <p>© 2025 Innovation Program | Naum Muro, Luis Mendoza</p>
@@ -329,6 +222,5 @@
       <a href="https://www.tiktok.com/@konvivee?_t=ZM-8xtf6H2DN16&_r=1" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
     </div>
   </footer>
-
 </body>
 </html>
