@@ -88,14 +88,8 @@
     }
 
     @keyframes fadeInDown {
-      from {
-        opacity: 0;
-        transform: translateY(-20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     header {
@@ -146,25 +140,53 @@
       text-align: center;
     }
 
+    .slogan-container {
+      position: relative;
+      margin-bottom: 60px;
+    }
+
+    .slogan-shadow {
+      font-size: 2.8rem;
+      color: rgba(255, 255, 255, 0.08);
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      white-space: nowrap;
+      z-index: 0;
+    }
+
     .slogan {
-      font-size: 2.5rem;
+      font-size: 2.8rem;
       color: white;
       font-family: 'Raleway', sans-serif;
       font-weight: 700;
-      text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.2);
       position: relative;
+      z-index: 1;
     }
 
-    .slogan::after {
-      content: "La idea original. La solución real.";
-      position: absolute;
-      top: 100%;
-      left: 50%;
-      transform: translateX(-50%);
-      font-size: 1.2rem;
-      color: rgba(255,255,255,0.8);
-      font-weight: 600;
-      margin-top: 5px;
+    .alianzas {
+      margin: 60px 0 40px;
+    }
+
+    .alianzas h2 {
+      font-size: 2.4rem;
+      font-family: 'Raleway', sans-serif;
+      font-weight: 700;
+      color: white;
+      margin-bottom: 30px;
+    }
+
+    .logos-alianzas {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .logos-alianzas img {
+      max-height: 100px;
+      filter: brightness(0) invert(1);
     }
 
     .info-section {
@@ -198,12 +220,29 @@
       color: #333;
     }
 
+    .iconos-redes {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      margin: 60px 0;
+    }
+
+    .iconos-redes a {
+      color: white;
+      font-size: 2.8rem;
+      transition: transform 0.3s ease;
+    }
+
+    .iconos-redes a:hover {
+      transform: scale(1.2);
+      color: var(--acento);
+    }
+
     footer {
       background-color: var(--principal);
       color: white;
       text-align: center;
       padding: 30px 20px;
-      margin-top: 50px;
     }
   </style>
 </head>
@@ -234,7 +273,18 @@
   </header>
 
   <main>
-    <h1 class="slogan">No hablamos de cambio. Lo hacemos.</h1>
+    <div class="slogan-container">
+      <div class="slogan-shadow">La idea original. La solución real.</div>
+      <h1 class="slogan">No hablamos de cambio. Lo hacemos.</h1>
+    </div>
+
+    <section class="alianzas">
+      <h2>Alianzas Estratégicas</h2>
+      <div class="logos-alianzas">
+        <img src="https://www.transparentpng.com/thumb/logo/white-siseve-logo-free-download-png-15.png" alt="SiSeVe" />
+        <img src="https://i.imgur.com/6cIoYFb.png" alt="ICEDep Azul Marino" />
+      </div>
+    </section>
 
     <section class="info-section">
       <div class="info-block">
@@ -250,15 +300,16 @@
         <p>Integramos herramientas accesibles, recursos y estrategias innovadoras para una convivencia efectiva.</p>
       </div>
     </section>
+
+    <section class="iconos-redes">
+      <a href="https://www.instagram.com/kon.vive" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.facebook.com/profile.php?id=61578204418703" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
+      <a href="https://www.tiktok.com/@konvivee?_t=ZM-8xtf6H2DN16&_r=1" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
+    </section>
   </main>
 
   <footer>
     <p>© 2025 Innovation Program | Naum Muro, Luis Mendoza</p>
-    <div class="iconos-redes">
-      <a href="https://www.instagram.com/kon.vive" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
-      <a href="https://www.facebook.com/profile.php?id=61578204418703" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
-      <a href="https://www.tiktok.com/@konvivee?_t=ZM-8xtf6H2DN16&_r=1" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
-    </div>
   </footer>
 
 </body>
