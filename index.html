@@ -3,19 +3,29 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Quiénes somos | Konvive - Innovation Program</title>
+  <title>Inicio | Konvive - Innovation Program</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;600;700&family=Open+Sans&display=swap" rel="stylesheet" />
+  <!-- SEO -->
+  <meta name="description" content="Konvive es una web educativa enfocada en prevenir la violencia escolar y fomentar la convivencia. Conoce nuestro plan, herramientas y comunidad." />
+  <meta name="keywords" content="violencia escolar, bullying, convivencia, innovación educativa, Naum Muro, Luis Mendoza, educación R" />
+  <meta name="author" content="Naum Muro, Luis Mendoza" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@600;700&family=Open+Sans&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" />
   <style>
     @font-face {
       font-family: 'CrogDemo';
       src: url('fonts/crog-demo.otf') format('opentype');
+      font-weight: normal;
+      font-style: normal;
     }
 
     :root {
       --principal: #3D2C5E;
       --acento: #CCE6C5;
+      --fondo: linear-gradient(to bottom, #3D2C5E, #CCE6C5);
       --claro: #ffffff;
       --texto: #1b1b1b;
     }
@@ -28,16 +38,64 @@
 
     body {
       font-family: 'Open Sans', sans-serif;
-      background-color: #3D2C5E;
-      background-image:
-        radial-gradient(circle at 10% 20%, rgba(204, 230, 197, 0.3), transparent 20%),
-        radial-gradient(circle at 90% 80%, rgba(255, 255, 255, 0.2), transparent 25%),
-        radial-gradient(circle at 50% 50%, rgba(204, 230, 197, 0.25), transparent 20%),
-        radial-gradient(circle at 80% 30%, rgba(255, 255, 255, 0.15), transparent 15%);
-      background-size: cover;
-      background-repeat: no-repeat;
+      background: var(--fondo);
       color: var(--texto);
       scroll-behavior: smooth;
+    }
+
+    #modal-bienvenida {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+    }
+
+    #modal-bienvenida .contenido-modal {
+      background: white;
+      padding: 40px;
+      border-radius: 16px;
+      max-width: 500px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      animation: fadeInDown 0.5s ease;
+    }
+
+    #modal-bienvenida h3 {
+      color: var(--principal);
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+    }
+
+    #modal-bienvenida p {
+      font-size: 1.1rem;
+      color: #444;
+      margin-bottom: 30px;
+    }
+
+    #modal-bienvenida button {
+      background: var(--principal);
+      color: white;
+      padding: 10px 24px;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    #modal-bienvenida button:hover {
+      background: var(--acento);
+    }
+
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     header {
@@ -82,118 +140,112 @@
     }
 
     main {
-      max-width: 1100px;
+      max-width: 1000px;
       margin: 60px auto;
       padding: 20px;
       text-align: center;
     }
 
-    .section-title {
-      font-size: 2.2rem;
-      background: white;
-      color: var(--principal);
-      display: inline-block;
-      padding: 10px 20px;
-      border-radius: 8px;
-      margin-bottom: 20px;
-      font-family: 'Raleway', sans-serif;
+    .slogan-container {
+      margin-bottom: 100px;
+      position: relative;
     }
 
-    .info-grid {
+    .slogan-container h2 {
+      font-family: 'CrogDemo', sans-serif;
+      font-size: 2.8rem;
+      color: rgba(255, 255, 255, 0.25);
+      font-weight: 900;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      white-space: pre-line;
+      line-height: 1.1;
+    }
+
+    .slogan-container h1 {
+      font-family: 'Raleway', sans-serif;
+      font-size: 2.5rem;
+      color: white;
+      font-weight: 700;
+      position: relative;
+      z-index: 2;
+    }
+
+    .alianzas {
+      margin: 100px 0 40px;
+    }
+
+    .alianzas h2 {
+      font-size: 2.8rem;
+      font-family: 'Raleway', sans-serif;
+      color: white;
+      margin-bottom: 40px;
+      padding: 10px 30px;
+      border-radius: 12px;
+      background-color: rgba(255,255,255,0.1);
+      display: inline-block;
+    }
+
+    .logos-alianzas {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .logos-alianzas img {
+      max-height: 100px;
+    }
+
+    .info-section {
       display: flex;
       flex-direction: column;
       gap: 30px;
-      margin-top: 40px;
-    }
-
-    .info-row {
-      display: flex;
-      gap: 30px;
-      flex-wrap: wrap;
-      justify-content: center;
+      margin-top: 60px;
     }
 
     .info-block {
+      background: rgba(255,255,255,0.8);
+      padding: 30px;
       border-radius: 16px;
       box-shadow: 0 6px 20px rgba(0,0,0,0.1);
-      flex: 1 1 45%;
-      min-width: 300px;
-      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+
+    .info-block:hover {
+      transform: translateY(-5px);
     }
 
     .info-block h3 {
-      background: linear-gradient(to right, var(--principal), var(--acento));
-      color: white;
-      margin: 0;
-      padding: 12px;
-      font-size: 1.6rem;
+      font-size: 1.8rem;
+      color: var(--principal);
+      margin-bottom: 12px;
     }
 
     .info-block p {
-      font-size: 1rem;
-      padding: 20px;
-      background: rgba(255,255,255,0.9);
-      color: #333;
+      font-size: 1.1rem;
       line-height: 1.6;
+      color: #333;
     }
 
-    .expand-section {
-      margin-top: 50px;
-    }
-
-    .btn-expand {
-      background: var(--principal);
-      color: white;
-      border: none;
-      padding: 12px 24px;
-      font-size: 1rem;
-      border-radius: 8px;
-      cursor: pointer;
-      margin-bottom: 20px;
-    }
-
-    #timeline-content {
-      display: none;
-      background: rgba(255,255,255,0.9);
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
-      animation: fadeIn 0.5s ease;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: scale(0.95); }
-      to { opacity: 1; transform: scale(1); }
-    }
-
-    .timeline {
+    .iconos-redes {
       display: flex;
-      overflow-x: auto;
-      gap: 40px;
-      padding: 20px 0;
       justify-content: center;
-      flex-wrap: nowrap;
+      gap: 40px;
+      margin: 60px 0;
     }
 
-    .timeline-item {
-      flex: 0 0 auto;
-      min-width: 250px;
-      background: var(--claro);
-      border-radius: 12px;
-      padding: 20px;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
-      text-align: left;
+    .iconos-redes a {
+      color: white;
+      font-size: 2.8rem;
+      transition: transform 0.3s ease;
     }
 
-    .timeline-item h4 {
-      color: var(--principal);
-      font-size: 1.2rem;
-      margin-bottom: 10px;
-    }
-
-    .timeline-item p {
-      font-size: 0.95rem;
-      color: #444;
+    .iconos-redes a:hover {
+      transform: scale(1.2);
+      color: var(--acento);
     }
 
     footer {
@@ -201,11 +253,18 @@
       color: white;
       text-align: center;
       padding: 30px 20px;
-      margin-top: 50px;
     }
   </style>
 </head>
 <body>
+
+  <div id="modal-bienvenida">
+    <div class="contenido-modal">
+      <h3>Atención</h3>
+      <p>Esta web aún está en desarrollo. Es una maqueta funcional creada por estudiantes. Con tu apoyo y el de nuestra comunidad, ¡seguirá mejorando!</p>
+      <button onclick="document.getElementById('modal-bienvenida').style.display='none'">Entendido</button>
+    </div>
+  </div>
 
   <header>
     <div class="logo"><a href="index.html">Konvive</a></div>
@@ -224,70 +283,39 @@
   </header>
 
   <main>
-    <h2 class="section-title">Nuestro equipo</h2>
-    <p style="color: white; max-width: 800px; margin: auto;">Somos Naum Muro, Luis Mendoza y Nicolás Silva, estudiantes comprometidos con la transformación social a través de la educación. Nos unimos bajo el nombre “Los amigos de Jeison” para desarrollar una propuesta que permita reducir la violencia escolar en el Perú.</p>
-
-    <div class="info-grid">
-      <div class="info-row">
-        <div class="info-block">
-          <h3>Usuario</h3>
-          <p>Estudiantes de secundaria de instituciones educativas públicas y privadas que enfrentan entornos escolares con presencia de violencia o falta de integración.</p>
-        </div>
-        <div class="info-block">
-          <h3>Necesidad</h3>
-          <p>Reducir y prevenir los casos de bullying y violencia escolar mediante una propuesta integral que involucre a toda la comunidad educativa.</p>
-        </div>
-      </div>
-
-      <div class="info-row">
-        <div class="info-block">
-          <h3>Misión</h3>
-          <p>Implementar un ecosistema educativo integral basado en el respeto, la reflexión y el reconocimiento, brindando herramientas sostenibles para erradicar el acoso escolar.</p>
-        </div>
-        <div class="info-block">
-          <h3>Visión</h3>
-          <p>Ser una propuesta educativa innovadora que contribuya activamente a construir espacios escolares seguros, respetuosos y libres de cualquier forma de violencia.</p>
-        </div>
-      </div>
-
-      <div class="info-row">
-        <div class="info-block" style="flex: 1 1 90%;">
-          <h3>Pregunta reto</h3>
-          <p>¿Cómo podríamos ayudar a los estudiantes de secundaria a reducir el bullying en los centros educativos, considerando el notorio incremento de estos casos a nivel nacional?</p>
-        </div>
-      </div>
-
-      <div class="info-row">
-        <div class="info-block" style="flex: 1 1 90%;">
-          <h3>Propuesta de valor</h3>
-          <p>Konvive ofrece una web interactiva, metodología de aula, acompañamiento psicológico, capacitación docente y guía para padres, enmarcada en la Educación R. Está diseñada para ser deseable, realizable, sostenible e innovadora en contextos escolares reales.</p>
-        </div>
-      </div>
+    <div class="slogan-container">
+      <h2>LA IDEA ORIGINAL<br>LA SOLUCIÓN REAL</h2>
+      <h1>No hablamos de cambio. Lo hacemos.</h1>
     </div>
 
-    <div class="expand-section">
-      <button class="btn-expand" onclick="document.getElementById('timeline-content').style.display='block'; this.style.display='none'">Ver línea de tiempo del proyecto</button>
-      <div id="timeline-content">
-        <div class="timeline">
-          <div class="timeline-item">
-            <h4>🔹 Inicio del proyecto</h4>
-            <p>Idea original y formación del equipo “Los amigos de Jeison”.</p>
-          </div>
-          <div class="timeline-item">
-            <h4>🔍 Investigación</h4>
-            <p>Recopilación de datos sobre bullying en el Perú (SISEVE, encuestas).</p>
-          </div>
-          <div class="timeline-item">
-            <h4>💡 Propuesta inicial</h4>
-            <p>Primera estructura del plan educativo basado en Educación R.</p>
-          </div>
-          <div class="timeline-item">
-            <h4>🌐 Desarrollo web</h4>
-            <p>Diseño e implementación de Konvive como plataforma interactiva.</p>
-          </div>
-        </div>
+    <section class="alianzas">
+      <h2>Alianzas Estratégicas</h2>
+      <div class="logos-alianzas">
+        <img src="img/qeqweqweqwe_siseve-removebg-preview.png" alt="SiSeVe">
+        <img src="img/icedepppp-removebg-preview.png" alt="ICEDep">
       </div>
-    </div>
+    </section>
+
+    <section class="info-section">
+      <div class="info-block">
+        <h3>Prevención desde la raíz</h3>
+        <p>Trabajamos desde los primeros indicios de violencia para erradicarla antes de que se normalice en las escuelas.</p>
+      </div>
+      <div class="info-block">
+        <h3>Compromiso estudiantil</h3>
+        <p>Este proyecto nace de jóvenes comprometidos que entienden los problemas reales en los colegios.</p>
+      </div>
+      <div class="info-block">
+        <h3>Soluciones reales</h3>
+        <p>Integramos herramientas accesibles, recursos y estrategias innovadoras para una convivencia efectiva.</p>
+      </div>
+    </section>
+
+    <section class="iconos-redes">
+      <a href="https://www.instagram.com/kon.vive" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.facebook.com/profile.php?id=61578204418703" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
+      <a href="https://www.tiktok.com/@konvivee?_t=ZM-8xtf6H2DN16&_r=1" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
+    </section>
   </main>
 
   <footer>
