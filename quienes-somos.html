@@ -3,53 +3,61 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Quiénes somos | Konvive</title>
-  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@600;700&family=Open+Sans&display=swap" rel="stylesheet" />
+  <title>Quiénes somos | Konvive - Innovation Program</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;600;700&family=Open+Sans&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" />
   <style>
+    @font-face {
+      font-family: 'CrogDemo';
+      src: url('fonts/crog-demo.otf') format('opentype');
+    }
+
     :root {
-      --principal: #1b105a;
-      --blanco: #ffffff;
-      --gris-claro: #f6f5fc;
-      --azul-acento: #3a7ce1;
-      --texto: #111;
-      --hover: #2a1e8c;
+      --principal: #3D2C5E;
+      --acento: #CCE6C5;
+      --claro: #ffffff;
+      --texto: #1b1b1b;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
 
     body {
-      margin: 0;
       font-family: 'Open Sans', sans-serif;
-      background-color: var(--gris-claro);
+      background-color: #3D2C5E;
+      background-image:
+        radial-gradient(circle at 10% 20%, rgba(204, 230, 197, 0.3), transparent 20%),
+        radial-gradient(circle at 90% 80%, rgba(255, 255, 255, 0.2), transparent 25%),
+        radial-gradient(circle at 50% 50%, rgba(204, 230, 197, 0.25), transparent 20%),
+        radial-gradient(circle at 80% 30%, rgba(255, 255, 255, 0.15), transparent 15%);
+      background-size: cover;
+      background-repeat: no-repeat;
       color: var(--texto);
-      line-height: 1.6;
+      scroll-behavior: smooth;
     }
 
     header {
       background-color: var(--principal);
       color: white;
-      padding: 20px 24px;
+      padding: 20px 30px;
       display: flex;
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
     }
 
     .logo {
-      font-size: 1.6rem;
+      font-size: 1.8rem;
       font-family: 'Raleway', sans-serif;
-      font-weight: bold;
     }
 
-    .menu-icon {
-      display: none;
-      font-size: 28px;
-      cursor: pointer;
-    }
-
-    nav {
-      position: relative;
+    .logo a {
+      color: white;
+      text-decoration: none;
     }
 
     nav ul {
@@ -64,161 +72,145 @@
     nav li a {
       color: white;
       text-decoration: none;
-      padding: 10px 16px;
-      border-radius: 6px;
-      transition: background 0.3s ease;
-      font-size: 1rem;
+      padding: 8px 14px;
+      border-radius: 8px;
+      transition: background 0.3s;
     }
 
-    nav li a:hover,
-    nav li a.activo {
-      background-color: var(--hover);
-    }
-
-    @media (max-width: 768px) {
-      .menu-icon {
-        display: block;
-      }
-
-      nav ul {
-        display: none;
-        flex-direction: column;
-        background-color: var(--principal);
-        position: absolute;
-        top: 60px;
-        right: 0;
-        width: 100vw;
-        padding: 20px;
-        z-index: 999;
-      }
-
-      nav ul.show {
-        display: flex;
-      }
-
-      nav li {
-        margin-bottom: 10px;
-      }
-    }
-
-    .hero {
-      text-align: center;
-      padding: 60px 20px 30px;
-    }
-
-    .hero h2 {
-      font-size: 2.8rem;
-      margin-bottom: 10px;
-      color: var(--principal);
-      font-family: 'Raleway', sans-serif;
-    }
-
-    .hero p {
-      font-size: 1.1rem;
-      max-width: 700px;
-      margin: 0 auto;
+    nav li a:hover {
+      background-color: #2a1e8c;
     }
 
     main {
       max-width: 1100px;
-      margin: auto;
-      padding: 30px 20px;
+      margin: 60px auto;
+      padding: 20px;
+      text-align: center;
     }
 
-    .section {
-      background-color: var(--blanco);
-      border-radius: 16px;
-      padding: 25px;
-      margin-bottom: 30px;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .section:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
-    }
-
-    .section h3 {
+    .section-title {
+      font-size: 2.2rem;
+      background: white;
       color: var(--principal);
-      margin-top: 0;
-      font-size: 1.6rem;
+      display: inline-block;
+      padding: 10px 20px;
+      border-radius: 8px;
+      margin-bottom: 20px;
       font-family: 'Raleway', sans-serif;
     }
 
-    .grid-2col {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
-
-    .col {
-      flex: 1;
-      min-width: 280px;
-    }
-
-    .combined-card {
+    .info-grid {
       display: flex;
       flex-direction: column;
-      gap: 16px;
+      gap: 30px;
+      margin-top: 40px;
     }
 
-    .combined-card .part h4 {
-      color: var(--azul-acento);
-      margin: 0 0 5px;
-      font-size: 1.2rem;
-      font-weight: 700;
-      font-family: 'Raleway', sans-serif;
+    .info-row {
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .info-block {
+      border-radius: 16px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+      flex: 1 1 45%;
+      min-width: 300px;
+      overflow: hidden;
+    }
+
+    .info-block h3 {
+      background: linear-gradient(to right, var(--principal), var(--acento));
+      color: white;
+      margin: 0;
+      padding: 12px;
+      font-size: 1.6rem;
+    }
+
+    .info-block p {
+      font-size: 1rem;
+      padding: 20px;
+      background: rgba(255,255,255,0.9);
+      color: #333;
+      line-height: 1.6;
+    }
+
+    .expand-section {
+      margin-top: 50px;
+    }
+
+    .btn-expand {
+      background: var(--principal);
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      font-size: 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-bottom: 20px;
+    }
+
+    #timeline-content {
+      display: none;
+      background: rgba(255,255,255,0.9);
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+      animation: fadeIn 0.5s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
     }
 
     .timeline {
-      padding-top: 20px;
+      display: flex;
+      overflow-x: auto;
+      gap: 40px;
+      padding: 20px 0;
+      justify-content: center;
+      flex-wrap: nowrap;
     }
 
-    .timeline-step {
-      margin-bottom: 25px;
-      padding-left: 20px;
-      border-left: 3px solid var(--principal);
-      position: relative;
+    .timeline-item {
+      flex: 0 0 auto;
+      min-width: 250px;
+      background: var(--claro);
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+      text-align: left;
     }
 
-    .timeline-step::before {
-      content: "•";
-      position: absolute;
-      left: -10px;
-      top: 0;
+    .timeline-item h4 {
       color: var(--principal);
-      font-size: 1.5rem;
+      font-size: 1.2rem;
+      margin-bottom: 10px;
     }
 
-    .timeline-step h4 {
-      margin: 0;
-      color: var(--principal);
-      font-family: 'Raleway', sans-serif;
-    }
-
-    .timeline-step p {
-      margin: 5px 0 0;
+    .timeline-item p {
+      font-size: 0.95rem;
+      color: #444;
     }
 
     footer {
       background-color: var(--principal);
       color: white;
       text-align: center;
-      padding: 20px;
-      font-size: 0.95rem;
+      padding: 30px 20px;
       margin-top: 50px;
     }
   </style>
 </head>
 <body>
 
-  <!-- HEADER -->
   <header>
-    <div class="logo">Konvive</div>
-    <div class="menu-icon" onclick="toggleMenu()">☰</div>
+    <div class="logo"><a href="index.html">Konvive</a></div>
     <nav>
-      <ul id="menu">
+      <ul>
         <li><a href="quienes-somos.html">Quiénes somos</a></li>
         <li><a href="educacion-r.html">Educación R</a></li>
         <li><a href="plan-estudios.html">Plan de estudios</a></li>
@@ -231,111 +223,76 @@
     </nav>
   </header>
 
-  <!-- HERO -->
-  <section class="hero">
-    <h2>¿Quiénes somos?</h2>
-    <p>Un equipo con una misión clara: transformar la escuela desde la raíz con innovación, empatía y acción real.</p>
-  </section>
-
   <main>
-    <!-- EQUIPO -->
-    <div class="section">
-      <h3>Nuestro equipo</h3>
-      <p>Somos Naum Muro, Luis Mendoza y Nicolás Silva, estudiantes comprometidos con la transformación social a través de la educación. Nos unimos bajo el nombre “Los amigos de Jeison” para desarrollar una propuesta que permita reducir la violencia escolar en el Perú.</p>
-    </div>
+    <h2 class="section-title">Nuestro equipo</h2>
+    <p style="color: white; max-width: 800px; margin: auto;">Somos Naum Muro, Luis Mendoza y Nicolás Silva, estudiantes comprometidos con la transformación social a través de la educación. Nos unimos bajo el nombre “Los amigos de Jeison” para desarrollar una propuesta que permita reducir la violencia escolar en el Perú.</p>
 
-    <!-- COMBINADAS -->
-    <div class="grid-2col">
-      <div class="col section combined-card">
-        <div class="part">
-          <h4>Usuario</h4>
+    <div class="info-grid">
+      <div class="info-row">
+        <div class="info-block">
+          <h3>Usuario</h3>
           <p>Estudiantes de secundaria de instituciones educativas públicas y privadas que enfrentan entornos escolares con presencia de violencia o falta de integración.</p>
         </div>
-        <div class="part">
-          <h4>Necesidad</h4>
+        <div class="info-block">
+          <h3>Necesidad</h3>
           <p>Reducir y prevenir los casos de bullying y violencia escolar mediante una propuesta integral que involucre a toda la comunidad educativa.</p>
         </div>
       </div>
 
-      <div class="col section combined-card">
-        <div class="part">
-          <h4>Visión</h4>
+      <div class="info-row">
+        <div class="info-block">
+          <h3>Misión</h3>
+          <p>Implementar un ecosistema educativo integral basado en el respeto, la reflexión y el reconocimiento, brindando herramientas sostenibles para erradicar el acoso escolar.</p>
+        </div>
+        <div class="info-block">
+          <h3>Visión</h3>
           <p>Ser una propuesta educativa innovadora que contribuya activamente a construir espacios escolares seguros, respetuosos y libres de cualquier forma de violencia.</p>
         </div>
-        <div class="part">
-          <h4>Misión</h4>
-          <p>Implementar un ecosistema educativo integral basado en el respeto, la reflexión y el reconocimiento, brindando herramientas sostenibles para erradicar el acoso escolar.</p>
+      </div>
+
+      <div class="info-row">
+        <div class="info-block" style="flex: 1 1 90%;">
+          <h3>Pregunta reto</h3>
+          <p>¿Cómo podríamos ayudar a los estudiantes de secundaria a reducir el bullying en los centros educativos, considerando el notorio incremento de estos casos a nivel nacional?</p>
+        </div>
+      </div>
+
+      <div class="info-row">
+        <div class="info-block" style="flex: 1 1 90%;">
+          <h3>Propuesta de valor</h3>
+          <p>Konvive ofrece una web interactiva, metodología de aula, acompañamiento psicológico, capacitación docente y guía para padres, enmarcada en la Educación R. Está diseñada para ser deseable, realizable, sostenible e innovadora en contextos escolares reales.</p>
         </div>
       </div>
     </div>
 
-    <!-- PREGUNTA RETO -->
-    <div class="section">
-      <h3>Pregunta reto</h3>
-      <p>¿Cómo podríamos ayudar a los estudiantes de secundaria a reducir el bullying en los centros educativos, considerando el notorio incremento de estos casos a nivel nacional?</p>
-    </div>
-
-    <!-- PROPUESTA DE VALOR -->
-    <div class="section">
-      <h3>Propuesta de valor</h3>
-      <p>Konvive ofrece una web interactiva, metodología de aula, acompañamiento psicológico, capacitación docente y guía para padres, enmarcada en la Educación R. Está diseñada para ser deseable, realizable, sostenible e innovadora en contextos escolares reales.</p>
-    </div>
-
-    <!-- PROBLEMÁTICA + TIMELINE -->
-    <div class="section" style="background-color: #f3f1fd;">
-      <h3>Problemática</h3>
-      <p><strong>“6 de cada 10 escolares han vivido violencia escolar.”</strong></p>
-      <p>Esto refleja una realidad crítica en los colegios del país. El miedo, la exclusión y el maltrato afectan el rendimiento, la autoestima y la seguridad de miles de estudiantes a diario.</p>
-
-      <div class="timeline">
-        <div class="timeline-step">
-          <h4>🔹 Inicio del proyecto</h4>
-          <p>Idea original y formación del equipo “Los amigos de Jeison”.</p>
-        </div>
-        <div class="timeline-step">
-          <h4>🔍 Investigación</h4>
-          <p>Recopilación de datos sobre bullying en el Perú (SISEVE, encuestas).</p>
-        </div>
-        <div class="timeline-step">
-          <h4>💡 Propuesta inicial</h4>
-          <p>Primera estructura del plan educativo basado en Educación R.</p>
-        </div>
-        <div class="timeline-step">
-          <h4>🌐 Desarrollo web</h4>
-          <p>Diseño e implementación de Konvive como plataforma interactiva.</p>
-        </div>
-        <div class="timeline-step">
-          <h4>🚀 Versión actual</h4>
-          <p>Refinamiento visual, mejora UX/UI y expansión de funcionalidades.</p>
+    <div class="expand-section">
+      <button class="btn-expand" onclick="document.getElementById('timeline-content').style.display='block'; this.style.display='none'">Ver línea de tiempo del proyecto</button>
+      <div id="timeline-content">
+        <div class="timeline">
+          <div class="timeline-item">
+            <h4>🔹 Inicio del proyecto</h4>
+            <p>Idea original y formación del equipo “Los amigos de Jeison”.</p>
+          </div>
+          <div class="timeline-item">
+            <h4>🔍 Investigación</h4>
+            <p>Recopilación de datos sobre bullying en el Perú (SISEVE, encuestas).</p>
+          </div>
+          <div class="timeline-item">
+            <h4>💡 Propuesta inicial</h4>
+            <p>Primera estructura del plan educativo basado en Educación R.</p>
+          </div>
+          <div class="timeline-item">
+            <h4>🌐 Desarrollo web</h4>
+            <p>Diseño e implementación de Konvive como plataforma interactiva.</p>
+          </div>
         </div>
       </div>
     </div>
   </main>
 
   <footer>
-    <p>© 2025 Innovation Program | Naum Muro, Luis Mendoza, Nicolás Silva</p>
+    <p>© 2025 Innovation Program | Naum Muro, Luis Mendoza</p>
   </footer>
 
-  <script>
-    function toggleMenu() {
-      document.getElementById("menu").classList.toggle("show");
-    }
-
-    const currentPage = location.pathname.split("/").pop();
-    const menuLinks = document.querySelectorAll("nav ul li a");
-    menuLinks.forEach(link => {
-      if (link.getAttribute("href") === currentPage) {
-        link.classList.add("activo");
-      }
-    });
-
-    window.addEventListener("click", function (e) {
-      const menu = document.getElementById("menu");
-      const icon = document.querySelector(".menu-icon");
-      if (!menu.contains(e.target) && !icon.contains(e.target)) {
-        menu.classList.remove("show");
-      }
-    });
-  </script>
 </body>
 </html>
