@@ -12,7 +12,7 @@
   <meta name="robots" content="index, follow" />
 
   <!-- Fonts & Icons -->
-  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@600;700&family=Open+Sans&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;600;700&family=Open+Sans&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" />
   <style>
     @font-face {
@@ -166,9 +166,9 @@
 
     .slogan-container h1 {
       font-family: 'Raleway', sans-serif;
-      font-size: 2.5rem;
+      font-size: 3.2rem;
       color: white;
-      font-weight: 700;
+      font-weight: 400;
       position: relative;
       z-index: 2;
     }
@@ -182,28 +182,35 @@
       font-family: 'Raleway', sans-serif;
       color: white;
       margin-bottom: 40px;
-      padding: 10px 30px;
-      border-radius: 12px;
-      background-color: rgba(255,255,255,0.1);
-      display: inline-block;
     }
 
     .logos-alianzas {
       display: flex;
       justify-content: center;
-      gap: 40px;
+      gap: 60px;
       flex-wrap: wrap;
     }
 
     .logos-alianzas img {
-      max-height: 100px;
+      height: 140px;
     }
 
     .info-section {
-      display: flex;
-      flex-direction: column;
-      gap: 30px;
       margin-top: 60px;
+    }
+
+    .info-title {
+      font-size: 2.2rem;
+      color: white;
+      margin-bottom: 40px;
+      font-family: 'Raleway', sans-serif;
+    }
+
+    .info-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
     }
 
     .info-block {
@@ -211,6 +218,8 @@
       padding: 30px;
       border-radius: 16px;
       box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+      flex: 1 1 30%;
+      min-width: 250px;
       transition: transform 0.3s ease;
     }
 
@@ -257,7 +266,6 @@
   </style>
 </head>
 <body>
-
   <div id="modal-bienvenida">
     <div class="contenido-modal">
       <h3>Atención</h3>
@@ -284,7 +292,7 @@
 
   <main>
     <div class="slogan-container">
-      <h2>LA IDEA ORIGINAL<br>LA SOLUCIÓN REAL</h2>
+      <h2>LA IDEA ORIGINAL\nLA SOLUCIÓN REAL</h2>
       <h1>No hablamos de cambio. Lo hacemos.</h1>
     </div>
 
@@ -297,17 +305,20 @@
     </section>
 
     <section class="info-section">
-      <div class="info-block">
-        <h3>Prevención desde la raíz</h3>
-        <p>Trabajamos desde los primeros indicios de violencia para erradicarla antes de que se normalice en las escuelas.</p>
-      </div>
-      <div class="info-block">
-        <h3>Compromiso estudiantil</h3>
-        <p>Este proyecto nace de jóvenes comprometidos que entienden los problemas reales en los colegios.</p>
-      </div>
-      <div class="info-block">
-        <h3>Soluciones reales</h3>
-        <p>Integramos herramientas accesibles, recursos y estrategias innovadoras para una convivencia efectiva.</p>
+      <h2 class="info-title">¿Por qué confiar en Konvive?</h2>
+      <div class="info-row">
+        <div class="info-block">
+          <h3>Prevención desde la raíz</h3>
+          <p>Trabajamos desde los primeros indicios de violencia para erradicarla antes de que se normalice en las escuelas.</p>
+        </div>
+        <div class="info-block">
+          <h3>Compromiso estudiantil</h3>
+          <p>Este proyecto nace de jóvenes comprometidos que entienden los problemas reales en los colegios.</p>
+        </div>
+        <div class="info-block">
+          <h3>Soluciones reales</h3>
+          <p>Integramos herramientas accesibles, recursos y estrategias innovadoras para una convivencia efectiva.</p>
+        </div>
       </div>
     </section>
 
