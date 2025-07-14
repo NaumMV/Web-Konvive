@@ -30,10 +30,12 @@
       font-family: 'Open Sans', sans-serif;
       background-color: #3D2C5E;
       background-image:
-        radial-gradient(circle at 10% 20%, rgba(204, 230, 197, 0.3), transparent 20%),
-        radial-gradient(circle at 90% 80%, rgba(255, 255, 255, 0.2), transparent 25%),
-        radial-gradient(circle at 50% 50%, rgba(204, 230, 197, 0.25), transparent 20%),
-        radial-gradient(circle at 80% 30%, rgba(255, 255, 255, 0.15), transparent 15%);
+        radial-gradient(circle at 10% 20%, rgba(204, 230, 197, 0.15), transparent 8%),
+        radial-gradient(circle at 90% 80%, rgba(255, 255, 255, 0.12), transparent 12%),
+        radial-gradient(circle at 30% 60%, rgba(204, 230, 197, 0.12), transparent 8%),
+        radial-gradient(circle at 80% 30%, rgba(255, 255, 255, 0.08), transparent 6%),
+        radial-gradient(circle at 60% 10%, rgba(204, 230, 197, 0.08), transparent 6%),
+        radial-gradient(circle at 70% 70%, rgba(255, 255, 255, 0.04), transparent 5%);
       background-size: cover;
       background-repeat: no-repeat;
       color: var(--texto);
@@ -132,7 +134,7 @@
     .info-block p {
       font-size: 1rem;
       padding: 20px;
-      background: rgba(255,255,255,0.9);
+      background: #fafafa;
       color: #333;
       line-height: 1.6;
     }
@@ -154,7 +156,7 @@
 
     #timeline-content {
       display: none;
-      background: rgba(255,255,255,0.9);
+      background: rgba(255,255,255,0.95);
       padding: 30px;
       border-radius: 12px;
       box-shadow: 0 4px 20px rgba(0,0,0,0.15);
@@ -206,7 +208,6 @@
   </style>
 </head>
 <body>
-
   <header>
     <div class="logo"><a href="index.html">Konvive</a></div>
     <nav>
@@ -225,7 +226,9 @@
 
   <main>
     <h2 class="section-title">Nuestro equipo</h2>
-    <p style="color: white; max-width: 800px; margin: auto;">Somos Naum Muro, Luis Mendoza y Nicolás Silva, estudiantes comprometidos con la transformación social a través de la educación. Nos unimos bajo el nombre “Los amigos de Jeison” para desarrollar una propuesta que permita reducir la violencia escolar en el Perú.</p>
+    <p style="color: white; font-size: 1.1rem; line-height: 1.8; max-width: 800px; margin: auto;">
+      Somos Naum Muro, Luis Mendoza y Nicolás Silva, estudiantes comprometidos con la transformación social a través de la educación. Nos unimos bajo el nombre “Los amigos de Jeison” para desarrollar una propuesta que permita reducir la violencia escolar en el Perú.
+    </p>
 
     <div class="info-grid">
       <div class="info-row">
@@ -238,7 +241,6 @@
           <p>Reducir y prevenir los casos de bullying y violencia escolar mediante una propuesta integral que involucre a toda la comunidad educativa.</p>
         </div>
       </div>
-
       <div class="info-row">
         <div class="info-block">
           <h3>Misión</h3>
@@ -249,41 +251,37 @@
           <p>Ser una propuesta educativa innovadora que contribuya activamente a construir espacios escolares seguros, respetuosos y libres de cualquier forma de violencia.</p>
         </div>
       </div>
-
       <div class="info-row">
-        <div class="info-block" style="flex: 1 1 90%;">
+        <div class="info-block">
           <h3>Pregunta reto</h3>
           <p>¿Cómo podríamos ayudar a los estudiantes de secundaria a reducir el bullying en los centros educativos, considerando el notorio incremento de estos casos a nivel nacional?</p>
         </div>
-      </div>
-
-      <div class="info-row">
-        <div class="info-block" style="flex: 1 1 90%;">
+        <div class="info-block">
           <h3>Propuesta de valor</h3>
-          <p>Konvive ofrece una web interactiva, metodología de aula, acompañamiento psicológico, capacitación docente y guía para padres, enmarcada en la Educación R. Está diseñada para ser deseable, realizable, sostenible e innovadora en contextos escolares reales.</p>
+          <p>Konvive ofrece una web interactiva, metodología de aula, acompañamiento psicológico, capacitación docente y guía para padres, enmarcada en la Educación R.</p>
         </div>
       </div>
     </div>
 
     <div class="expand-section">
-      <button class="btn-expand" onclick="document.getElementById('timeline-content').style.display='block'; this.style.display='none'">Ver línea de tiempo del proyecto</button>
+      <button class="btn-expand" onclick="document.getElementById('timeline-content').style.display='block'">Ver desarrollo e investigación</button>
       <div id="timeline-content">
         <div class="timeline">
           <div class="timeline-item">
-            <h4>🔹 Inicio del proyecto</h4>
-            <p>Idea original y formación del equipo “Los amigos de Jeison”.</p>
+            <h4>Inicio del proyecto</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus tincidunt.</p>
           </div>
           <div class="timeline-item">
-            <h4>🔍 Investigación</h4>
-            <p>Recopilación de datos sobre bullying en el Perú (SISEVE, encuestas).</p>
+            <h4>Investigación</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus tincidunt.</p>
           </div>
           <div class="timeline-item">
-            <h4>💡 Propuesta inicial</h4>
-            <p>Primera estructura del plan educativo basado en Educación R.</p>
+            <h4>Propuesta inicial</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus tincidunt.</p>
           </div>
           <div class="timeline-item">
-            <h4>🌐 Desarrollo web</h4>
-            <p>Diseño e implementación de Konvive como plataforma interactiva.</p>
+            <h4>Desarrollo web</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus tincidunt.</p>
           </div>
         </div>
       </div>
@@ -293,6 +291,5 @@
   <footer>
     <p>© 2025 Innovation Program | Naum Muro, Luis Mendoza</p>
   </footer>
-
 </body>
 </html>
