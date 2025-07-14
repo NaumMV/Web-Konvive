@@ -5,26 +5,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Reporta un caso | Konvive</title>
   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@600&family=Open+Sans&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" />
   <style>
     :root {
-      --principal: #1b105a;
+      --principal: #3D2C5E;
+      --acento: #CCE6C5;
       --fondo: #f6f5fc;
+      --blanco: #ffffff;
       --gris: #666;
-      --blanco: #fff;
-      --hover: #2a1e8c;
     }
 
     body {
       margin: 0;
       font-family: 'Open Sans', sans-serif;
       background-color: var(--fondo);
+      scroll-behavior: smooth;
     }
 
-    /* HEADER */
     header {
       background-color: var(--principal);
       color: white;
-      padding: 18px 24px;
+      padding: 20px 30px;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -32,73 +33,37 @@
     }
 
     .logo {
-      font-size: 1.6rem;
+      font-size: 1.8rem;
       font-family: 'Raleway', sans-serif;
-      font-weight: bold;
     }
 
-    nav {
-      position: relative;
+    .logo a {
+      color: white;
+      text-decoration: none;
     }
 
     nav ul {
       list-style: none;
       display: flex;
-      gap: 15px;
+      gap: 16px;
       padding: 0;
       margin: 0;
+      flex-wrap: wrap;
     }
 
     nav li a {
       color: white;
       text-decoration: none;
-      padding: 8px 12px;
-      border-radius: 6px;
+      padding: 8px 14px;
+      border-radius: 8px;
       transition: background 0.3s;
     }
 
     nav li a:hover,
     nav li a.active {
-      background-color: var(--hover);
+      background-color: #2a1e8c;
     }
 
-    .menu-toggle {
-      display: none;
-      flex-direction: column;
-      gap: 5px;
-      cursor: pointer;
-    }
-
-    .menu-toggle span {
-      width: 25px;
-      height: 3px;
-      background-color: white;
-      border-radius: 2px;
-    }
-
-    @media (max-width: 768px) {
-      nav ul {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 60px;
-        right: 0;
-        background-color: var(--principal);
-        width: 100vw;
-        padding: 20px;
-        z-index: 100;
-      }
-
-      nav ul.show {
-        display: flex;
-      }
-
-      .menu-toggle {
-        display: flex;
-      }
-    }
-
-    /* CONTENIDO */
     main {
       max-width: 900px;
       margin: 0 auto;
@@ -116,8 +81,8 @@
     form {
       background-color: var(--blanco);
       padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+      border-radius: 16px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.08);
     }
 
     label {
@@ -148,30 +113,46 @@
     }
 
     button:hover {
-      background-color: var(--hover);
+      background-color: #2a1e8c;
     }
 
     .info-post-form {
-      margin-top: 40px;
-      background: var(--blanco);
+      margin-top: 60px;
+      background: rgba(255, 255, 255, 0.95);
       padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+      border-radius: 16px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.08);
     }
 
     .info-post-form h3 {
-      color: var(--principal);
-      margin-bottom: 15px;
+      font-size: 1.8rem;
+      background: linear-gradient(to right, var(--principal), var(--acento));
+      color: white;
+      padding: 10px 20px;
+      border-radius: 12px;
+      display: inline-block;
+      margin-bottom: 20px;
     }
 
     .linea-info {
-      margin: 15px 0;
+      margin: 20px 0;
+      padding: 15px;
+      background: #f2f2f2;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
     }
 
     .linea-info strong {
       display: block;
       margin-bottom: 6px;
       color: var(--principal);
+      font-size: 1rem;
+    }
+
+    .linea-info p {
+      font-size: 0.95rem;
+      color: #333;
+      margin: 0;
     }
 
     .nota-legal {
@@ -191,16 +172,10 @@
   </style>
 </head>
 <body>
-
   <header>
-    <div class="logo">Konvive</div>
-    <div class="menu-toggle" onclick="toggleMenu()">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
+    <div class="logo"><a href="index.html">Konvive</a></div>
     <nav>
-      <ul id="menu">
+      <ul>
         <li><a href="quienes-somos.html">Quiénes somos</a></li>
         <li><a href="educacion-r.html">Educación R</a></li>
         <li><a href="plan-estudios.html">Plan de estudios</a></li>
@@ -228,6 +203,12 @@
       <label for="email">Correo electrónico</label>
       <input type="email" id="email" required />
 
+      <label for="colegio">Nombre del colegio</label>
+      <input type="text" id="colegio" required />
+
+      <label for="sede">Sede</label>
+      <input type="text" id="sede" required />
+
       <label for="tipo">Tipo de caso</label>
       <select id="tipo" required>
         <option value="">Selecciona una opción</option>
@@ -251,28 +232,28 @@
       <h3>¿Qué pasa después de reportar?</h3>
 
       <div class="linea-info">
-        <strong>Si eres testigo y acabas de reportar:</strong>
+        <strong>Si eres testigo:</strong>
         <p>Se supervisará que los protocolos de atención se realicen a tiempo y con sensibilidad.</p>
       </div>
 
       <div class="linea-info">
-        <strong>Si eres víctima y acabas de reportar:</strong>
+        <strong>Si eres víctima:</strong>
         <p>No tienes ninguna culpa. El reporte es totalmente confidencial.</p>
       </div>
 
       <div class="linea-info">
-        <strong>VIOLENCIA ESCOLAR ENTRE ESTUDIANTES</strong>
+        <strong>Violencia entre estudiantes:</strong>
         <p>El Minedu, a través de la DRE y UGEL, tomará acciones para restablecer la convivencia escolar.</p>
       </div>
 
       <div class="linea-info">
-        <strong>VIOLENCIA SEXUAL DEL PERSONAL A ESTUDIANTE</strong>
+        <strong>Violencia sexual del personal:</strong>
         <p>Se separa al presunto agresor y se inicia investigación. Sanción máxima: destitución o término de contrato.</p>
       </div>
 
       <p class="nota-legal">
-        (1) Ley N.º 29944, Reforma Magisterial.  
-        (2) Ley N.º 30057, Servicio Civil.  
+        (1) Ley N.º 29944, Reforma Magisterial.<br>
+        (2) Ley N.º 30057, Servicio Civil.<br>
         (3) D.S. N.º 003-97-TR, Competitividad Laboral.
       </p>
     </div>
@@ -283,11 +264,6 @@
   </footer>
 
   <script>
-    function toggleMenu() {
-      const menu = document.getElementById("menu");
-      menu.classList.toggle("show");
-    }
-
     const form = document.getElementById('formularioReporte');
     form.addEventListener('submit', (e) => {
       e.preventDefault();
@@ -297,6 +273,8 @@
         apellidos: document.getElementById('apellidos').value.trim(),
         dni: document.getElementById('dni').value.trim(),
         email: document.getElementById('email').value.trim(),
+        colegio: document.getElementById('colegio').value.trim(),
+        sede: document.getElementById('sede').value.trim(),
         tipo: document.getElementById('tipo').value,
         descripcion: document.getElementById('descripcion').value.trim(),
       };
