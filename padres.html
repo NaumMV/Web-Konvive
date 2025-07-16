@@ -4,19 +4,45 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Padres | Konvive</title>
+
   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@600&family=Open+Sans&display=swap" rel="stylesheet" />
   <style>
+    @font-face {
+      font-family: 'CrogDemo';
+      src: url('fonts/crog-demo.otf') format('opentype');
+    }
+
     :root {
-      --principal: #1b105a;
-      --fondo: #f6f5fc;
-      --blanco: #fff;
-      --gris: #666;
+      --principal: #3D2C5E;
+      --acento: #CCE6C5;
+      --claro: #ffffff;
+      --texto: #1b1b1b;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
 
     body {
-      margin: 0;
       font-family: 'Open Sans', sans-serif;
-      background-color: var(--fondo);
+      background-color: #3D2C5E;
+      background-image:
+        radial-gradient(circle at 5% 15%, rgba(204, 230, 197, 0.2), transparent 9%),
+        radial-gradient(circle at 15% 85%, rgba(255, 255, 255, 0.12), transparent 10%),
+        radial-gradient(circle at 25% 35%, rgba(204, 230, 197, 0.18), transparent 9%),
+        radial-gradient(circle at 40% 90%, rgba(255, 255, 255, 0.08), transparent 8%),
+        radial-gradient(circle at 50% 25%, rgba(204, 230, 197, 0.15), transparent 8%),
+        radial-gradient(circle at 70% 70%, rgba(255, 255, 255, 0.07), transparent 7%),
+        radial-gradient(circle at 90% 40%, rgba(204, 230, 197, 0.12), transparent 9%),
+        radial-gradient(circle at 95% 10%, rgba(255, 255, 255, 0.08), transparent 6%),
+        radial-gradient(circle at 30% 10%, rgba(255, 255, 255, 0.05), transparent 5%),
+        radial-gradient(circle at 80% 90%, rgba(204, 230, 197, 0.1), transparent 6%),
+        radial-gradient(circle at 60% 60%, rgba(255, 255, 255, 0.08), transparent 6%);
+      background-size: cover;
+      background-repeat: no-repeat;
+      color: var(--texto);
     }
 
     header {
@@ -30,14 +56,14 @@
     }
 
     .logo {
-      font-size: 1.7rem;
+      font-size: 1.8rem;
       font-family: 'Raleway', sans-serif;
     }
 
     nav ul {
       list-style: none;
       display: flex;
-      gap: 15px;
+      gap: 16px;
       padding: 0;
       margin: 0;
       flex-wrap: wrap;
@@ -46,8 +72,8 @@
     nav li a {
       color: white;
       text-decoration: none;
-      padding: 8px 12px;
-      border-radius: 6px;
+      padding: 8px 14px;
+      border-radius: 8px;
       transition: background 0.3s;
     }
 
@@ -57,9 +83,9 @@
     }
 
     main {
-      max-width: 1000px;
-      margin: auto;
-      padding: 40px 20px;
+      max-width: 1100px;
+      margin: 60px auto;
+      padding: 20px;
     }
 
     h2, h3 {
@@ -73,15 +99,11 @@
     }
 
     .bloque {
-      background-color: var(--blanco);
+      background-color: var(--claro);
       padding: 25px;
-      border-radius: 12px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      border-radius: 16px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
       margin-bottom: 30px;
-    }
-
-    ul {
-      padding-left: 20px;
     }
 
     iframe {
@@ -92,27 +114,28 @@
       margin-top: 15px;
     }
 
+    ul {
+      padding-left: 20px;
+    }
+
+    .procedimiento {
+      background-color: #fafafa;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    }
+
+    .procedimiento h4 {
+      color: var(--principal);
+      margin-bottom: 10px;
+    }
+
     footer {
       background-color: var(--principal);
       color: white;
       padding: 30px 20px;
       text-align: center;
-      margin-top: 40px;
-    }
-
-    .procedimiento {
-      background-color: #edeaff;
-      padding: 25px;
-      border-radius: 12px;
-    }
-
-    .procedimiento h4 {
-      color: #1b105a;
-      margin-bottom: 10px;
-    }
-
-    .procedimiento ul {
-      padding-left: 20px;
+      margin-top: 50px;
     }
 
     @media (max-width: 768px) {
@@ -194,7 +217,4 @@
   </main>
 
   <footer>
-    © 2025 Innovation Program | Naum Muro, Luis Mendoza
-  </footer>
-</body>
-</html>
+    © 2025 Innovation Program | Naum
