@@ -4,21 +4,45 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Foro y dudas | Konvive</title>
-  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@600&family=Open+Sans&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;600;700&family=Open+Sans&display=swap" rel="stylesheet" />
   <style>
+    @font-face {
+      font-family: 'CrogDemo';
+      src: url('fonts/crog-demo.otf') format('opentype');
+    }
+
     :root {
-      --principal: #1b105a;
-      --fondo: #f6f5fc;
-      --blanco: #ffffff;
-      --acento: #3a7ce1;
-      --texto: #111;
+      --principal: #3D2C5E;
+      --acento: #CCE6C5;
+      --claro: #ffffff;
+      --texto: #1b1b1b;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
 
     body {
-      margin: 0;
       font-family: 'Open Sans', sans-serif;
-      background-color: var(--fondo);
+      background-color: var(--principal);
+      background-image:
+        radial-gradient(circle at 5% 15%, rgba(204, 230, 197, 0.2), transparent 9%),
+        radial-gradient(circle at 15% 85%, rgba(255, 255, 255, 0.12), transparent 10%),
+        radial-gradient(circle at 25% 35%, rgba(204, 230, 197, 0.18), transparent 9%),
+        radial-gradient(circle at 40% 90%, rgba(255, 255, 255, 0.08), transparent 8%),
+        radial-gradient(circle at 50% 25%, rgba(204, 230, 197, 0.15), transparent 8%),
+        radial-gradient(circle at 70% 70%, rgba(255, 255, 255, 0.07), transparent 7%),
+        radial-gradient(circle at 90% 40%, rgba(204, 230, 197, 0.12), transparent 9%),
+        radial-gradient(circle at 95% 10%, rgba(255, 255, 255, 0.08), transparent 6%),
+        radial-gradient(circle at 30% 10%, rgba(255, 255, 255, 0.05), transparent 5%),
+        radial-gradient(circle at 80% 90%, rgba(204, 230, 197, 0.1), transparent 6%),
+        radial-gradient(circle at 60% 60%, rgba(255, 255, 255, 0.08), transparent 6%);
+      background-size: cover;
+      background-repeat: no-repeat;
       color: var(--texto);
+      scroll-behavior: smooth;
     }
 
     header {
@@ -32,14 +56,14 @@
     }
 
     .logo {
-      font-size: 1.7rem;
+      font-size: 1.8rem;
       font-family: 'Raleway', sans-serif;
     }
 
     nav ul {
       list-style: none;
       display: flex;
-      gap: 15px;
+      gap: 16px;
       padding: 0;
       margin: 0;
       flex-wrap: wrap;
@@ -48,8 +72,8 @@
     nav li a {
       color: white;
       text-decoration: none;
-      padding: 8px 12px;
-      border-radius: 6px;
+      padding: 8px 14px;
+      border-radius: 8px;
       transition: background 0.3s;
     }
 
@@ -62,22 +86,23 @@
       flex-wrap: wrap;
       gap: 30px;
       max-width: 1200px;
-      margin: 0 auto;
+      margin: 60px auto;
       padding: 40px 20px;
+      text-align: center;
     }
 
     .foro, .chatbot {
       flex: 1;
       min-width: 320px;
-      background: var(--blanco);
+      background: var(--claro);
       border-radius: 12px;
       padding: 20px;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
     }
 
     h2 {
       font-family: 'Raleway', sans-serif;
-      font-size: 2.2rem;
+      font-size: 2.5rem;
       color: var(--principal);
       margin-bottom: 20px;
     }
@@ -101,7 +126,7 @@
     button {
       background-color: var(--principal);
       color: white;
-      padding: 10px 20px;
+      padding: 12px 24px;
       border: none;
       border-radius: 8px;
       font-weight: bold;
@@ -114,11 +139,12 @@
     }
 
     .duda {
-      background: var(--fondo);
+      background: #fafafa;
       padding: 14px;
       margin-bottom: 12px;
       border-left: 4px solid var(--acento);
       border-radius: 8px;
+      text-align: left;
     }
 
     .duda strong {
@@ -166,62 +192,9 @@
     footer {
       background-color: var(--principal);
       color: white;
+      text-align: center;
       padding: 30px 20px;
-      margin-top: 40px;
-    }
-
-    footer .footer-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      gap: 30px;
-      max-width: 1100px;
-      margin: auto;
-    }
-
-    .footer-col {
-      flex: 1;
-      min-width: 240px;
-    }
-
-    .footer-col h4 {
-      font-family: 'Raleway', sans-serif;
-      margin-bottom: 12px;
-      font-size: 1.1rem;
-    }
-
-    .footer-col p, .footer-col a {
-      color: #ddd;
-      font-size: 0.95rem;
-      text-decoration: none;
-    }
-
-    .social-icons {
-      display: flex;
-      gap: 12px;
-      margin-top: 10px;
-    }
-
-    .icon-link svg {
-      width: 28px;
-      height: 28px;
-      fill: white;
-      transition: transform 0.3s ease, fill 0.3s ease;
-    }
-
-    .icon-link:hover svg {
-      fill: var(--acento);
-      transform: scale(1.1);
-    }
-
-    @media (max-width: 768px) {
-      nav ul {
-        display: none;
-      }
-
-      .main-container {
-        flex-direction: column;
-      }
+      margin-top: 50px;
     }
   </style>
 </head>
@@ -268,38 +241,7 @@
   </main>
 
   <footer>
-    <div class="footer-container">
-      <div class="footer-col">
-        <h4>📍 Contacto</h4>
-        <p>📞 +51 987 654 321</p>
-        <p>✉️ contacto@konvive.org</p>
-      </div>
-      <div class="footer-col">
-        <h4>🌐 Redes sociales</h4>
-        <div class="social-icons">
-          <a href="https://www.instagram.com/kon.vive" target="_blank" class="icon-link" title="Instagram">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 24 24">
-              <path d="M7 2C4.243 2 2 4.243 2 7v10c0 2.757 2.243 5 5 5h10c2.757 0 5-2.243 5-5V7c0-2.757-2.243-5-5-5H7zm10 2a3 3 0 013 3v10a3 3 0 01-3 3H7a3 3 0 01-3-3V7a3 3 0 013-3h10zM12 7a5 5 0 100 10 5 5 0 000-10zm0 2a3 3 0 110 6 3 3 0 010-6zm4.5-3a1.5 1.5 0 100 3 1.5 1.5 0 000-3z"/>
-            </svg>
-          </a>
-          <a href="https://www.facebook.com/profile.php?id=61578204418703" target="_blank" class="icon-link" title="Facebook">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 24 24">
-              <path d="M22 12a10 10 0 10-11.6 9.9v-7H8v-2.9h2.4v-2.2c0-2.4 1.4-3.8 3.6-3.8 1 0 2 .2 2 .2v2.3h-1.1c-1.1 0-1.4.7-1.4 1.4v1.7H18l-.4 2.9h-2.8v7A10 10 0 0022 12z"/>
-            </svg>
-          </a>
-          <a href="#" target="_blank" class="icon-link" title="TikTok (próximamente)">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 24 24">
-              <path d="M16.5 1a5.4 5.4 0 003.5 1v3a8.4 8.4 0 01-3.5-.7V14a5.5 5.5 0 11-5.5-5.5h.5v3.5a2 2 0 102 2V1h3z"/>
-            </svg>
-          </a>
-        </div>
-      </div>
-      <div class="footer-col">
-        <h4>🧠 Nuestro propósito</h4>
-        <p>Educando con empatía, guiando con innovación.</p>
-      </div>
-    </div>
-    <p style="text-align:center; margin-top:20px;">© 2025 Innovation Program | Naum Muro, Luis Mendoza</p>
+    <p>© 2025 Innovation Program | Naum Muro, Luis Mendoza</p>
   </footer>
 
   <script>
@@ -356,7 +298,7 @@
     function obtenerRespuesta(texto) {
       const t = texto.toLowerCase();
       if (t.includes('bullying')) return 'El bullying es un problema serio. ¿Te gustaría saber cómo prevenirlo o qué hacer si ocurre?';
-      if (t.includes('padres')) return 'Puedes compartir nuestras guías con tus padres desde la sección "Padres".';
+      if (t.includes('padres')) return 'Puedes compartir nuestras guías con tus padres desde la sección \"Padres\".';
       if (t.includes('ayuda')) return 'Estoy aquí para ayudarte. ¿Tu duda es sobre violencia, orientación o cómo usar la plataforma?';
       if (t.includes('hola')) return '¡Hola! ¿Cómo puedo ayudarte hoy?';
       return 'Gracias por tu mensaje. Estoy procesándolo... 😊';
