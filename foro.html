@@ -104,6 +104,7 @@
       border: 1px solid #ccc;
       margin-bottom: 20px;
       font-family: 'Open Sans', sans-serif;
+      background-color: #f9f9f9;
     }
     button {
       background-color: var(--principal);
@@ -120,21 +121,23 @@
       color: #1b1b1b;
     }
     .duda {
-      background: #f9f9f9;
+      background: #ffffff;
       padding: 14px;
       margin-bottom: 15px;
       border-left: 5px solid var(--acento);
       border-radius: 8px;
     }
     .duda strong {
-      color: var(--acento);
+      color: var(--principal);
     }
     .respuesta {
-      background: #e8e3ff;
+      background: #edf1f5;
+      color: #333;
       padding: 10px;
       border-radius: 6px;
       margin-top: 8px;
       font-size: 0.95rem;
+      border-left: 3px solid #3D2C5E;
     }
     .chat-window {
       height: 400px;
@@ -179,6 +182,13 @@
       color: white;
       text-align: center;
       padding: 40px 20px;
+      font-size: 0.95rem;
+    }
+    footer div {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
     }
   </style>
 </head>
@@ -187,19 +197,19 @@
     <div class="logo">Konvive</div>
     <nav>
       <ul>
-        <li><a href="#">Quiénes somos</a></li>
-        <li><a href="#">Educación R</a></li>
-        <li><a href="#">Plan de estudios</a></li>
-        <li><a href="#">Plan de acción</a></li>
-        <li><a href="#">Capacitación</a></li>
-        <li><a href="#">Padres</a></li>
-        <li><a href="#">Reporta un caso</a></li>
-        <li><a href="#">Foro y dudas</a></li>
+        <li><a href="#quienes">Quiénes somos</a></li>
+        <li><a href="#educacion">Educación R</a></li>
+        <li><a href="#plan-estudios">Plan de estudios</a></li>
+        <li><a href="#plan-accion">Plan de acción</a></li>
+        <li><a href="#capacitacion">Capacitación</a></li>
+        <li><a href="#padres">Padres</a></li>
+        <li><a href="#reporte">Reporta un caso</a></li>
+        <li><a href="#foro">Foro y dudas</a></li>
       </ul>
     </nav>
   </header>
 
-  <main class="main-container">
+  <main class="main-container" id="foro">
     <section class="foro">
       <h2>💬 Foro de dudas</h2>
       <form id="formularioDuda">
@@ -227,8 +237,13 @@
   </main>
 
   <footer>
-    <p>📞 +51 987 654 321 | ✉ contacto@konvive.org</p>
-    <p style="margin-top:10px;">© 2025 Innovation Program | Naum Muro, Luis Mendoza</p>
+    <div>
+      <p>📍 Dirección: Av. Siempre Viva 123, Lima, Perú</p>
+      <p>📞 Teléfono: +51 987 654 321 | ✉️ Correo: contacto@konvive.org</p>
+      <p>📱 WhatsApp: +51 987 654 321</p>
+      <p>🌐 Sitio web: www.konvive.org</p>
+    </div>
+    <p style="margin-top: 20px;">© 2025 Innovation Program | Naum Muro, Luis Mendoza</p>
   </footer>
 
   <script>
@@ -242,7 +257,7 @@
       dudas.forEach(({ nombre, mensaje }) => {
         const div = document.createElement('div');
         div.className = 'duda';
-        div.innerHTML = `<strong>${nombre} pregunta:</strong><p>${mensaje}</p><div class='respuesta'><strong>Konvive responde:</strong> ¡Gracias por tu participación! Estamos revisando tu duda.</div>`;
+        div.innerHTML = `<strong>${nombre} pregunta:</strong><p>${mensaje}</p><div class='respuesta'><strong>Moderador responde:</strong> ¡Gracias por tu pregunta! Será revisada por nuestro equipo.</div>`;
         lista.prepend(div);
       });
       contador.textContent = `🗨️ Total de dudas registradas: ${dudas.length}`;
@@ -286,8 +301,8 @@
 
     function obtenerRespuesta(texto) {
       const t = texto.toLowerCase();
-      if (t.includes('bullying')) return 'Puedes actuar informando a un docente y usando nuestra sección \"Reporta un caso\".';
-      if (t.includes('padres')) return 'Comparte nuestras guías en la sección \"Padres\". Estamos para apoyarte.';
+      if (t.includes('bullying')) return 'Puedes actuar informando a un docente y usando nuestra sección "Reporta un caso".';
+      if (t.includes('padres')) return 'Comparte nuestras guías en la sección "Padres". Estamos para apoyarte.';
       if (t.includes('ayuda')) return 'Estoy aquí para ayudarte 🤗. ¿Tu duda es sobre convivencia, educación o apoyo emocional?';
       if (t.includes('hola')) return '¡Hola! ¿Cómo estás? ¿En qué te puedo ayudar?';
       return 'Gracias por tu mensaje. Estoy procesándolo... 😊';
