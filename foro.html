@@ -5,9 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Foro y dudas | Konvive</title>
   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;600;700&family=Open+Sans&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <style>
     :root {
-      --principal: #3D2C5E;
+      --principal: #1e0f5e;
       --acento: #CCE6C5;
       --claro: #ffffff;
       --texto: #1b1b1b;
@@ -19,7 +20,7 @@
     }
     body {
       font-family: 'Open Sans', sans-serif;
-      background-color: #3D2C5E;
+      background-color: var(--principal);
       background-image:
         radial-gradient(circle at 5% 15%, rgba(204, 230, 197, 0.2), transparent 9%),
         radial-gradient(circle at 15% 85%, rgba(255, 255, 255, 0.12), transparent 10%),
@@ -36,6 +37,7 @@
       background-repeat: no-repeat;
       color: var(--texto);
     }
+
     header {
       background-color: var(--principal);
       color: white;
@@ -45,18 +47,19 @@
       align-items: center;
       flex-wrap: wrap;
     }
+
     .logo {
       font-size: 1.8rem;
       font-family: 'Raleway', sans-serif;
     }
+
     nav ul {
       list-style: none;
       display: flex;
       gap: 16px;
-      padding: 0;
-      margin: 0;
       flex-wrap: wrap;
     }
+
     nav li a {
       color: white;
       text-decoration: none;
@@ -64,10 +67,12 @@
       border-radius: 8px;
       transition: background 0.3s;
     }
+
     nav li a:hover {
-      background-color: #CCE6C5;
+      background-color: var(--acento);
       color: var(--texto);
     }
+
     .main-container {
       display: flex;
       flex-wrap: wrap;
@@ -76,6 +81,7 @@
       margin: 60px auto;
       padding: 40px 20px;
     }
+
     .foro, .chatbot {
       flex: 1;
       min-width: 320px;
@@ -85,18 +91,21 @@
       box-shadow: 0 6px 20px rgba(0,0,0,0.08);
       border: 1px solid rgba(204, 230, 197, 0.25);
     }
+
     h2 {
       font-family: 'Raleway', sans-serif;
       font-size: 2.4rem;
       color: var(--principal);
       margin-bottom: 20px;
     }
+
     label {
       font-weight: bold;
       display: block;
       margin-bottom: 8px;
       color: var(--principal);
     }
+
     textarea, input {
       width: 100%;
       padding: 10px;
@@ -106,6 +115,7 @@
       font-family: 'Open Sans', sans-serif;
       background-color: #f9f9f9;
     }
+
     button {
       background-color: var(--principal);
       color: white;
@@ -116,10 +126,12 @@
       cursor: pointer;
       transition: background 0.3s;
     }
+
     button:hover {
-      background-color: #CCE6C5;
+      background-color: var(--acento);
       color: #1b1b1b;
     }
+
     .duda {
       background: #ffffff;
       padding: 14px;
@@ -127,9 +139,11 @@
       border-left: 5px solid var(--acento);
       border-radius: 8px;
     }
+
     .duda strong {
       color: var(--principal);
     }
+
     .respuesta {
       background: #edf1f5;
       color: #333;
@@ -137,8 +151,9 @@
       border-radius: 6px;
       margin-top: 8px;
       font-size: 0.95rem;
-      border-left: 3px solid #3D2C5E;
+      border-left: 3px solid var(--principal);
     }
+
     .chat-window {
       height: 400px;
       overflow-y: auto;
@@ -150,45 +165,104 @@
       flex-direction: column;
       gap: 10px;
     }
+
     .message {
       padding: 10px 14px;
       border-radius: 18px;
       max-width: 80%;
       font-size: 0.95rem;
     }
+
     .user {
       background-color: #dce0f7;
       align-self: flex-end;
     }
+
     .bot {
       background-color: #e6e2ff;
       align-self: flex-start;
     }
+
     .chat-input {
       display: flex;
       gap: 10px;
     }
+
     .chat-input input {
       flex: 1;
     }
+
     .contador, .reconocimiento {
       font-weight: 600;
-      font-style: normal;
       text-align: center;
       margin-top: 10px;
     }
+
     footer {
       background-color: var(--principal);
       color: white;
+      padding: 40px 20px 20px;
       text-align: center;
-      padding: 40px 20px;
-      font-size: 0.95rem;
     }
-    footer div {
+
+    .footer-container {
       display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 6px;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      gap: 30px;
+      margin-bottom: 20px;
+    }
+
+    .footer-section h4 {
+      font-size: 1.1rem;
+      margin-bottom: 10px;
+    }
+
+    .footer-section p {
+      margin: 4px 0;
+      color: #eaeaea;
+    }
+
+    .social-icons i {
+      font-size: 1.4rem;
+      margin: 0 8px;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+
+    .social-icons i:hover {
+      transform: scale(1.2);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+      padding-top: 15px;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+      .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      nav ul {
+        justify-content: center;
+      }
+
+      header {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .main-container {
+        flex-direction: column;
+      }
+
+      .chat-window {
+        height: 300px;
+      }
     }
   </style>
 </head>
@@ -237,13 +311,30 @@
   </main>
 
   <footer>
-    <div>
-      <p>📍 Dirección: Av. Siempre Viva 123, Lima, Perú</p>
-      <p>📞 Teléfono: +51 987 654 321 | ✉️ Correo: contacto@konvive.org</p>
-      <p>📱 WhatsApp: +51 987 654 321</p>
-      <p>🌐 Sitio web: www.konvive.org</p>
+    <div class="footer-container">
+      <div class="footer-section">
+        <h4>📍 Contacto</h4>
+        <p>📞 +51 987 654 321</p>
+        <p>✉️ contacto@konvive.org</p>
+      </div>
+
+      <div class="footer-section">
+        <h4>🌐 Redes sociales</h4>
+        <div class="social-icons">
+          <i class="fab fa-instagram"></i>
+          <i class="fab fa-facebook-f"></i>
+          <i class="fab fa-tiktok"></i>
+        </div>
+      </div>
+
+      <div class="footer-section">
+        <h4>🧠 Nuestro propósito</h4>
+        <p>Educando con empatía, guiando con innovación.</p>
+      </div>
     </div>
-    <p style="margin-top: 20px;">© 2025 Innovation Program | Naum Muro, Luis Mendoza</p>
+    <div class="footer-bottom">
+      © 2025 Innovation Program | Naum Muro, Luis Mendoza
+    </div>
   </footer>
 
   <script>
