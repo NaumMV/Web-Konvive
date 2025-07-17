@@ -1,4 +1,7 @@
-<!DOCTYPE html>
+# Guardar el archivo HTML final completo como texto para entrega al usuario
+html_path = "/mnt/data/konvive_foro_completo.html"
+
+html_code = """<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
@@ -8,19 +11,34 @@
   <style>
     :root {
       --principal: #3D2C5E;
-      --acento: #B8AEE0;
+      --acento: #CCE6C5;
       --claro: #ffffff;
       --texto: #1b1b1b;
     }
-
-    body {
-      font-family: 'Open Sans', sans-serif;
-      background-color: #F5F3FA;
-      color: var(--texto);
+    * {
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
     }
-
+    body {
+      font-family: 'Open Sans', sans-serif;
+      background-color: #3D2C5E;
+      background-image:
+        radial-gradient(circle at 5% 15%, rgba(204, 230, 197, 0.2), transparent 9%),
+        radial-gradient(circle at 15% 85%, rgba(255, 255, 255, 0.12), transparent 10%),
+        radial-gradient(circle at 25% 35%, rgba(204, 230, 197, 0.18), transparent 9%),
+        radial-gradient(circle at 40% 90%, rgba(255, 255, 255, 0.08), transparent 8%),
+        radial-gradient(circle at 50% 25%, rgba(204, 230, 197, 0.15), transparent 8%),
+        radial-gradient(circle at 70% 70%, rgba(255, 255, 255, 0.07), transparent 7%),
+        radial-gradient(circle at 90% 40%, rgba(204, 230, 197, 0.12), transparent 9%),
+        radial-gradient(circle at 95% 10%, rgba(255, 255, 255, 0.08), transparent 6%),
+        radial-gradient(circle at 30% 10%, rgba(255, 255, 255, 0.05), transparent 5%),
+        radial-gradient(circle at 80% 90%, rgba(204, 230, 197, 0.1), transparent 6%),
+        radial-gradient(circle at 60% 60%, rgba(255, 255, 255, 0.08), transparent 6%);
+      background-size: cover;
+      background-repeat: no-repeat;
+      color: var(--texto);
+    }
     header {
       background-color: var(--principal);
       color: white;
@@ -30,12 +48,10 @@
       align-items: center;
       flex-wrap: wrap;
     }
-
     .logo {
       font-size: 1.8rem;
       font-family: 'Raleway', sans-serif;
     }
-
     nav ul {
       list-style: none;
       display: flex;
@@ -44,7 +60,6 @@
       margin: 0;
       flex-wrap: wrap;
     }
-
     nav li a {
       color: white;
       text-decoration: none;
@@ -52,11 +67,10 @@
       border-radius: 8px;
       transition: background 0.3s;
     }
-
     nav li a:hover {
-      background-color: #2a1e8c;
+      background-color: #CCE6C5;
+      color: var(--texto);
     }
-
     .main-container {
       display: flex;
       flex-wrap: wrap;
@@ -65,7 +79,6 @@
       margin: 60px auto;
       padding: 40px 20px;
     }
-
     .foro, .chatbot {
       flex: 1;
       min-width: 320px;
@@ -73,22 +86,20 @@
       border-radius: 12px;
       padding: 20px;
       box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+      border: 1px solid rgba(204, 230, 197, 0.25);
     }
-
     h2 {
       font-family: 'Raleway', sans-serif;
       font-size: 2.4rem;
       color: var(--principal);
       margin-bottom: 20px;
     }
-
     label {
       font-weight: bold;
       display: block;
       margin-bottom: 8px;
       color: var(--principal);
     }
-
     textarea, input {
       width: 100%;
       padding: 10px;
@@ -97,7 +108,6 @@
       margin-bottom: 20px;
       font-family: 'Open Sans', sans-serif;
     }
-
     button {
       background-color: var(--principal);
       color: white;
@@ -108,11 +118,10 @@
       cursor: pointer;
       transition: background 0.3s;
     }
-
     button:hover {
-      background-color: #2a1e8c;
+      background-color: #CCE6C5;
+      color: #1b1b1b;
     }
-
     .duda {
       background: #f9f9f9;
       padding: 14px;
@@ -120,11 +129,9 @@
       border-left: 5px solid var(--acento);
       border-radius: 8px;
     }
-
     .duda strong {
       color: var(--acento);
     }
-
     .respuesta {
       background: #e8e3ff;
       padding: 10px;
@@ -132,7 +139,6 @@
       margin-top: 8px;
       font-size: 0.95rem;
     }
-
     .chat-window {
       height: 400px;
       overflow-y: auto;
@@ -144,99 +150,38 @@
       flex-direction: column;
       gap: 10px;
     }
-
     .message {
       padding: 10px 14px;
       border-radius: 18px;
       max-width: 80%;
       font-size: 0.95rem;
     }
-
     .user {
       background-color: #dce0f7;
       align-self: flex-end;
     }
-
     .bot {
       background-color: #e6e2ff;
       align-self: flex-start;
     }
-
     .chat-input {
       display: flex;
       gap: 10px;
     }
-
     .chat-input input {
       flex: 1;
     }
-
-    .contador {
-      margin-top: 20px;
-      font-size: 0.95rem;
-      color: #444;
+    .contador, .reconocimiento {
+      font-weight: 600;
+      font-style: normal;
       text-align: center;
-    }
-
-    .reconocimiento {
       margin-top: 10px;
-      text-align: center;
-      font-style: italic;
-      font-size: 0.9rem;
-      color: var(--principal);
     }
-
     footer {
       background-color: var(--principal);
       color: white;
+      text-align: center;
       padding: 40px 20px;
-      margin-top: 60px;
-    }
-
-    .footer-container {
-      max-width: 1100px;
-      margin: auto;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      gap: 30px;
-    }
-
-    .footer-col h4 {
-      font-size: 1.1rem;
-      margin-bottom: 10px;
-    }
-
-    .footer-col p, .footer-col a {
-      font-size: 0.95rem;
-      color: #ddd;
-      text-decoration: none;
-    }
-
-    .social-icons {
-      display: flex;
-      gap: 10px;
-    }
-
-    .social-icons svg {
-      width: 28px;
-      height: 28px;
-      fill: white;
-      transition: transform 0.3s ease, fill 0.3s ease;
-    }
-
-    .social-icons a:hover svg {
-      fill: var(--acento);
-      transform: scale(1.1);
-    }
-
-    @media (max-width: 768px) {
-      nav ul {
-        display: none;
-      }
-      .main-container {
-        flex-direction: column;
-      }
     }
   </style>
 </head>
@@ -245,14 +190,14 @@
     <div class="logo">Konvive</div>
     <nav>
       <ul>
-        <li><a href="quienes-somos.html">Quiénes somos</a></li>
-        <li><a href="educacion-r.html">Educación R</a></li>
-        <li><a href="plan-estudios.html">Plan de estudios</a></li>
-        <li><a href="plan-accion.html">Plan de acción</a></li>
-        <li><a href="capacitacion.html">Capacitación</a></li>
-        <li><a href="padres.html">Padres</a></li>
-        <li><a href="reporta-caso.html">Reporta un caso</a></li>
-        <li><a href="foro.html">Foro y dudas</a></li>
+        <li><a href="#">Quiénes somos</a></li>
+        <li><a href="#">Educación R</a></li>
+        <li><a href="#">Plan de estudios</a></li>
+        <li><a href="#">Plan de acción</a></li>
+        <li><a href="#">Capacitación</a></li>
+        <li><a href="#">Padres</a></li>
+        <li><a href="#">Reporta un caso</a></li>
+        <li><a href="#">Foro y dudas</a></li>
       </ul>
     </nav>
   </header>
@@ -285,32 +230,8 @@
   </main>
 
   <footer>
-    <div class="footer-container">
-      <div class="footer-col">
-        <h4>📍 Contacto</h4>
-        <p>+51 987 654 321</p>
-        <p>konvivee@gmail.com</p>
-      </div>
-      <div class="footer-col">
-        <h4>🌐 Redes sociales</h4>
-        <div class="social-icons">
-          <a href="https://www.instagram.com/kon.vive" target="_blank" title="Instagram">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 2C4.243 2 2 4.243 2 7v10c0 2.757 2.243 5 5 5h10c2.757 0 5-2.243 5-5V7c0-2.757-2.243-5-5-5H7zm10 2a3 3 0 013 3v10a3 3 0 01-3 3H7a3 3 0 01-3-3V7a3 3 0 013-3h10zM12 7a5 5 0 100 10 5 5 0 000-10zm0 2a3 3 0 110 6 3 3 0 010-6zm4.5-3a1.5 1.5 0 100 3 1.5 1.5 0 000-3z"/></svg>
-          </a>
-          <a href="https://www.facebook.com/profile.php?id=61578204418703" target="_blank" title="Facebook">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22 12a10 10 0 10-11.6 9.9v-7H8v-2.9h2.4v-2.2c0-2.4 1.4-3.8 3.6-3.8 1 0 2 .2 2 .2v2.3h-1.1c-1.1 0-1.4.7-1.4 1.4v1.7H18l-.4 2.9h-2.8v7A10 10 0 0022 12z"/></svg>
-          </a>
-          <a href="#" target="_blank" title="TikTok (próximamente)">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16.5 1a5.4 5.4 0 003.5 1v3a8.4 8.4 0 01-3.5-.7V14a5.5 5.5 0 11-5.5-5.5h.5v3.5a2 2 0 102 2V1h3z"/></svg>
-          </a>
-        </div>
-      </div>
-      <div class="footer-col">
-        <h4>🧠 Nuestro propósito</h4>
-        <p>Educando con empatía, guiando con innovación.</p>
-      </div>
-    </div>
-    <p style="text-align:center; margin-top:20px;">© 2025 Innovation Program | Naum Muro, Luis Mendoza</p>
+    <p>📞 +51 987 654 321 | ✉ contacto@konvive.org</p>
+    <p style="margin-top:10px;">© 2025 Innovation Program | Naum Muro, Luis Mendoza</p>
   </footer>
 
   <script>
@@ -368,8 +289,8 @@
 
     function obtenerRespuesta(texto) {
       const t = texto.toLowerCase();
-      if (t.includes('bullying')) return 'Puedes actuar informando a un docente y usando nuestra sección "Reporta un caso".';
-      if (t.includes('padres')) return 'Comparte nuestras guías en la sección "Padres". Estamos para apoyarte.';
+      if (t.includes('bullying')) return 'Puedes actuar informando a un docente y usando nuestra sección \"Reporta un caso\".';
+      if (t.includes('padres')) return 'Comparte nuestras guías en la sección \"Padres\". Estamos para apoyarte.';
       if (t.includes('ayuda')) return 'Estoy aquí para ayudarte 🤗. ¿Tu duda es sobre convivencia, educación o apoyo emocional?';
       if (t.includes('hola')) return '¡Hola! ¿Cómo estás? ¿En qué te puedo ayudar?';
       return 'Gracias por tu mensaje. Estoy procesándolo... 😊';
@@ -377,3 +298,8 @@
   </script>
 </body>
 </html>
+"""
+
+# Escribir el archivo
+Path(html_path).write_text(html_code, encoding="utf-8")
+html_path
