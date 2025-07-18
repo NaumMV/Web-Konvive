@@ -4,27 +4,43 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Plan de estudios | Konvive</title>
+
+  <!-- Fonts & Icons -->
   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@600;700&family=Open+Sans&display=swap" rel="stylesheet" />
+
   <style>
+    @font-face {
+      font-family: 'CrogDemo';
+      src: url('fonts/crog-demo.otf') format('opentype');
+      font-weight: normal;
+      font-style: normal;
+    }
+
     :root {
-      --principal: #1b105a;
-      --fondo: #f6f5fc;
-      --blanco: #fff;
-      --gris: #666;
-      --hover: #2a1e8c;
+      --principal: #3D2C5E;
+      --acento: #CCE6C5;
+      --fondo: linear-gradient(to bottom, #3D2C5E, #CCE6C5);
+      --claro: #ffffff;
+      --texto: #1b1b1b;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
 
     body {
-      margin: 0;
       font-family: 'Open Sans', sans-serif;
-      background-color: var(--fondo);
+      background: var(--fondo);
+      color: var(--texto);
+      scroll-behavior: smooth;
     }
 
-    /* HEADER */
     header {
       background-color: var(--principal);
       color: white;
-      padding: 18px 24px;
+      padding: 20px 30px;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -32,9 +48,9 @@
     }
 
     .logo {
-      font-size: 1.6rem;
+      font-size: 1.8rem;
       font-family: 'Raleway', sans-serif;
-      font-weight: bold;
+      font-weight: 700;
     }
 
     .menu-icon {
@@ -43,29 +59,27 @@
       cursor: pointer;
     }
 
-    nav {
-      position: relative;
-    }
-
     nav ul {
       list-style: none;
       display: flex;
-      gap: 15px;
+      gap: 16px;
       padding: 0;
       margin: 0;
+      flex-wrap: wrap;
     }
 
     nav li a {
       color: white;
       text-decoration: none;
-      padding: 8px 12px;
-      border-radius: 6px;
-      transition: background 0.3s ease;
+      padding: 8px 14px;
+      border-radius: 8px;
+      transition: background 0.3s;
     }
 
     nav li a:hover,
     nav li a.active {
-      background-color: var(--hover);
+      background-color: var(--acento);
+      color: var(--texto);
     }
 
     @media (max-width: 768px) {
@@ -90,58 +104,117 @@
       }
     }
 
-    /* MAIN */
     main {
-      padding: 50px 20px;
-      max-width: 1100px;
+      padding: 60px 20px;
+      max-width: 1000px;
       margin: auto;
+      text-align: center;
     }
 
     h2 {
       font-family: 'Raleway', sans-serif;
-      text-align: center;
-      font-size: 2.4rem;
-      color: var(--principal);
-      margin-bottom: 20px;
-    }
-
-    .intro {
-      text-align: center;
-      max-width: 800px;
-      margin: 0 auto 40px;
-      font-size: 1.1rem;
-      color: var(--gris);
-    }
-
-    .bloque {
-      background: var(--blanco);
+      font-size: 2.5rem;
+      color: white;
+      background-color: rgba(255,255,255,0.1);
+      display: inline-block;
+      padding: 10px 20px;
       border-radius: 12px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-      padding: 25px;
       margin-bottom: 30px;
     }
 
-    .bloque h3 {
-      color: #0d47a1;
-      margin-bottom: 10px;
-      font-family: 'Raleway', sans-serif;
+    .intro {
+      max-width: 800px;
+      margin: 0 auto 40px;
+      font-size: 1.1rem;
+      color: white;
     }
 
-    .bloque p, .bloque ul {
-      color: #555;
+    .bloque {
+      background: rgba(255,255,255,0.8);
+      border-radius: 16px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+      padding: 30px;
+      margin-bottom: 30px;
+      text-align: left;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .bloque:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 20px var(--acento);
+    }
+
+    .bloque h3 {
+      color: var(--principal);
+      font-family: 'Raleway', sans-serif;
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+    }
+
+    .bloque p,
+    .bloque ul {
       font-size: 1rem;
+      line-height: 1.6;
+      color: #333;
     }
 
     .bloque ul {
       padding-left: 20px;
     }
 
-    iframe {
-      display: block;
-      margin: 20px auto;
-      max-width: 100%;
-      border: none;
+    .descargas {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .descargas a {
+      display: inline-block;
+      background-color: var(--principal);
+      color: white;
+      padding: 12px 20px;
       border-radius: 10px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+
+    .descargas a:hover {
+      background-color: var(--acento);
+      color: var(--texto);
+    }
+
+    .video-galeria {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .video-galeria iframe {
+      border-radius: 10px;
+      width: 100%;
+      max-width: 560px;
+      margin: 0 auto;
+      height: 315px;
+    }
+
+    .carrusel {
+      display: flex;
+      overflow-x: auto;
+      gap: 20px;
+      padding: 10px 0;
+      scroll-snap-type: x mandatory;
+    }
+
+    .carrusel img {
+      flex: 0 0 auto;
+      width: 300px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 12px;
+      scroll-snap-align: center;
     }
 
     footer {
@@ -156,7 +229,6 @@
 </head>
 <body>
 
-  <!-- HEADER -->
   <header>
     <div class="logo">Konvive</div>
     <div class="menu-icon" onclick="toggleMenu()">☰</div>
@@ -177,8 +249,15 @@
   <main>
     <h2>📘 Plan de Estudios</h2>
     <p class="intro">
-      En Konvive, el aula es un espacio vivo. Nuestro plan de estudios transforma momentos cotidianos —como tutorías, dinámicas o recreos— en oportunidades para construir respeto, empatía y confianza entre estudiantes. No solo planteamos actividades, sino una cultura distinta: cercana, real, funcional.
+      En Konvive, el aula es un espacio vivo. Nuestro plan de estudios transforma momentos cotidianos como tutorías, dinámicas o recreos en oportunidades para construir respeto, empatía y confianza entre estudiantes. No solo planteamos actividades, sino una cultura distinta: cercana, real, funcional.
     </p>
+
+    <div class="bloque">
+      <h3>📖 ¿Qué es nuestro plan de estudios?</h3>
+      <p>
+        No es un currículo rígido, sino una organización flexible de contenidos y experiencias adaptadas al nivel y ritmo de cada estudiante. En Konvive, las actividades cotidianas como clases, charlas, dinámicas, juegos o tutorías se convierten en oportunidades de aprendizaje integral. Todo lo que promueve nuestro proyecto —el respeto, la empatía, la escucha activa y la reconciliación— se vive dentro y fuera del aula. Esta plataforma reúne todos los materiales visuales, recursos prácticos y guías interactivas para que cada actor de la comunidad educativa encuentre lo que necesita, en el momento en que lo necesita.
+      </p>
+    </div>
 
     <div class="bloque">
       <h3>🧠 Nuestra metodología revolucionaria</h3>
@@ -199,10 +278,37 @@
     </div>
 
     <div class="bloque">
-      <h3>🎥 Video guía para docentes</h3>
-      <p>Una explicación sencilla de cómo llevar este plan al aula y convertirlo en una experiencia significativa para todos:</p>
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/jkHIyC3EjLg" allowfullscreen></iframe>
+      <h3>📂 Recursos para docentes</h3>
+      <p>Descarga aquí presentaciones, fichas y materiales para implementar las actividades de aula. Todo el trabajo listo para usar:</p>
+      <div class="descargas">
+        <a href="#">📥 Bitácora semanal (PPT)</a>
+        <a href="#">📥 Dinámicas y juegos cooperativos (PPT)</a>
+        <a href="#">📥 Guía para círculos de diálogo (PPT)</a>
+        <a href="#">📥 Reconocimientos y estímulos (PPT)</a>
+        <a href="#">📥 Planificador semanal de tutorías (PPT)</a>
+      </div>
     </div>
+
+    <div class="bloque">
+      <h3>🎥 Ejemplos en acción</h3>
+      <p>Observa cómo se aplican nuestras metodologías en contextos reales. Estos videos ayudan a inspirar, guiar y mejorar la experiencia educativa de docentes y estudiantes.</p>
+      <div class="video-galeria">
+        <iframe src="https://www.youtube.com/embed/HgVopGVpoUk" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/3q7ujEP9OOU" allowfullscreen></iframe>
+      </div>
+    </div>
+
+    <div class="bloque">
+      <h3>🖼️ Galería de experiencias</h3>
+      <p>Conoce algunos momentos vividos en las aulas, actividades y encuentros donde la Educación R cobra vida:</p>
+      <div class="carrusel">
+        <img src="img/actividad1.jpg" alt="Actividad 1">
+        <img src="img/actividad2.jpg" alt="Actividad 2">
+        <img src="img/actividad3.jpg" alt="Actividad 3">
+        <img src="img/actividad4.jpg" alt="Actividad 4">
+      </div>
+    </div>
+
   </main>
 
   <footer>
