@@ -7,17 +7,18 @@
   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@600;700&family=Open+Sans&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --principal: #1b105a;
-      --fondo: #f6f5fc;
+      --principal: #3D2C5E;
+      --fondo: linear-gradient(to bottom, #3D2C5E, #CCE6C5);
       --blanco: #ffffff;
       --acento: #3a7ce1;
       --texto: #111;
+      --hover-verde: #CCE6C5;
     }
 
     body {
       margin: 0;
       font-family: 'Open Sans', sans-serif;
-      background-color: var(--fondo);
+      background: var(--fondo);
       color: var(--texto);
     }
 
@@ -68,8 +69,16 @@
       font-family: 'Raleway', sans-serif;
       font-size: 2.4rem;
       text-align: center;
-      color: var(--principal);
+      color: var(--blanco);
       margin-bottom: 20px;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 10px 20px;
+      border-radius: 12px;
+      display: inline-block;
+      box-shadow: none;
+      width: fit-content;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     .intro {
@@ -77,7 +86,7 @@
       max-width: 800px;
       margin: 0 auto 40px;
       font-size: 1.1rem;
-      color: #444;
+      color: #f0f0f0;
     }
 
     .pilares-resumen {
@@ -97,6 +106,12 @@
       min-width: 120px;
       font-size: 1rem;
       color: var(--principal);
+      transition: box-shadow 0.3s ease, background 0.3s ease;
+    }
+
+    .pilar:hover {
+      background-color: var(--hover-verde);
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
     }
 
     .grid-ejes {
@@ -111,11 +126,13 @@
       padding: 25px;
       border-radius: 14px;
       box-shadow: 0 2px 12px rgba(0,0,0,0.06);
-      transition: transform 0.3s ease;
+      transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
     }
 
     .eje:hover {
       transform: translateY(-8px);
+      box-shadow: 0 0 15px rgba(58, 124, 225, 0.4);
+      background-color: var(--hover-verde);
     }
 
     .eje h3 {
@@ -128,18 +145,45 @@
       color: #555;
     }
 
-    .subtitulo {
+    .testimonio {
+      background: #e8f5e9;
+      padding: 25px;
+      border-left: 5px solid #66bb6a;
+      margin: 40px auto;
+      max-width: 700px;
+      font-style: italic;
+      border-radius: 10px;
+      color: #33691e;
+      box-shadow: none;
+    }
+
+    .plan-accion {
+      background: var(--blanco);
+      padding: 30px;
+      border-radius: 14px;
+      margin-top: 50px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+
+    .plan-accion h3 {
       text-align: center;
-      margin: 60px 0 20px;
-      font-size: 1.6rem;
       color: var(--principal);
+      margin-bottom: 30px;
+      font-size: 1.8rem;
+      font-family: 'Raleway', sans-serif;
+      border-bottom: 2px solid rgba(61, 44, 94, 0.2);
+      padding-bottom: 10px;
+    }
+
+    .acciones {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
     }
 
     .acciones button {
       display: block;
       width: 100%;
-      max-width: 420px;
-      margin: 15px auto;
       padding: 14px;
       border: none;
       background: var(--acento);
@@ -152,51 +196,20 @@
     }
 
     .acciones button:hover {
-      background: #215dbf;
+      background: var(--hover-verde);
+      color: #000;
     }
 
     .accion {
       background: var(--blanco);
       border-radius: 10px;
-      box-shadow: 0 1px 5px rgba(0,0,0,0.05);
-      max-width: 700px;
-      margin: 0 auto 25px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      margin-top: 10px;
       padding: 20px;
       display: none;
       animation: fadeIn 0.4s ease;
       color: #333;
-    }
-
-    .extra {
-      margin-top: 50px;
-      text-align: center;
-    }
-
-    .btn-descarga {
-      display: inline-block;
-      padding: 12px 20px;
-      background-color: #2e7d32;
-      color: white;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: bold;
-      margin: 10px;
-      transition: background 0.3s;
-    }
-
-    .btn-descarga:hover {
-      background-color: #1b5e20;
-    }
-
-    .testimonio {
-      background: #e8f5e9;
-      padding: 25px;
-      border-left: 5px solid #66bb6a;
-      margin: 40px auto;
-      max-width: 700px;
-      font-style: italic;
-      border-radius: 10px;
-      color: #33691e;
+      grid-column: 1 / -1;
     }
 
     footer {
@@ -205,22 +218,17 @@
       padding: 30px 20px;
       margin-top: 40px;
       text-align: center;
+      font-size: 0.95rem;
+      letter-spacing: 0.5px;
     }
 
     @keyframes fadeIn {
       from {opacity: 0;}
       to {opacity: 1;}
     }
-
-    @media (max-width: 768px) {
-      nav ul {
-        display: none;
-      }
-    }
   </style>
 </head>
 <body>
-
   <header>
     <div class="logo">Konvive</div>
     <nav>
@@ -239,9 +247,7 @@
 
   <main>
     <h2>Educación R</h2>
-    <p class="intro">
-      Nuestra propuesta educativa se basa en una metodología transformadora enfocada en el <strong>Respeto, Reconocimiento, Reflexión y Reconciliación</strong>. Con estos pilares, buscamos formar comunidades escolares libres de violencia, inclusivas y emocionalmente sanas.
-    </p>
+    <p class="intro">Educación pensada para reconectar a los estudiantes mediante el aprendizaje, usando un enfoque práctico, interactivo y flexible. Surge como respuesta al desinterés que generan las clases tradicionales.</p>
 
     <div class="pilares-resumen">
       <div class="pilar">✋<br><strong>Respeto</strong></div>
@@ -289,83 +295,72 @@
       “Gracias a Educación R, aprendí a escuchar y resolver conflictos sin pelear. Ahora soy parte de la brigada de convivencia.” — <strong>Valeria, 4to grado</strong>
     </div>
 
-    <h3 class="subtitulo">🛡️ Plan de acción ante casos de bullying o violencia</h3>
+    <section class="plan-accion">
+      <h3>🛡️ Plan de acción ante casos de bullying o violencia</h3>
+      <div class="acciones">
+        <button onclick="toggleAccion('prevencion')">🔍 Prevención</button>
+        <button onclick="toggleAccion('deteccion')">🧠 Detección</button>
+        <button onclick="toggleAccion('actuacion')">🚨 Actuación inmediata</button>
+        <button onclick="toggleAccion('intervencion')">🗣️ Intervención y acompañamiento</button>
+        <button onclick="toggleAccion('seguimiento')">🔁 Seguimiento</button>
 
-    <div class="acciones">
-      <button onclick="toggleAccion('prevencion')">🔍 Prevención</button>
-      <div id="prevencion" class="accion">
-        <ul>
-          <li>Campañas de sensibilización</li>
-          <li>Talleres sobre bullying y ciberbullying</li>
-          <li>Formación de brigadas de convivencia</li>
-          <li>Acuerdos de aula firmados</li>
-          <li>Integración de Educación R en sesiones</li>
-        </ul>
+        <div id="prevencion" class="accion">
+          <ul>
+            <li>Campañas de sensibilización</li>
+            <li>Talleres sobre bullying y ciberbullying</li>
+            <li>Formación de brigadas de convivencia</li>
+            <li>Acuerdos de aula firmados</li>
+            <li>Integración de Educación R en sesiones</li>
+          </ul>
+        </div>
+
+        <div id="deteccion" class="accion">
+          <ul>
+            <li>Detectar cambios de conducta</li>
+            <li>Observar uso del celular o aislamiento</li>
+            <li>Alertas por docentes, padres o alumnos</li>
+          </ul>
+        </div>
+
+        <div id="actuacion" class="accion">
+          <ol>
+            <li>Escuchar sin juzgar</li>
+            <li>Garantizar confidencialidad</li>
+            <li>Notificar a tutor o psicólogo</li>
+            <li>Separar al agresor si hay riesgo</li>
+            <li>Aplicar protocolo del colegio</li>
+          </ol>
+        </div>
+
+        <div id="intervencion" class="accion">
+          <ul>
+            <li>Entrevistas con ambas partes</li>
+            <li>Compromisos firmados</li>
+            <li>Derivación psicológica</li>
+            <li>Actividades restaurativas</li>
+          </ul>
+        </div>
+
+        <div id="seguimiento" class="accion">
+          <ul>
+            <li>Evaluaciones de clima escolar</li>
+            <li>Observación del agresor</li>
+            <li>Refuerzo de normas</li>
+          </ul>
+        </div>
       </div>
-
-      <button onclick="toggleAccion('deteccion')">🧠 Detección</button>
-      <div id="deteccion" class="accion">
-        <ul>
-          <li>Detectar cambios de conducta</li>
-          <li>Observar uso del celular o aislamiento</li>
-          <li>Alertas por docentes, padres o alumnos</li>
-        </ul>
-      </div>
-
-      <button onclick="toggleAccion('actuacion')">🚨 Actuación inmediata</button>
-      <div id="actuacion" class="accion">
-        <ol>
-          <li>Escuchar sin juzgar</li>
-          <li>Garantizar confidencialidad</li>
-          <li>Notificar a tutor o psicólogo</li>
-          <li>Separar al agresor si hay riesgo</li>
-          <li>Aplicar protocolo del colegio</li>
-        </ol>
-      </div>
-
-      <button onclick="toggleAccion('intervencion')">🗣️ Intervención y acompañamiento</button>
-      <div id="intervencion" class="accion">
-        <ul>
-          <li>Entrevistas con ambas partes</li>
-          <li>Compromisos firmados</li>
-          <li>Derivación psicológica</li>
-          <li>Actividades restaurativas</li>
-        </ul>
-      </div>
-
-      <button onclick="toggleAccion('seguimiento')">🔁 Seguimiento</button>
-      <div id="seguimiento" class="accion">
-        <ul>
-          <li>Evaluaciones de clima escolar</li>
-          <li>Observación del agresor</li>
-          <li>Refuerzo de normas</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="extra">
-      <h4>📚 Recursos complementarios</h4>
-      <a href="guia-educacion-r.pdf" class="btn-descarga">📘 Guía del estudiante (PDF)</a>
-      <a href="bitacora-modelo.pdf" class="btn-descarga">🗂️ Bitácora semanal (PDF)</a>
-
-      <h4 style="margin-top: 40px">📜 Reglamento Interno</h4>
-      <a href="reglamento-interno.pdf" class="btn-descarga">📥 Descargar Reglamento Interno</a>
-
-      <h4 style="margin-top: 30px">🧾 Protocolo Interno</h4>
-      <p>Etapas claras con responsables y acciones para cada fase del proceso. Disponible en la sección de Plan de Acción.</p>
-    </div>
+    </section>
   </main>
 
   <footer>
-    <p>© 2025 Innovation Program | Naum Muro, Luis Mendoza</p>
+    © 2025 Innovation Program | Naum Muro, Luis Mendoza
   </footer>
 
   <script>
     function toggleAccion(id) {
-      const elem = document.getElementById(id);
-      elem.style.display = (elem.style.display === "block") ? "none" : "block";
+      const el = document.getElementById(id);
+      el.style.display = el.style.display === 'block' ? 'none' : 'block';
     }
   </script>
-
 </body>
 </html>
