@@ -56,7 +56,8 @@
 
     nav li a:hover,
     nav li a.active {
-      background-color: #2a1e8c;
+      background-color: var(--hover-verde);
+      color: var(--principal);
     }
 
     main {
@@ -75,10 +76,10 @@
       padding: 10px 20px;
       border-radius: 12px;
       display: inline-block;
-      box-shadow: none;
       width: fit-content;
-      margin-left: auto;
-      margin-right: auto;
+      position: relative;
+      left: 50%;
+      transform: translateX(-50%);
     }
 
     .intro {
@@ -106,12 +107,6 @@
       min-width: 120px;
       font-size: 1rem;
       color: var(--principal);
-      transition: box-shadow 0.3s ease, background 0.3s ease;
-    }
-
-    .pilar:hover {
-      background-color: var(--hover-verde);
-      box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
     }
 
     .grid-ejes {
@@ -126,13 +121,6 @@
       padding: 25px;
       border-radius: 14px;
       box-shadow: 0 2px 12px rgba(0,0,0,0.06);
-      transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
-    }
-
-    .eje:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 0 15px rgba(58, 124, 225, 0.4);
-      background-color: var(--hover-verde);
     }
 
     .eje h3 {
@@ -163,11 +151,6 @@
       border-radius: 14px;
       margin-top: 50px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-      transition: background 0.3s ease;
-    }
-
-    .plan-accion:hover {
-      background-color: var(--hover-verde);
     }
 
     .plan-accion h3 {
@@ -187,9 +170,7 @@
     }
 
     .acciones button {
-      display: block;
-      width: 100%;
-      padding: 14px;
+      padding: 14px 20px;
       border: none;
       background: var(--acento);
       color: white;
@@ -201,8 +182,7 @@
     }
 
     .acciones button:hover {
-      background: var(--hover-verde);
-      color: #000;
+      background: #215dbf;
     }
 
     .accion {
@@ -214,7 +194,7 @@
       display: none;
       animation: fadeIn 0.4s ease;
       color: #333;
-      grid-column: 1 / -1;
+      width: 100%;
     }
 
     footer {
