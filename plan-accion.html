@@ -13,8 +13,7 @@
     :root {
       --principal: #3D2C5E;
       --acento: #CCE6C5;
-      --fondo1: #f6f5fc;
-      --fondo2: #ffffff;
+      --fondo: linear-gradient(to bottom, #3D2C5E, #CCE6C5);
       --claro: #ffffff;
       --gris: #555;
       --texto: #1b1b1b;
@@ -28,7 +27,7 @@
 
     body {
       font-family: 'Open Sans', sans-serif;
-      background: linear-gradient(to bottom, var(--fondo1), var(--fondo2));
+      background: var(--fondo);
       color: var(--texto);
     }
 
@@ -74,14 +73,18 @@
       max-width: 1100px;
       margin: auto;
       padding: 50px 20px;
+      text-align: center;
     }
 
     h2 {
       font-family: 'Raleway', sans-serif;
       font-size: 2.3rem;
-      color: var(--principal);
-      text-align: center;
+      color: var(--claro);
       margin-bottom: 30px;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 12px 18px;
+      border-radius: 12px;
+      display: inline-block;
     }
 
     .intro {
@@ -89,7 +92,7 @@
       max-width: 800px;
       margin: auto;
       font-size: 1.1rem;
-      color: #333;
+      color: white;
     }
 
     .bloque {
@@ -97,13 +100,13 @@
       border-radius: 12px;
       padding: 25px;
       margin: 30px 0;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+      box-shadow: 0 0 0 rgba(0,0,0,0);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
     .bloque:hover {
       transform: translateY(-4px);
-      box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+      box-shadow: 0 0 12px 2px var(--acento);
     }
 
     .bloque h3 {
@@ -114,6 +117,7 @@
 
     .bloque ul {
       padding-left: 20px;
+      text-align: left;
     }
 
     .timeline {
@@ -137,6 +141,27 @@
       color: #888;
       margin-top: 20px;
       line-height: 1.5;
+    }
+
+    .recursos-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+      text-align: left;
+    }
+
+    .recurso {
+      background: #f0f0f0;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.08);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .recurso:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 0 14px rgba(204, 230, 197, 0.5);
     }
 
     footer {
@@ -228,17 +253,15 @@
 
     <div class="bloque">
       <h3>📎 Recursos descargables</h3>
-      <p>Encuentra aquí los documentos esenciales para implementar correctamente el Plan de Acción en tu institución:</p>
-      <ul>
-        <li>📄 <a href="REGLAMENTO-INTERNO-DE-CONVIVENCIA-ESCOLAR.docx" download>Reglamento Interno de Convivencia Escolar</a></li>
-        <li>📋 Plantilla para informes mensuales</li>
-        <li>📞 Contactos UGEL y psicólogos de la red</li>
-      </ul>
+      <div class="recursos-grid">
+        <div class="recurso">📄 <a href="REGLAMENTO-INTERNO-DE-CONVIVENCIA-ESCOLAR.docx" download>Reglamento Interno de Convivencia Escolar</a></div>
+        <div class="recurso">📋 Plantilla para informes mensuales</div>
+        <div class="recurso">📞 Contactos UGEL y psicólogos de la red</div>
+      </div>
     </div>
 
     <div class="bloque">
       <h3>✅ Checklist para directivos</h3>
-      <p>Revisa esta guía de verificación para garantizar una intervención adecuada y oportuna ante casos reportados:</p>
       <ul>
         <li>☑️ Verificar si el caso está registrado según el Reglamento Interno.</li>
         <li>☑️ Comunicar inmediatamente al tutor o encargado del aula.</li>
@@ -256,4 +279,3 @@
   </footer>
 </body>
 </html>
-
