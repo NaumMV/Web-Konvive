@@ -7,17 +7,18 @@
   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@600&family=Open+Sans&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --principal: #1b105a;
-      --fondo: #f6f5fc;
+      --principal: #3D2C5E;
+      --fondo: linear-gradient(to bottom, #3D2C5E, #CCE6C5);
       --blanco: #ffffff;
       --acento: #3a7ce1;
       --texto: #111;
+      --hover-verde: #CCE6C5;
     }
 
     body {
       margin: 0;
       font-family: 'Open Sans', sans-serif;
-      background-color: var(--fondo);
+      background: var(--fondo);
       color: var(--texto);
     }
 
@@ -55,7 +56,8 @@
 
     nav li a:hover,
     nav li a.active {
-      background-color: #2a1e8c;
+      background-color: var(--hover-verde);
+      color: var(--principal);
     }
 
     main {
@@ -66,10 +68,18 @@
 
     h2 {
       font-family: 'Raleway', sans-serif;
-      font-size: 2.2rem;
-      color: var(--principal);
-      margin-bottom: 20px;
+      font-size: 2.4rem;
+      color: var(--blanco);
       text-align: center;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 10px 20px;
+      border-radius: 12px;
+      display: inline-block;
+      width: fit-content;
+      position: relative;
+      left: 50%;
+      transform: translateX(-50%);
+      margin-bottom: 30px;
     }
 
     .bloque {
@@ -96,6 +106,7 @@
       padding: 20px;
       border-radius: 12px;
       box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+      transition: none;
     }
 
     .modulo h4, .video h4 {
@@ -111,6 +122,12 @@
       border-radius: 8px;
       font-weight: bold;
       cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .modulo button:hover, .video button:hover {
+      background-color: var(--hover-verde);
+      color: var(--principal);
     }
 
     blockquote {
