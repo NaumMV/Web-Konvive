@@ -4,21 +4,32 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Plan de acción | Konvive</title>
+
+  <!-- Fuentes e íconos -->
   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@600&family=Open+Sans&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" />
+
   <style>
     :root {
-      --principal: #1b105a;
-      --fondo: #f6f5fc;
-      --blanco: #fff;
+      --principal: #3D2C5E;
+      --acento: #CCE6C5;
+      --fondo1: #f6f5fc;
+      --fondo2: #ffffff;
+      --claro: #ffffff;
       --gris: #555;
-      --acento: #3a7ce1;
+      --texto: #1b1b1b;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
 
     body {
-      margin: 0;
       font-family: 'Open Sans', sans-serif;
-      background-color: var(--fondo);
-      color: var(--gris);
+      background: linear-gradient(to bottom, var(--fondo1), var(--fondo2));
+      color: var(--texto);
     }
 
     header {
@@ -55,7 +66,8 @@
 
     nav li a:hover,
     nav li a.active {
-      background-color: #2a1e8c;
+      background-color: var(--acento);
+      color: var(--principal);
     }
 
     main {
@@ -81,16 +93,23 @@
     }
 
     .bloque {
-      background: var(--blanco);
+      background: var(--claro);
       border-radius: 12px;
       padding: 25px;
       margin: 30px 0;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .bloque:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.08);
     }
 
     .bloque h3 {
       color: var(--principal);
       margin-bottom: 12px;
+      font-family: 'Raleway', sans-serif;
     }
 
     .bloque ul {
@@ -114,7 +133,7 @@
     }
 
     .nota-legal {
-      font-size: 0.8rem;
+      font-size: 0.85rem;
       color: #888;
       margin-top: 20px;
       line-height: 1.5;
@@ -126,6 +145,16 @@
       padding: 30px 20px;
       text-align: center;
       margin-top: 60px;
+    }
+
+    a {
+      color: var(--principal);
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: var(--acento);
     }
   </style>
 </head>
@@ -149,7 +178,7 @@
   <main>
     <h2>🗂️ Plan de Acción</h2>
     <p class="intro">
-      Este plan es nuestra guía estratégica para que Konvive funcione de manera efectiva en tu institución. Incluye las fases clave, los actores involucrados y las medidas necesarias para atender los casos con empatía y firmeza.
+      Guía clara de procedimientos para actuar ante casos de acoso escolar. Dirigida a directivos, detalla los pasos según el tipo de caso y garantiza que tanto los padres de las víctimas como de los agresores comprendan cómo se debe intervenir correctamente, promoviendo transparencia y justicia.
     </p>
 
     <div class="bloque">
@@ -198,12 +227,26 @@
     </div>
 
     <div class="bloque">
-      <h3>📎 Recursos y materiales de apoyo</h3>
+      <h3>📎 Recursos descargables</h3>
+      <p>Encuentra aquí los documentos esenciales para implementar correctamente el Plan de Acción en tu institución:</p>
       <ul>
-        <li>📘 Manual para directivos y docentes</li>
-        <li>🎥 Video explicativo de implementación</li>
-        <li>📄 Plantilla para informes mensuales</li>
+        <li>📄 <a href="REGLAMENTO-INTERNO-DE-CONVIVENCIA-ESCOLAR.docx" download>Reglamento Interno de Convivencia Escolar</a></li>
+        <li>📋 Plantilla para informes mensuales</li>
         <li>📞 Contactos UGEL y psicólogos de la red</li>
+      </ul>
+    </div>
+
+    <div class="bloque">
+      <h3>✅ Checklist para directivos</h3>
+      <p>Revisa esta guía de verificación para garantizar una intervención adecuada y oportuna ante casos reportados:</p>
+      <ul>
+        <li>☑️ Verificar si el caso está registrado según el Reglamento Interno.</li>
+        <li>☑️ Comunicar inmediatamente al tutor o encargado del aula.</li>
+        <li>☑️ Informar a los padres de ambas partes.</li>
+        <li>☑️ Activar el protocolo adecuado según el tipo de violencia.</li>
+        <li>☑️ Evaluar si el caso debe ser derivado a UGEL o autoridades competentes.</li>
+        <li>☑️ Brindar acompañamiento psicológico o emocional a las partes involucradas.</li>
+        <li>☑️ Registrar acciones tomadas y generar informe mensual.</li>
       </ul>
     </div>
   </main>
@@ -213,3 +256,4 @@
   </footer>
 </body>
 </html>
+
